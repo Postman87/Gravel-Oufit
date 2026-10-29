@@ -1,69 +1,92 @@
-# Gravel Outfit · Version 0.7.1
+# Gravel Outfit · Version 0.8.0
 
-Fortführung der bestehenden Version 0.7 mit HTML, CSS, Vanilla JavaScript, IndexedDB und Service Worker. Kein Framework, kein Build. Outfit, Kleiderschrank und Einstellungen bleiben erhalten.
+Weiterentwicklung des bestehenden Standes 0.7.1. HTML, CSS, Vanilla JavaScript, IndexedDB und Service Worker; kein Framework, kein Build und kein Cloud-Backend. Outfit, Kleiderschrank und Einstellungen bleiben erhalten.
 
-## Hochladen und Aktualisieren
+## Ins bestehende Repository hochladen
 
-ZIP entpacken und den Inhalt direkt ins Hauptverzeichnis von `postman87/Gravel-Oufit` hochladen; Dateien gleichen Namens ersetzen. GitHub Pages bleibt auf `main` / `/ (root)`. `.nojekyll` mit übernehmen. Die alten Ordner `js`, `css` und `assets` können bestehen bleiben, werden aber von dieser Version nicht geladen.
+1. ZIP entpacken. Den Inhalt direkt ins Hauptverzeichnis von `postman87/Gravel-Oufit` hochladen und Dateien gleichen Namens ersetzen. Keinen zusätzlichen übergeordneten Ordner anlegen. `.nojekyll` ebenfalls übernehmen.
+2. GitHub Pages auf Branch `main` und Ordner `/ (root)` belassen. Alte Ordner `js/`, `css/` und `assets/` dürfen bestehen bleiben; diese Version lädt ihre Dateien aus dem Hauptverzeichnis.
+3. Nach dem Deployment alle bisherigen Gravel-Outfit-Tabs und installierten App-Fenster schließen und erneut öffnen. Falls noch ein alter Stand erscheint: einmal online öffnen, wieder sämtliche App-Fenster schließen und neu starten. Angezeigt werden muss „Testversion 0.8.0“.
+4. Unter Einstellungen prüfen, dass der Offline-Speicher vorbereitet ist. Danach offline testen.
 
-Nach dem Deployment alle Gravel-Outfit-Tabs und installierten App-Fenster schließen und erneut öffnen. Falls noch die alte Version erscheint: einmal online öffnen, wieder alle Fenster schließen und neu starten. Danach muss „Testversion 0.7.1“ angezeigt werden. Keine Browserdaten oder IndexedDB löschen. Die Anwendung bleibt unter https://postman87.github.io/Gravel-Oufit/ erreichbar, sobald die Dateien dort veröffentlicht wurden.
+Die bestehende Adresse lautet nach dem Deployment https://postman87.github.io/Gravel-Oufit/ . Das Paket wurde noch nicht in GitHub hochgeladen. Browserdaten und IndexedDB für dieses Update nicht löschen.
 
-## Temperaturen ohne Datenverlust
+## Start und Ende der Tour
 
-Alle Temperaturanzeigen und Regler verwenden ganze Celsiusgrade. Schrittweite: 1 °C, Bereich −25 bis 50 °C. Die Grenzwerte passen sich beim Überschneiden an.
+Die erste Temperatur bezeichnet ausschließlich die Außentemperatur beim Tourstart. Die zweite bezeichnet die erwartete Außentemperatur am Tourende. Ein Start mit 11 °C und ein Ende mit 7 °C sind ausdrücklich zulässig. Die Regler sind unabhängig und werden weder sortiert noch aufeinander begrenzt.
 
-Alte Dezimalwerte bleiben in der Datenbank, in Fahrten und im JSON-Export exakt erhalten. Für die Oberfläche werden sie lediglich gerundet dargestellt. Auch das erneute Speichern des Wetters ohne Reglerbewegung oder das Bearbeiten anderer Kleidungseigenschaften rundet diese Daten nicht. Erst wenn ein bestimmter Regler bewegt wird, wird dessen Wert ausdrücklich neu gesetzt. Muss dadurch die andere Grenze angepasst werden, wird auch diese angepasst. Ein unverändert gebliebener anderer Grenzwert bleibt intern unverändert. Die Berechnung verwendet weiterhin die unveränderten gespeicherten Wetterwerte.
+Beide Regler verwenden 1-°C-Schritte von −25 bis 50 °C. Die Kleidung behält dagegen ihre eigenen Felder „Geeignet ab“ / „Geeignet bis“ als Kleidungs-Temperaturbereich. Dort werden die beiden Grenzen weiterhin aufeinander abgestimmt.
 
-Wetter mit „Empfehlung aktualisieren“ übernehmen; Kleidung mit „Speichern“. Bei neuen Kleidungsstücken gelten ganzzahlige Standardwerte.
+Alte gespeicherte Dezimalwerte bleiben intern und in JSON-Sicherungen exakt erhalten. Die Oberfläche zeigt nur gerundete ganze Grad. Erst das Bewegen eines bestimmten Reglers übernimmt bewusst einen neuen ganzzahligen Wert. Das Speichern anderer Angaben oder eine Bestätigung ohne Reglerbewegung verändert einen alten Zwischenwert nicht.
 
-## Kleidungsarten und Längen
+Wind, Niederschlag, Intensität, Dauer und Kälteempfinden werden für beide Tourzeitpunkte verwendet. Es gibt noch keine automatische Wetterabfrage und keine Vorhersage für weitere Zwischenpunkte.
 
-Art und Länge bleiben unabhängige Datenfelder. Hosen einschließlich der Kategorie Außenhose für RevolutionRace können „Lang“ oder „Kurz“ sein. Oberbekleidung zeigt „Langarm“, „Kurzarm“ und, soweit sinnvoll, „Ärmellos“. Zubehör besitzt keine Ärmel- oder Beinlänge.
+## Anziehen, Mitnehmen und Ablegen
 
-Für Westen ist ärmelloser Schnitt vorgesehen, für Thermojacken Langarm, für Regenjacken und Thermotrikots Kurzarm oder Langarm. Baselayer und normale Trikots erlauben alle drei Schnitte. „Nicht angegeben“ bleibt möglich und wird nicht als garantierte lange Bedeckung bewertet.
+„Anziehen“ orientiert sich an den Bedingungen zum Tourstart. Aus dem tatsächlichen Bestand werden passende Funktionsschichten kombiniert. Für jedes Startoutfit wird geprüft, wie es mit zusätzlichen oder ablegbaren äußeren Schichten am Tourende funktionieren kann.
 
-Alte unpassende Kombinationen werden nicht umgeschrieben oder gelöscht. Ein zusätzlicher Prüfhinweis kennzeichnet sie. Bis zur Korrektur werden sie nicht automatisch eingeplant; im Editor kann eine passende Länge gewählt werden. Das Bearbeiten anderer Felder lässt die alte Angabe zunächst erhalten. Nach bewusster Korrektur entfällt der Prüfhinweis.
+„Mitnehmen“ enthält ausschließlich zusätzliche verfügbare Kleidungsstücke, die für die geplante Endkombination benötigt werden. Ein bereits angezogenes Teil wird dort nicht erneut aufgeführt. Bei Abkühlung können beispielsweise eine zusätzliche Jacke, Mütze oder wärmere Handschuhe erforderlich werden. Sind unterschiedliche Handschuhe für beide Zeitpunkte erforderlich, wird ein echter Ersatzwechsel benannt; sie werden nicht übereinander als doppelte Schicht bewertet.
 
-## Modulare Berechnung
+Bei Erwärmung erscheinen passende Ablegehinweise. Unter „Am Tourende tragen“ ist die resultierende konkrete Kombination sichtbar. Die Diagnose bewertet genau diesen Endzustand, also Startkleidung abzüglich der abzulegenden Teile zuzüglich des Gepäcks.
 
-Es gibt keinen virtuellen Kleiderschrank und keine erfundenen idealen Kleidungsstücke mehr. Aus dem Wetter werden zuerst funktionale Anforderungen abgeleitet: Wärmeisolierung, Bedeckung, Windschutz, Nässeschutz und Atmungsaktivität. Die Oberfläche zeigt diese Anforderungen ausdrücklich als Funktionen an.
+Baselayer, Trikot, normale Hose und Polster-Unterwäsche werden als Grundkombination über die Tour beibehalten. Die Planung setzt keinen Wechsel dieser inneren oder grundlegenden Schichten am Wegesrand stillschweigend voraus. Bei abkühlender Tour darf eine etwas wärmere Beinkleidung bereits am Start sinnvoll sein, weil normale Hosen nicht als zusätzliche zweite Außenhose übereinander eingeplant werden. Bleibt damit eine Schutzlücke, wird sie für den jeweiligen Tourzeitpunkt benannt.
 
-Danach werden tatsächlich vorhandene, verfügbare und nicht archivierte Kleidungsstücke als Kombinationen bewertet: eine Basisschicht, eine Trikotschicht, passende Armlinge, isolierende Oberbekleidung, Wind- oder Nässeschutz sowie passende Beinschichten. Die Suche bevorzugt strukturell tragbare Kombinationen. Innerhalb dieser Kombinationen bewertet sie verbleibende Schutzlücken, gesamte Wärmeisolierung, Überwärmung, Atmungsaktivität und die Anzahl der Teile. Temperaturbereiche sind Orientierung, keine harten Ausschlussgrenzen für einzelne Schichten.
+Startkleidung, Gepäck, Ablegehinweise und Endkombination werden getrennt berechnet. Im Fahrt-Snapshot bleiben tatsächliche Kleidung und ursprüngliche automatische Empfehlung weiterhin getrennt gespeichert; die Empfehlung enthält zusätzlich den geplanten Endzustand und dessen Diagnose.
 
-Wasserabweisend ist begrenzter Schauerschutz und bleibt getrennt von wasserdicht. Winddichte Regenkleidung kann Windschutz liefern, besitzt im Modell aber nur geringe Isolierung. Bei zu wenig Wärme werden vorhandene kompatible Zusatzschichten kombiniert. Ein Regenmantel wird dadurch nicht zur Thermojacke. Bei vergleichbaren Eigenschaften werden bei Kälte längere Ärmel und Beine bevorzugt.
+## Hosen und optionale Körperzonen
 
-Nicht kombiniert werden doppelte Funktionsschichten, redundante Windweste und Regenjacke, zwei Sitzpolster oder Armlinge zusätzlich zu bereits langen darunterliegenden Ärmeln. Armlinge ergänzen ein kurzärmeliges Trikot; sie werden nicht als Ersatz für die Schulterbedeckung eines ärmellosen Trikots behandelt. Die Funktionsart Thermo-Radhose wird als eigenständig gepolsterte Radhose bewertet.
+RevolutionRace-Hosen werden über die Funktion Außenhose und eine davon unabhängige Länge „Lang“ oder „Kurz“ erfasst. Bei Wärme werden vergleichbar geeignete kurze Varianten bevorzugt. Lange Hosen können bei Kälte, stärkerem Wind, Nässe oder einem abkühlenden Tourende sinnvoll sein. Eine gepolsterte Unterziehhose allein zählt nicht als äußere Hose.
 
-Die Anziehreihenfolge bleibt funktional: Baselayer und Unterhose, Armlinge, Trikot, Hose, isolierende Jacke, äußere Wind- und Regenschichten. Bei deutlicher Temperaturspanne kann eine verfügbare zusätzliche Windschicht zum Mitnehmen vorgeschlagen werden, ohne ein Kleidungsstück doppelt zu verwenden. Ablegehinweise dürfen keine bloße Unterwäsche als verbleibende Oberbekleidung hinterlassen.
+Normale lange Hosen besitzen im Modell einen begrenzten passiven Windschutz; dadurch wird bei mäßigem Wind nicht pauschal eine Regenhose benötigt. Das setzt das gespeicherte Kennzeichen „Winddicht“ nicht auf wahr. Eine ausdrücklich winddichte Hose bietet weiterhin den stärkeren Schutz. Regenkleidung ohne zusätzlichen Nutzen wird vermieden.
 
-Fehlt Schutz, wird er als Funktion benannt, beispielsweise „Zusätzliche Wärmeisolierung für den Oberkörper erforderlich.“ Gibt es nur einen ärmellosen Baselayer, wird ausdrücklich eine unvollständige Grundlage angezeigt. Der automatische Fahrtstart ist dann gesperrt. Aus diesem Bestand lässt sich kein vollständiges Outfit erzeugen, ohne Kleidung zu erfinden. Besteht eine tragbare Grundkombination, aber reicht ihre Wärme nicht, bleibt diese mit deutlichen Einschränkungen sichtbar.
+Unter „Optionale Schutzkleidung“ sind Handschuhe, Mütze, Halstuch, Armlinge und Überschuhe jeweils auf „Automatisch“ oder ausdrücklich „Keine …“ einstellbar. Automatisch dürfen Zonen bei Wärme frei bleiben. Bei konstant 25 °C werden warme oder winddichte Winterhandschuhe nicht allein deshalb vorgeschlagen, weil sie vorhanden sind. Entsprechend können Mütze, Halstuch, Armlinge und Überschuhe entfallen.
 
-Die eigene Auswahl bleibt unabhängig und bewusst manuell steuerbar. Umschalten und Neuladen erhalten sie. Beim Fahrtstart bleiben tatsächliche Kleidung und ursprüngliche automatische Empfehlung getrennt gespeichert. Ältere Fahrten und deren historische Informationen werden nicht nachträglich umgedeutet. Neue Empfehlungen speichern funktionale Anforderungen zusätzlich zum tatsächlichen Vergleichsoutfit.
+Bei Kälte, Wind oder Regen prüft die automatische Auswahl den Schutz erneut. Eine ausdrückliche „Keine …“-Entscheidung bleibt erhalten; falls dadurch notwendiger Schutz fehlt, wird darauf hingewiesen. „Optionale Körperzonen“ zeigt die tatsächlichen Entscheidungen für Start und Ende.
 
-## Bewertung bleibt ein Regelmodell
+## Modulare Bewertung
 
-Wärme und Atmungsaktivität sind aus Funktion, Schnitt und Angaben abgeleitete Modellwerte, keine Messwerte der Textilien. Für große Bestände werden identische Profile zusammengefasst und bis zu fünf Kandidaten pro Schichtfunktion kombiniert. Dies hält die Berechnung auf Mobilgeräten nutzbar und garantiert keine mathematisch globale Optimierung. Individuelles Empfinden, Pausen, Helm, Schuhe und sichere Beweglichkeit bleiben selbst zu prüfen.
+Die Suche berücksichtigt aktive, verfügbare und hinsichtlich ihrer Länge nutzbare Kleidungsstücke. Wäsche und archivierte oder vorübergehend nicht verfügbare Teile werden weder zum Start noch als Gepäck verwendet.
 
-Die Temperaturanzeige verwendet °C. Zahlen in der Schichtbewertung sind relative Isolierungswerte ohne Celsius-Einheit und dürfen dort Nachkommastellen besitzen.
+Wärmeisolierung, Windschutz, Nässeschutz und Atmungsaktivität werden getrennt bewertet. Mehrere kompatible Schichten können gemeinsam isolieren. Beispiel ohne verfügbare Thermokleidung: langärmelige Basis + Trikot + GOREWEAR Lupra als äußere Windschutzschicht. Die Lupra liefert Wind- und gegebenenfalls Nässeschutz, wird aber nicht zur Thermojacke. Wasserabweisend bleibt von wasserdicht unterschieden.
 
-## Datenmigration und Sicherung
+Es gibt keine erfundenen Kleidungsstücke im tatsächlichen Outfit. Fehlender Schutz wird erst nach der Suche nach kompatiblen Alternativen benannt. Eine unvollständige Ausstattung wird nicht als fahrbereites Outfit dargestellt; ein alleiniger ärmelloser Baselayer bleibt beispielsweise eine Grundlage. Der automatische Start ist ohne vollständige Grundbekleidung gesperrt.
 
-Der Datenbankname bleibt `gravel-outfit`. IndexedDB wird auf Version 4 erweitert, das Datenformat auf `schemaVersion: 5`. Vorhandene Stores bleiben erhalten. Vor der Migration wird eine unveränderte Kopie des bisherigen Zustands unter `migrationBackups` / `before-0.7.1` gespeichert. Kopie und Migration erfolgen atomar im Upgrade. Der frühere Snapshot `before-0.7` bleibt ebenfalls erhalten.
+Schichten und Anziehreihenfolge folgen der Funktion. Keine doppelten Baselayer oder Trikots, keine redundante Windweste und äußere Regenjacke, keine zwei Sitzpolster und keine unvereinbaren Hosenkombinationen. Geeignete Kombinationen mit weniger Teilen werden bevorzugt. Bei vergleichbaren Eigenschaften sind bei Kälte längere Ärmel und Beine günstiger.
 
-Aus 0.7 wird kein bestehender Temperatur-, Längen- oder Historienwert verändert. Falls nötig, kommt nur eine Prüfmarkierung für eine unpassende alte Länge hinzu. Aus 0.6 werden fehlende Eigenschaften wie bisher ergänzt; vorhandene Werte, IDs, Namen, Archiv, Pflege, Fahrten, aktive Fahrt und Planungen bleiben erhalten. JSON-Sicherungen der Datenformate 3 und 4 sowie ältere Sicherungen mit `version: 2` bleiben importierbar. Neue Exporte enthalten alle aktuellen Nutzerdaten, einschließlich unveränderter alter Dezimalwerte. Die internen Migrationskopien sind nicht Teil des normalen Exports.
+Alle verfügbaren Funktionsprofile gehen in die Suche ein. Identische Profile werden zusammengefasst. Bei sehr großen Kombinationsräumen wird eine begrenzte Beam-Suche verwendet, damit die App auf Mobilgeräten nutzbar bleibt. Das Modell garantiert keine mathematisch globale Optimierung beliebig großer Kleiderschränke.
 
-Kleiderschrankbearbeitung, Verfügbarkeit, Archivierung, Pflegehistorie, Fahrtstart und Fahrtende mit Rückmeldung sowie JSON-Sicherung bleiben verfügbar. Import ersetzt Daten erst nach Prüfung und Bestätigung. Schreibvorgänge werden nacheinander ausgeführt, mit zusätzlicher Tab-Koordination über Web Locks, soweit vom Browser unterstützt.
+## Diagnosebereiche
 
-## Offline und Zielgeräte
+Die aufklappbaren Bereiche „Schutz der gesamten Kombination“ und „Ideale Zielausrüstung“ bleiben vorhanden.
 
-Einmal online vollständig laden und unter Einstellungen den Offline-Status prüfen. Danach funktionieren Bestand, Planung, Fahrtverwaltung und Sicherung ohne Internet. Der Verbindungsstatus prüft den Server außerhalb des Offline-Caches. Erreichbares WLAN bei nicht erreichbarem Server erscheint als „Server nicht erreichbar · lokal nutzbar“.
+„Schutz der gesamten Kombination“ zeigt für Start und Ende jeweils Wärmeisolierung, Windschutz, Regenschutz und Atmungsaktivität samt numerischen Modellzielen. Die Werte der Wärmebewertung sind relative Einheiten, keine Celsiusgrade. „Ideale Zielausrüstung“ beschreibt die benötigten Funktionen, ohne virtuelle Artikel zu erzeugen, und berücksichtigt dieselben temperaturabhängigen Ziele wie die Berechnung.
 
-Mac: im entpackten Ordner `python3 -m http.server 8080` starten, dann `http://localhost:8080/` öffnen. Für iPhone Safari die bereitgestellte HTTPS-Adresse verwenden und über Teilen → Zum Home-Bildschirm installieren. Nach dem Update alte App-Fenster schließen. Ein physischer iPhone-Test steht weiterhin aus; die mobile Browseransicht wurde bei 390 Pixeln Breite geprüft.
+Die Werte sind aus Kleidungsfunktion, Schnitt und gespeicherten Eigenschaften abgeleitete Richtwerte, keine gemessenen Materialdaten. Eigenes Empfinden, Helm, Schuhe, Pausen und Beweglichkeit bleiben selbst zu prüfen.
 
-Regelmäßig JSON sichern. Browser können lokale Daten entfernen; dauerhafte Speicherung kann unter Einstellungen angefragt werden. Keine Cloud-Synchronisierung, automatische Wetterabfrage oder GPS-Aufzeichnung.
+## Daten erhalten
+
+IndexedDB behält den Namen `gravel-outfit` und wird auf Datenbankversion 5 erweitert. Das Datenformat wird `schemaVersion: 6`. Vor der Migration wird eine unveränderte Kopie unter `migrationBackups` / `before-0.8` gespeichert; vorhandene ältere Stores und Migrationskopien bleiben bestehen. Kopie und Migration laufen in derselben Upgrade-Transaktion.
+
+Alle Kleidungsstücke, IDs, Namen, Längen, Eigenschaften, Notizen, Archiv- und Verfügbarkeitszustände, Pflegeeinträge, Fahrten und manuellen Auswahlen bleiben erhalten. Aus dem früheren ersten Wetterwert wird `startTemp`, aus dem früheren zweiten `endTemp`. Die alten Felder `min` und `max` bleiben zusätzlich unverändert gespeichert; sie werden in der neuen Planung nicht mehr als Bereich verwendet. Vorhandene weitere Einstellungen bleiben erhalten.
+
+Historische Fahrten behalten ihre damaligen Wetterdaten und Snapshots. Alte Temperaturbereiche werden in der Historie ausdrücklich als frühere Bereiche bezeichnet und nicht nachträglich als tatsächlicher Verlauf umgedeutet. Eine laufende alte Fahrt kann weiter beendet werden.
+
+Sicherungen früherer Versionen bleiben importierbar. Neue JSON-Dateien enthalten zusätzlich Start-/Endtemperaturen, Optionen und Endplanung. Ein Import prüft die Datei und ersetzt Daten erst nach Bestätigung. Die internen Migrationskopien gehören nicht zum normalen Export.
+
+Kleiderschrankbearbeitung, Pflegehistorie, Archivierung, manuelle Outfit-Auswahl, Fahrt-Rückmeldung und Wäscheoption sind weiterhin verfügbar. Die manuelle Auswahl bleibt unabhängig; sie wird als selbst gewählte Startkombination gespeichert. Ihre Diagnose bewertet dieselbe eigene Kombination an beiden Tourzeitpunkten und fügt nicht heimlich automatische Gepäckstücke hinzu.
+
+## Offline, Mac und iPhone
+
+Einmal online vollständig öffnen. Danach bleiben Planung, Bestand, Fahrten und JSON-Sicherung offline verfügbar. Der Verbindungsstatus prüft den Server außerhalb des Offline-Caches. WLAN ohne erreichbaren Server wird als „Server nicht erreichbar · lokal nutzbar“ angezeigt.
+
+Mac: im entpackten Ordner `python3 -m http.server 8080`, anschließend `http://localhost:8080/` öffnen. Ein direkter Doppelklick auf die HTML-Datei ist kein verlässlicher PWA-Test.
+
+iPhone: die GitHub-Pages-HTTPS-Adresse in Safari öffnen; optional Teilen → Zum Home-Bildschirm. Nach dem Update bisherige App-Fenster schließen und neu starten. Installation und echter Flugmodus auf einem physischen iPhone sind noch auf dem Zielgerät zu prüfen. Die mobile Browseransicht wurde bei 390 Pixeln Breite geprüft.
+
+Regelmäßig eine JSON-Sicherung exportieren. Browser können lokalen Speicher entfernen. Keine Cloud-Synchronisierung, GPS-Aufzeichnung oder automatische lernende Regeländerung.
 
 ## Tests
 
-`node --test tests/core.test.cjs` mit Node.js 20 oder neuer; keine zusätzlichen Pakete. Node ist nicht zum Betrieb der PWA erforderlich. Alle 51 Tests bestehen, einschließlich der sechs ausdrücklich angeforderten Fälle. Details und Browserprüfungen stehen in `TESTBERICHT.md`.
+`node --test tests/core.test.cjs` mit Node.js 20 oder neuer, ohne zusätzliche Pakete. Node wird nur für die Tests benötigt. Alle 69 Tests bestehen. Konkrete Ergebnisse und Browserprüfungen stehen in `TESTBERICHT.md`.
 
-`tests/migration-fixture.html` ist ein optionaler Migrationstest für einen neuen isolierten lokalen Testport. Er legt erfundene Daten an und überschreibt keinen vorhandenen Bestand. Nach dem Öffnen der App vor weiteren Bearbeitungen zur Testseite zurückkehren und „Datenerhalt prüfen“ ausführen.
+`tests/migration-fixture.html` erlaubt einen reproduzierbaren Migrationstest auf einem neuen isolierten lokalen Testport. Es werden nur erfundene Testdaten angelegt, kein vorhandener Bestand überschrieben. Vor Änderungen zur Testseite zurückkehren und den Datenerhalt prüfen.

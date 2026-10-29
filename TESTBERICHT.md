@@ -1,63 +1,70 @@
-# Testbericht · Gravel Outfit 0.7.1
+# Testbericht · Gravel Outfit 0.8.0
 
-29. Oktober 2026. Weiterentwicklung des bestehenden Standes 0.7.
+29. Oktober 2026. Fortgeführter Projektstand 0.7.1, keine Neuentwicklung.
 
 ## Ergebnis
 
-51 automatisierte Tests bestanden, keine fehlgeschlagen. Ausführbar ohne Zusatzpakete mit `node --test tests/core.test.cjs`.
+69 automatisierte Tests bestanden, keine fehlgeschlagen. Ausführen mit `node --test tests/core.test.cjs`; keine Zusatzpakete erforderlich.
 
-## Die sechs angeforderten Fälle
+## Angeforderte Situationen
 
-Die Tests prüfen reale IDs, Verfügbarkeit, eindeutige Verwendung und legale Schichten. Wo ein tragbares Gesamtoutfit erwartet wird, enthält der Testbestand auch eine reale Beinkleidung; diese wird nicht erfunden.
+| Situation | Geprüftes Ergebnis |
+|---|---|
+| Start 11 °C, Ende 7 °C | Startkleidung anhand 11 °C; zusätzliche verfügbare Schutzschichten im Gepäck; konkrete Endkombination und nötige Ersatz-/Ablegehinweise. Keine Doppelnutzung derselben ID. |
+| Start 7 °C, Ende 11 °C | Startkleidung für kühlen Beginn; geeignete Teile können am Ende entfallen; Restkombination bleibt strukturell tragbar. |
+| Konstant 25 °C, kurze RevolutionRace vorhanden | Kurze statt vergleichbarer langer Variante. Gepolsterte Unterhose bleibt unter einer echten Außenhose. Keine unnötige Regenhose oder pauschal mitgenommene Windweste. |
+| 25 °C mit ausschließlich warmen Ziener-Handschuhen | Keine automatische Handschuhempfehlung; Start und Ende ausdrücklich „Keine Handschuhe“. |
+| Kaltes Wetter ohne verfügbare Thermokleidung | Verfügbare Basis-, Trikot- und äußere Windschutzschichten werden geprüft und kombiniert. Verbleibende Isolierungslücken werden erst danach benannt. |
+| Kalt mit Basis, Trikot und Lupra | Alle drei funktional genutzt, Windschutz getrennt von Isolierung. Regenjacke wird nicht als Thermokleidung gewertet. |
+| Ein Teil vorübergehend nicht verfügbar | Kein Auftauchen beim Start, im Gepäck oder in der Endkombination. |
 
-| Fall | Bestand / Situation | Geprüftes Ergebnis |
-|---|---|---|
-| 1 | Kalt, kein Thermo-Baselayer; Langarm-Baselayer, Regenjacke, reale Hose | Langarm-Basis und Regenjacke werden kombiniert. Regenjacke liefert Windschutz, kaum Isolierung. Verbleibende Wärme fehlt ausdrücklich als Funktion. |
-| 2 | Kalt, ausschließlich ärmelloser Baselayer | Nur unvollständige Grundlage, kein fahrbereites Outfit; automatischer Fahrtstart wird verhindert. Keine virtuelle Ersatzkleidung. |
-| 3 | Lange und kurze RevolutionRace-Hose gleicher Art | Kalt wird die lange, warm die kurze Variante gewählt. Art bleibt identisch, Länge separat. |
-| 4 | Mehrere passende Oberkörperschichten | Langarm-Basis, Trikotschicht und äußere Windschicht werden kombiniert; gemeinsame Isolierung erreicht das Modellziel, obwohl kein Einzelteil genügt. |
-| 5 | Passende Thermokleidung vorhanden und verfügbar | Thermo-Basis und Thermojacke werden genutzt; keine Oberkörper-Wärmelücke im Modell. |
-| 6 | Thermo-Basis in Wäsche und Thermojacke nicht verfügbar | Beide werden ausgeschlossen. Verfügbare lange Basis, Trikot und Regenjacke bilden den Ersatz; Restbedarf wird benannt. |
-
-Fall 2 kann mit dem genannten Bestand physisch kein vollständiges Outfit ergeben. Der Test verlangt deshalb die ehrliche Kennzeichnung dieser Grenze und das Unterbinden eines automatischen Starts, statt einen tragbaren Ersatz vorzutäuschen.
+Die Testbestände enthalten reale Testobjekte für erforderliche Grundkleidung. Falls der Bestand physisch kein vollständiges Outfit zulässt, wird das ausdrücklich als Grenze behandelt statt Kleidung zu erfinden.
 
 ## Weitere automatisierte Prüfungen
 
-Fortgeführte Regressionstests prüfen Migration aus früheren Versionen, Datenunveränderlichkeit, alle Kleidungsarten, getrennten Regen- und Windschutz, Atmungsaktivität, Längeneinfluss, Wärme aus mehreren Schichten, sinnvolle Mindestanzahl, Anziehreihenfolge, keine Doppelnutzung, Ausschluss von Archiv und Wäsche, eigene Auswahl und wiederholtes Umschalten, Fahrt-Snapshots, JSON-Rundlauf und ungültige Sicherungen.
+- Fallende Temperaturen sind zulässig; sie werden nicht sortiert oder automatisch angeglichen.
+- Aus Startteilen minus Ablegehinweisen plus Gepäck ergibt sich exakt die diagnostizierte Endkombination.
+- Jede Kleidungs-ID erscheint höchstens einmal in Anziehen und Mitnehmen zusammen.
+- Schutzlücken am Ende werden konkret dem Tourende zugeordnet.
+- Hände, Kopf, Hals, Arme und Füße dürfen bei Wärme ohne zusätzliche Teile bleiben.
+- Ausdrückliche „Keine …“-Entscheidungen bleiben erhalten, mit Hinweis auf fehlenden Schutz bei Kälte.
+- Alle verfügbaren Profile werden berücksichtigt, einschließlich später angelegter kurzer Hosen.
+- Normale lange Hosen liefern begrenzten Windschutz, ohne dass ihr gespeichertes Merkmal „Winddicht“ verändert wird; bei mäßigem Wind keine unnötige zusätzliche Regenhose.
+- „Ideale Zielausrüstung“ spiegelt dieselben temperaturabhängigen Wind-Modellziele wider wie die Kombinationsbewertung.
+- Fahrt speichert Start, Gepäck, Endzustand und ursprüngliche Empfehlung getrennt.
+- JSON-Rundlauf und Migration erhalten Einstellungen, Kleidungsstücke, Eigenschaften, Pflege, Archiv, historische und laufende Fahrten sowie manuelle Auswahl.
+- Alte Dezimalwerte bleiben erhalten; ganze Grad sind die Anzeige und die neue Regler-Schrittweite.
+- Fortgeführte Regressionstests: sinnvolle Längen, Schichtreihenfolge, getrennte Wasserabweisung/Wasserdichtigkeit, Wärme aus mehreren Schichten, Ausschluss von Wäsche und Archiv, keine erfundenen Artikel und kein automatischer Start nur mit Unterwäsche.
 
-Neue Prüfungen betreffen außerdem:
+## Im Browser geprüft
 
-- Funktionale Anforderungen enthalten keine virtuellen Artikel, Kleidungsarten oder Längen.
-- Keine generisch erzeugten ärmellosen Thermotrikots.
-- Sinnvolle unterschiedliche Längenbezeichnungen für Hosen und Oberbekleidung.
-- Alte unpassende Längen werden erhalten, markiert und nicht automatisch eingeplant.
-- Alte Dezimaltemperaturen bleiben bei Migration exakt erhalten.
-- Anzeige rundet nur optisch; unveränderte Reglerwerte werden nicht zurückgeschrieben.
-- Neue Temperaturwerte werden ganzzahlig übernommen.
-- Zusätzliche mitgenommene Windschicht bei großer Temperaturspanne wird nicht doppelt verwendet.
-- Armlinge werden nicht mit einem ärmellosen Trikot als Ersatz für fehlende Schulterbedeckung empfohlen.
+Integrierter Browser auf dem Mac, lokale Testursprünge mit Unterpfad `/v08/`:
 
-## Durchgeführte Browserprüfungen
+1. Testbestand aus 0.7.1 mit 21 Kleidungsstücken, bestehender Notiz, Pflegehistorie, manueller Auswahl, historischer Fahrt und zusätzlichem alten Settings-Store migriert. Unabhängiger Prüflauf bestätigte unveränderte bestehende Daten und Einstellungen sowie eine unveränderte Migrationskopie. Neue Start-/Endfelder wurden ergänzt.
+2. Endregler von 13 auf 7 °C gesetzt, während der Start bei 11 °C blieb. Nach Speichern zeigte die App 11 → 7 und getrennte Listen für Anziehen und Mitnehmen.
+3. Anschließend 7 → 11 eingestellt: Ablegehinweise erschienen. Beide Diagnosebereiche geöffnet; getrennte Start-/Endwerte einschließlich numerischer Ziele sichtbar.
+4. Nach Verfeinerung der Hosenbewertung wurde die abkühlende Tour erneut mit der aktualisierten Fassung geladen: keine pauschale Regenhose bei mäßigem Wind.
+5. Beide Temperaturen auf 25 °C gesetzt. Die andere kurze Außenhose und die leichten Handschuhe im Testbestand als nicht verfügbar markiert. Verfügbare warme Ziener-Handschuhe wurden trotzdem nicht ausgewählt; die kurze RevolutionRace-Hose wurde empfohlen. Optionale Körperzonen zeigten jeweils „Keine …“ für Start und Ende.
+6. „Keine Handschuhe“ ausdrücklich eingestellt und neu geladen: Einstellung blieb gespeichert. Zwischen eigener und empfohlener Auswahl gewechselt.
+7. JSON exportiert und inhaltlich validiert: alle 21 Kleidungsstücke einschließlich historischer Fahrt vorhanden, Start/Ende 25/25 und Handschuh-Einstellung gespeichert.
+8. Lokalen Webserver beendet. App neu geladen: Service-Worker-Cache verfügbar, Status „Server nicht erreichbar · lokal nutzbar“.
+9. Version-0.8-Sicherung ohne erreichbaren Server importiert. Wiederherstellung erfolgreich. Fahrt offline gestartet, neu geladen und beendet. Tatsächliche Startkleidung und ursprüngliche Empfehlung waren getrennt erhalten.
+10. Mobile Ansicht mit beiden geöffneten Diagnosebereichen: bei 390 × 844 Pixeln exakt 390 Pixel Dokumentbreite, kein Seitenüberlauf. Mac-Ansicht bei 1280 × 900 ebenfalls ohne Seitenüberlauf.
 
-Integrierter Browser auf dem Mac, lokale Testursprünge unter dem Unterpfad `/v071/`:
+## Reproduzierbarer Migrationstest
 
-1. Vorbereiteten Bestand aus 0.7 mit Dezimaltemperaturen, archivierter Hose, Pflege, alter Fahrt und einer früher möglichen ärmellosen Thermotrikot-Angabe geöffnet.
-2. Unabhängiger Prüflauf bestätigte nach Migration Datenbankversion 4, Datenformat 5, unveränderte Temperaturwerte, sämtliche alten Kleidungsfelder, Archiv, Pflege, alte Fahrt und alten Settings-Store. Unveränderte Migrationskopie war vorhanden.
-3. Wetter ohne Bewegung der Regler erneut gespeichert und nur eine Kleidungsnotiz bearbeitet. Der heruntergeladene JSON-Export bestätigte exakt erhaltene alte Wetter- und Kleidungstemperaturen; kein stilles Runden beim Speichern.
-4. Die sichtbaren Anzeigen verwendeten ganze Grad. Ein Tastenschritt am Regler änderte die Temperatur um 1 °C; der Wert blieb nach Neuladen erhalten.
-5. Der Hoseneditor bot „Lang“ / „Kurz“, der Oberbekleidungseditor „Langarm“ / „Kurzarm“ / „Ärmellos“ für passende Arten.
-6. Mit nur nutzbarem ärmellosem Baselayer war „Fahrt starten“ deaktiviert; die Übersicht meldete ausdrücklich ein unvollständiges Outfit. Eine alte unpassende Thermo-Angabe wurde als zu prüfen markiert und nicht als Ersatz verwendet.
-7. Reale RevolutionRace-Hose und reales Kurzarmtrikot angelegt. Danach erkannte die App die vorhandene Kombination aus Baselayer, Trikot und Hose als tragbare Grundbekleidung, mit weiterhin erklärten Wärmebeschränkungen.
-8. Webserver beendet. App neu geladen: aus dem Service-Worker-Cache verfügbar, Anzeige „Server nicht erreichbar · lokal nutzbar“, ganzzahliger Wetterwert erhalten.
-9. Fahrt offline gestartet und neu geladen. Tatsächlich gespeicherte Kleidungsstücke waren ausschließlich die vorhandene Basis, das reale Trikot und die reale Hose; ursprüngliche Empfehlung separat vorhanden.
-10. Mobile Ansicht bei 390 × 844 Pixeln und geöffneten funktionalen Anforderungen geprüft: Dokumentbreite 390 Pixel, kein horizontaler Seitenüberlauf.
+Auf einem neuen, isolierten lokalen Testport im entpackten Ordner starten, z. B. `python3 -m http.server 8099`.
 
-## Reproduzierbarer Datenerhalt-Test
+1. `http://localhost:8099/tests/migration-fixture.html` öffnen.
+2. „0.7.1-Testbestand anlegen“ wählen und auf „BEREIT“ warten.
+3. „Version 0.8 öffnen“ wählen.
+4. Vor weiteren Änderungen zur Testseite zurückkehren, „Datenerhalt prüfen“ wählen.
+5. Erwartet: „BESTANDEN“ mit unveränderten vorhandenen Daten und Migrationskopie.
 
-Im entpackten Ordner auf einem neuen Testport starten, beispielsweise `python3 -m http.server 8098`. Dann `http://localhost:8098/tests/migration-fixture.html` öffnen, „0.7-Testdaten anlegen“ ausführen und auf „BEREIT“ warten. Über den Link Version 0.7.1 öffnen. Vor Änderungen zur Testseite zurückkehren und „Datenerhalt prüfen“ anklicken. Erwartet wird „BESTANDEN“.
+Der Test überschreibt keinen vorhandenen Datenstand. Auf dem produktiven GitHub-Pages-Profil ist er nicht erforderlich.
 
-Der Test schreibt nur auf einen leeren Testursprung und überschreibt keine vorhandenen Daten. Er ist für das produktive Profil nicht erforderlich.
+## Grenzen der Prüfung
 
-## Noch auf dem Zielgerät prüfen
+Kein Upload und kein Deployment im bestehenden GitHub-Repository ausgeführt. Installation, Service-Worker-Wechsel und echter Flugmodus auf einem physischen iPhone stehen auf dem Zielgerät noch aus. Browserdaten beim Update nicht löschen; alte App-Fenster schließen und neu öffnen.
 
-Kein GitHub-Deployment oder Upload ausgeführt. Die Installation und der Flugmodus auf einem echten iPhone sowie das produktive Service-Worker-Update bleiben auf dem Zielgerät zu prüfen. Keine Browserdaten für das Update löschen; alte App-Fenster schließen und erneut öffnen.
+Die Schichtwerte bleiben ein regelbasiertes Modell. Die Suche berücksichtigt alle verfügbaren Profile, begrenzt aber bei großen Kombinationsräumen die Anzahl gleichzeitig verfolgter Kombinationen. Eine mathematisch globale Optimierung beliebig großer Bestände oder gemessene Materialleistung wird nicht zugesichert.
