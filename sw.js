@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='gravel-outfit-0.6.0',BASE=new URL('./',self.location.href).pathname;
+const CACHE='gravel-outfit-0.7.0-final2',BASE=new URL('./',self.location.href).pathname;
 const FILES=['./','./index.html','./style.css','./core.js','./app.js','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES))));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('gravel-outfit-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
