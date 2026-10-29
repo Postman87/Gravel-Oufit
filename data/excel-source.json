@@ -1,0 +1,1538 @@
+{
+  "file": "Radbekleidung_KI.xlsx",
+  "sha256": "04d1abdd303a9c02cd1615032cee1ae999447f9bb7c567fb7afc7b5abac17e3f",
+  "sheets": [
+    {
+      "name": "Kategorien nach T.",
+      "cells": [
+        {
+          "cell": "A2",
+          "value": "Fahrradbekleidung nach Temperatur",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A3",
+          "value": "Quelle: Löffler – Die richtige Fahrradbekleidung nach Temperatur",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A4",
+          "value": "https://www.loeffler.at/de/die-richtige-fahrradbekleidung-nach-temperatur/",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A5",
+          "value": "Abgerufen am 29.10.2026. Tabelleninhalt aus den beiden Originaltabellen.",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A7",
+          "value": "Temperatur",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B7",
+          "value": "Baselayer",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C7",
+          "value": "Oberkörper Midlayer",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D7",
+          "value": "Toplayer",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E7",
+          "value": "Hose",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F7",
+          "value": "Extras",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A8",
+          "value": "16- >20°C",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B8",
+          "value": "Baselayer ärmellos",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C8",
+          "value": "Kurzarm-Trikot",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D8",
+          "value": "–",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E8",
+          "value": "Kurze Radhose",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F8",
+          "value": "UV-Schutz",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A9",
+          "value": "11-15°C",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B9",
+          "value": "Baselayer",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C9",
+          "value": "Kurzarm-Trikot",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D9",
+          "value": "Windweste (in Tasche packbar)",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E9",
+          "value": "Lange Radhose",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F9",
+          "value": "Dünne Handschuhe bei Wind",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A10",
+          "value": "6-10°C",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B10",
+          "value": "Baselayer, kurz",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C10",
+          "value": "Langarm-Trikot oder Thermotrikot",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D10",
+          "value": "Windweste",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E10",
+          "value": "Winddichte Hose",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F10",
+          "value": "Fingerhandschuhe, Stirnband",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A11",
+          "value": "0-5°C",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B11",
+          "value": "Thermo-Baselayer, lang",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C11",
+          "value": "Thermotrikot Langarm",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D11",
+          "value": "Windjacke oder Thermojacke",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E11",
+          "value": "Thermo-Hose",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F11",
+          "value": "Fingerhandschuhe, Überschuhe, Mütze",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A12",
+          "value": "0°C und kälter",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B12",
+          "value": "Thermo-Baselayer, lang",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C12",
+          "value": "Thermotrikot Langarm",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D12",
+          "value": "Thermo-Jacke",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E12",
+          "value": "Thermo-Hose",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F12",
+          "value": "Winterhandschuhe, Überschuhe, Mütze",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A14",
+          "value": "Je Temperatur: oben die Empfehlung, darunter Platz für deine eigenen Teile.",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A15",
+          "value": "Gültigkeit: mittlere Intensität (Ausdauer, kein Renntempo).",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A16",
+          "value": "Hinweis der Quelle: Bei hoher Intensität eine Schicht weniger. Individuelle Kälteempfindlichkeit berücksichtigen.",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A17",
+          "value": "Temperaturstufen und Produktbereiche sind wie in der Originaltabelle angegeben; keine zusätzlichen Temperaturintervalle abgeleitet.",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A18",
+          "value": "Die Seite zeigt die Übersicht zusätzlich als verkürzte Karten. Hier ist die ausführliche Originaltabelle übernommen.",
+          "color": null,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "name": "Allgemein inkl Bestand",
+      "cells": [
+        {
+          "cell": "A2",
+          "value": "Fahrradbekleidung nach Temperatur",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A3",
+          "value": "Quelle: Löffler – Die richtige Fahrradbekleidung nach Temperatur",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A4",
+          "value": "https://www.loeffler.at/de/die-richtige-fahrradbekleidung-nach-temperatur/",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A5",
+          "value": "Abgerufen am 29.10.2026. Tabelleninhalt aus den beiden Originaltabellen.",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A7",
+          "value": "Temperatur",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B7",
+          "value": "Baselayer",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C7",
+          "value": "Oberkörper Midlayer",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D7",
+          "value": "Toplayer",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E7",
+          "value": "Hose",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F7",
+          "value": "Extras",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A8",
+          "value": "16- >20°C",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B8",
+          "value": "Baselayer ärmellos",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C8",
+          "value": "Kurzarm-Trikot",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D8",
+          "value": "–",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E8",
+          "value": "Kurze Radhose",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F8",
+          "value": "UV-Schutz",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B9",
+          "value": "GOREWEAR Baslayer Shirt ärmellos",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "C9",
+          "value": "Wera Tool Rebel Fahrradtrikot",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "E9",
+          "value": "RevolutionRace-Hose, kurz",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "A10",
+          "value": "11-15°C",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B10",
+          "value": "Baselayer, kurz",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C10",
+          "value": "Kurzarm-Trikot",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D10",
+          "value": "Windweste (in Tasche packbar)",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E10",
+          "value": "Lange Radhose",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F10",
+          "value": "Armlinge, Dünne Handschuhe bei Wind",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B11",
+          "value": "GOREWEAR Baslayer Shirt ärmellos",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "C11",
+          "value": "Wera Tool Rebel Fahrradtrikot",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "E11",
+          "value": "RevolutionRace-Hose (je nach Wetter)",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "F11",
+          "value": "GOREWEAR Shield Armlinge",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "F12",
+          "value": "Ziener Dabbs WS Touch",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "A13",
+          "value": "6-10°C",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B13",
+          "value": "Baselayer, kurz",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C13",
+          "value": "Langarm-Trikot oder Thermotrikot",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D13",
+          "value": "Windweste",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E13",
+          "value": "Winddichte Hose",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F13",
+          "value": "Strinband, Halstuch, Armlinge, Fingerhandschuhe",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B14",
+          "value": "Pro-Function Baselayer",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "C14",
+          "value": "Wera Tool Rebel Fahrradtrikot",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "D14",
+          "value": "GOREWEAR Everyday Weste",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "E14",
+          "value": "RevolutionRace-Hose, lang",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "F14",
+          "value": "GOREWEAR Shield Armlinge",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "C15",
+          "value": "Ersatz durch Kombination mit Armlingen",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D15",
+          "value": "Gorewear Lupra 2.0 GORE-TEX Jacke",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "E15",
+          "value": "Gorewear Lupra GORE-TEX Hose",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "F15",
+          "value": "Halstuch",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "D16",
+          "value": "ggf. ergänzt mit Lupra 2.0 Jacke",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E16",
+          "value": "Ersatz durch Kombination von RevolutionRace-Hose Lupra Hose",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F16",
+          "value": "GOREWEAR WINDSTOPPER Thermo-Mütze",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "F17",
+          "value": "Ziener Dabbs WS Touch",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "A18",
+          "value": "0-5°C",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B18",
+          "value": "Thermo-Baselayer, lang",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C18",
+          "value": "Thermotrikot Langarm",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D18",
+          "value": "Windjacke oder Thermojacke",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E18",
+          "value": "Thermo-Hose",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F18",
+          "value": "Mütze, Halstuch, Armlinge, Fingerhandschuhe, Überschuhe",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B19",
+          "value": "Pro-Function Baselayer",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "C19",
+          "value": "Wera Tool Rebel Fahrradtrikot",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "D19",
+          "value": "Gorewear Lupra 2.0 GORE-TEX Jacke",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "E19",
+          "value": "RevolutionRace-Hose, lang",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "F19",
+          "value": "GOREWEAR Shield Armlinge",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "C20",
+          "value": "Ersatz durch Kombination mit Armlingen und Lupra 2.0 Jacke und ggf. Windweste",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D20",
+          "value": "GOREWEAR Everyday Weste",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "E20",
+          "value": "Gorewear Lupra GORE-TEX Hose",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "F20",
+          "value": "Halstuch",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "E21",
+          "value": "Ersatz durch Kombination von RevolutionRace-Hose Lupra Hose",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F21",
+          "value": "GOREWEAR WINDSTOPPER Thermo-Mütze",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "F22",
+          "value": "Ziener Dabbs WS Touch",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "F23",
+          "value": "GOREWEAR Shield Thermo-Überschuhe",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "A24",
+          "value": "0°C und kälter",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B24",
+          "value": "Thermo-Baselayer, lang",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C24",
+          "value": "Thermotrikot Langarm",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D24",
+          "value": "Thermo-Jacke",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E24",
+          "value": "Thermo-Hose",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F24",
+          "value": "Mütze, Halstuch, Armlinge, Fingerhandschuhe, Überschuhe",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B25",
+          "value": "Pro-Function Baselayer",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "C25",
+          "value": "Wera Tool Rebel Fahrradtrikot",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "D25",
+          "value": "Gorewear Lupra 2.0 GORE-TEX Jacke",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "E25",
+          "value": "RevolutionRace-Hose, lang",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "F25",
+          "value": "GOREWEAR Shield Armlinge",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "D26",
+          "value": "GOREWEAR Everyday Weste",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "E26",
+          "value": "Gorewear Lupra GORE-TEX Hose",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "F26",
+          "value": "Halstuch",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "F27",
+          "value": "GOREWEAR WINDSTOPPER Thermo-Mütze",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "F28",
+          "value": "Ziener Dabbs WS Touch",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "F29",
+          "value": "GOREWEAR Shield Thermo-Überschuhe",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "A32",
+          "value": "Je Temperatur: oben die Empfehlung, darunter Platz für deine eigenen Teile.",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A33",
+          "value": "Gültigkeit: mittlere Intensität (Ausdauer, kein Renntempo).",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A34",
+          "value": "Hinweis der Quelle: Bei hoher Intensität eine Schicht weniger. Individuelle Kälteempfindlichkeit berücksichtigen.",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A35",
+          "value": "Temperaturstufen und Produktbereiche sind wie in der Originaltabelle angegeben; keine zusätzlichen Temperaturintervalle abgeleitet.",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A36",
+          "value": "Die Seite zeigt die Übersicht zusätzlich als verkürzte Karten. Hier ist die ausführliche Originaltabelle übernommen.",
+          "color": null,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "name": "Temperatur und Kleidung",
+      "cells": [
+        {
+          "cell": "A2",
+          "value": "Fahrradbekleidung nach Temperatur",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A3",
+          "value": "Quelle: Löffler – Die richtige Fahrradbekleidung nach Temperatur",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A4",
+          "value": "https://www.loeffler.at/de/die-richtige-fahrradbekleidung-nach-temperatur/",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A5",
+          "value": "Abgerufen am 29.10.2026. Tabelleninhalt aus den beiden Originaltabellen.",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A7",
+          "value": "Temperatur",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B7",
+          "value": "Baselayer",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C7",
+          "value": "Oberkörper Midlayer",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D7",
+          "value": "Toplayer",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E7",
+          "value": "Hose",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F7",
+          "value": "Extras",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A8",
+          "value": "16- >20°C",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B8",
+          "value": "transtex® light oder light grid",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C8",
+          "value": "Kurzarm-Trikot",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D8",
+          "value": "–",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E8",
+          "value": "Kurze Radhose / Bib Shorts",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F8",
+          "value": "Sonnenbrille, ggf. Arm-UV-Schutz",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B9",
+          "value": "GOREWEAR Baslayer Shirt ärmellos",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "C9",
+          "value": "Wera Tool Rebel Fahrradtrikot",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "E9",
+          "value": "RevolutionRace-Hose, kurz",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "A10",
+          "value": "11-15°C",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B10",
+          "value": "transtex® light 100",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C10",
+          "value": "Kurzarm-Trikot",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D10",
+          "value": "Windweste (in Tasche packbar)",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E10",
+          "value": "Lange Radhose oder ¾-Tight",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F10",
+          "value": "Dünne Handschuhe bei Wind",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B11",
+          "value": "GOREWEAR Baslayer Shirt ärmellos",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "C11",
+          "value": "Wera Tool Rebel Fahrradtrikot",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "E11",
+          "value": "RevolutionRace-Hose (je nach Wetter)",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "F11",
+          "value": "GOREWEAR Shield Armlinge",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "F12",
+          "value": "Ziener Dabbs WS Touch",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "A13",
+          "value": "6-10°C",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B13",
+          "value": "transtex® light 100",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C13",
+          "value": "Langarm-Trikot oder Thermotrikot",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D13",
+          "value": "Windweste",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E13",
+          "value": "Thermo-Tight (0–10°C)",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F13",
+          "value": "Fingerhandschuhe, Stirnband",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B14",
+          "value": "Pro-Function Baselayer",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "C14",
+          "value": "Wera Tool Rebel Fahrradtrikot",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "D14",
+          "value": "Gorewear Lupra 2.0 GORE-TEX Jacke",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "E14",
+          "value": "RevolutionRace-Hose, lang",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "F14",
+          "value": "GOREWEAR WINDSTOPPER Thermo-Mütze",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "D15",
+          "value": "GOREWEAR Everyday Weste",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "E15",
+          "value": "Gorewear Lupra GORE-TEX Hose",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "F15",
+          "value": "Halstuch",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "F16",
+          "value": "GOREWEAR Shield Armlinge",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "F17",
+          "value": "Ziener Dabbs WS Touch",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "A18",
+          "value": "0-5°C",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B18",
+          "value": "transtex® warm 180",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C18",
+          "value": "Thermotrikot Langarm Fullzip",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D18",
+          "value": "Windjacke / Airblocc Light",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E18",
+          "value": "Airblocc-Tight oder Thermo-Tight",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F18",
+          "value": "Vollhandschuhe, Zehenwärmer / Überschuhe, Mütze",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B19",
+          "value": "Pro-Function Baselayer",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "C19",
+          "value": "Wera Tool Rebel Fahrradtrikot",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "D19",
+          "value": "Gorewear Lupra 2.0 GORE-TEX Jacke",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "E19",
+          "value": "RevolutionRace-Hose, lang",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "F19",
+          "value": "GOREWEAR WINDSTOPPER Thermo-Mütze",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "D20",
+          "value": "GOREWEAR Everyday Weste",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "E20",
+          "value": "Gorewear Lupra GORE-TEX Hose",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "F20",
+          "value": "Halstuch",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "F21",
+          "value": "GOREWEAR Shield Armlinge",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "F22",
+          "value": "Ziener Dabbs WS Touch",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "F23",
+          "value": "GOREWEAR Shield Thermo-Überschuhe",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "A24",
+          "value": "0°C und kälter",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B24",
+          "value": "transtex® warm 180 oder Merino 200",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C24",
+          "value": "Thermotrikot Langarm Fullzip",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D24",
+          "value": "Airblocc Softshell oder WPM-Jacke",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "E24",
+          "value": "Airblocc-Tight (−5–8°C)",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "F24",
+          "value": "Winterhandschuhe, WPM-Überschuhe, Helm-Unterzieher",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B25",
+          "value": "Pro-Function Baselayer",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "C25",
+          "value": "Wera Tool Rebel Fahrradtrikot",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "D25",
+          "value": "Gorewear Lupra 2.0 GORE-TEX Jacke",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "E25",
+          "value": "RevolutionRace-Hose, lang",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "F25",
+          "value": "GOREWEAR WINDSTOPPER Thermo-Mütze",
+          "color": "green",
+          "formula": null
+        },
+        {
+          "cell": "D26",
+          "value": "GOREWEAR Everyday Weste",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "E26",
+          "value": "Gorewear Lupra GORE-TEX Hose",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "F26",
+          "value": "Halstuch",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "F27",
+          "value": "GOREWEAR Shield Armlinge",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "F28",
+          "value": "Ziener Dabbs WS Touch",
+          "color": "yellow",
+          "formula": null
+        },
+        {
+          "cell": "F29",
+          "value": "GOREWEAR Shield Thermo-Überschuhe",
+          "color": "red",
+          "formula": null
+        },
+        {
+          "cell": "A32",
+          "value": "Je Temperatur: oben die Empfehlung, darunter Platz für deine eigenen Teile.",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A33",
+          "value": "Gültigkeit: mittlere Intensität (Ausdauer, kein Renntempo).",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A34",
+          "value": "Hinweis der Quelle: Bei hoher Intensität eine Schicht weniger. Individuelle Kälteempfindlichkeit berücksichtigen.",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A35",
+          "value": "Temperaturstufen und Produktbereiche sind wie in der Originaltabelle angegeben; keine zusätzlichen Temperaturintervalle abgeleitet.",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A36",
+          "value": "Die Seite zeigt die Übersicht zusätzlich als verkürzte Karten. Hier ist die ausführliche Originaltabelle übernommen.",
+          "color": null,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "name": "Temperatur und Intensität",
+      "cells": [
+        {
+          "cell": "A2",
+          "value": "Schichtauswahl nach Fahrintensität",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A3",
+          "value": "Quelle: Löffler – Die richtige Fahrradbekleidung nach Temperatur",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A4",
+          "value": "https://www.loeffler.at/de/die-richtige-fahrradbekleidung-nach-temperatur/",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A5",
+          "value": "Abgerufen am 29.10.2026. Tabelleninhalt aus den beiden Originaltabellen.",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A7",
+          "value": "Temperatur",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B7",
+          "value": "Niedrige Intensität (Pendeln, Genuss)",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C7",
+          "value": "Mittlere Intensität (Ausdauer)",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D7",
+          "value": "Hohe Intensität (Intervalle, Race)",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A8",
+          "value": "20°C",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B8",
+          "value": "Baselayer + leichtes Trikot, ggf. Weste",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C8",
+          "value": "Baselayer + Kurzarmtrikot",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D8",
+          "value": "transtex® light grid + Kurzarmtrikot",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A9",
+          "value": "15°C",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B9",
+          "value": "transtex® light + Langarmtrikot + Weste",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C9",
+          "value": "transtex® light + Kurzarmtrikot + Weste",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D9",
+          "value": "transtex® light + Kurzarmtrikot",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A10",
+          "value": "10°C",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B10",
+          "value": "transtex® warm + Thermotrikot + Jacke",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C10",
+          "value": "transtex® light + Thermotrikot + Weste",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D10",
+          "value": "transtex® light + Langarmtrikot + Weste",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A11",
+          "value": "5°C",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B11",
+          "value": "transtex® warm + Thermotrikot + Airblocc-Jacke",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C11",
+          "value": "transtex® warm + Thermotrikot + Windjacke",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D11",
+          "value": "transtex® light + Langarmtrikot + Windweste",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A12",
+          "value": "0°C",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "B12",
+          "value": "transtex® Merino 200 + Thermotrikot + Airblocc",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "C12",
+          "value": "transtex® warm 180 + Thermotrikot + Airblocc",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "D12",
+          "value": "transtex® warm 180 + Thermotrikot + Windjacke",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A14",
+          "value": "Baselayer-Empfehlung der Quelle: Je höher die Intensität und der Schweißausstoß, desto eher transtex® light.",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A15",
+          "value": "Je niedriger die Intensität, desto eher transtex® warm oder Merino.",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A16",
+          "value": "Die Originaltabelle nennt hier 0°C; die Kleidungsübersicht auf dem ersten Blatt nennt dagegen 0°C und kälter.",
+          "color": null,
+          "formula": null
+        },
+        {
+          "cell": "A17",
+          "value": "Empfehlungen sind je Originaltabelle übernommen. Unterschiede zwischen beiden Tabellen sind beibehalten.",
+          "color": null,
+          "formula": null
+        }
+      ]
+    }
+  ]
+}
