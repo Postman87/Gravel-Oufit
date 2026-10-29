@@ -1,3 +1,11 @@
+# Ergänzungsprüfung · Gravel Outfit 0.9.1
+
+98 automatisierte Tests bestanden (93 bisherige und 5 zusätzliche), 0 fehlgeschlagen. Neue Fälle: eigener Hosenbein-Gepäckeintrag mit Eltern-ID, keine Mitnahme bei konstanten Temperaturen oder langem Start, Ausschluss nicht verfügbarer Hosen, unveränderlicher Fahrt-/JSON-Snapshot sowie Trennung von eigener Auswahl und ursprünglicher Empfehlung.
+
+Browserprüfung 0.9.1: Bei 25 → 7 °C steht „Zip-off-Hosenbeine · RevolutionRace-Hose“ mit gelber „Mitnehmen“-Kennzeichnung in derselben Liste wie Handschuhe. Antippen öffnet die Eigenschaften derselben Hose mit Variante Lang. 390 × 844 Pixel: Dokumentbreite 390 Pixel, kein horizontaler Überlauf. Fahrtstart speichert die Beine separat als zugehörigen Bestandteil; Fahrtabschluss und Neuladen erfolgreich. Keine JavaScript-Konsolenfehler. Screenshots erstellt. Kein physischer iPhone-Test durchgeführt. Datenbankversion und Sicherungsformat unverändert (6 / 7); nur optionale Fahrtfelder ergänzt. Die folgenden Ergebnisse der Version 0.9 bleiben als bisherige Prüfung dokumentiert.
+
+---
+
 # Testbericht · Gravel Outfit 0.9.0
 
 29. Oktober 2026. Fortgeführt auf dem tatsächlichen Repository-Stand 0.8.0 (`9a673490c5c3d6b46fc94d659954eccd9f0da232`). Keine Neuentwicklung, keine Veröffentlichung auf dem Hauptbranch.

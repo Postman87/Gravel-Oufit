@@ -1,6 +1,10 @@
-# Gravel Outfit 0.9.0
+# Gravel Outfit 0.9.1
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
+
+## Ergänzung 0.9.1
+
+Abnehmbare Zip-off-Hosenbeine erscheinen beim Wechsel von Kurz am Start zu Lang am Ende als eigener gelber Eintrag unter „Mitnehmen“. Antippen öffnet die Eigenschaften der zugehörigen Hose. Sie werden als Bestandteil mit Verweis auf die Hose gespeichert, ohne zweite Kleidungs-ID und ohne zusätzliche Wärme-Doppelzählung. Tatsächliches Gepäck und ursprüngliche Empfehlung bleiben getrennt; alte Fahrten benötigen dieses neue optionale Feld nicht. Die vorhandene Hose muss als Zip-off mit beiden Varianten markiert sein.
 
 ## Änderungen
 
