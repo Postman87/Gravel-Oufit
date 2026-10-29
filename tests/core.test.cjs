@@ -1,0 +1,14 @@
+const {test}=require('node:test');const a=require('node:assert/strict');const G=require('../core.js');
+function warm(){const s=G.seed();s.weather={...G.weather,min:22,max:25,wind:0};return s;}
+test('Leerer Startzustand ist gültig',()=>a.equal(G.validate(G.seed()).items.length,0));
+test('Alle Funktionen können angelegt werden',()=>{const s=G.seed();s.items=Object.keys(G.types).map(t=>G.item(t));G.validate(s);});
+test('Warme und kalte Bedingungen wählen unterschiedliche Kleidung',()=>{const s=warm();a(G.recommend(s).rows.some(x=>x.type==='shorts'));s.weather.min=-10;a(G.recommend(s).rows.some(x=>x.type==='winterjacket'));});
+test('Dauerregen verlangt Regenjacke und Regenhose beim Start',()=>{const s=warm();s.weather.rain=2;for(const t of ['lupra','luprapants'])a(G.recommend(s).rows.some(x=>x.type===t&&x.group==='start'));});
+test('Schauer: Regenschutz mitnehmen',()=>{const s=warm();s.weather.rain=1;a(G.recommend(s).rows.some(x=>x.type==='lupra'&&x.group==='pack'));});
+test('Verfügbare Teile werden gewählt, Wäsche und Archiv ausgeschlossen',()=>{const s=warm(),i=G.item('jersey');s.items=[i];a(G.recommend(s).rows.some(x=>x.item===i));for(const status of ['laundry','unavailable']){i.status=status;a(!G.recommend(s).rows.some(x=>x.item));}i.status='available';i.archived=true;a(!G.recommend(s).rows.some(x=>x.item));});
+test('Passender Temperaturbereich hat Vorrang',()=>{const s=warm(),cold=G.item('jersey','Kalt'),warmItem=G.item('jersey','Warm');cold.min=0;cold.max=10;s.items=[cold,warmItem];a.equal(G.recommend(s).rows.find(x=>x.type==='jersey').item.name,'Warm');});
+test('Ungeeigneter Bereich wird sichtbar markiert',()=>{const s=warm(),i=G.item('jersey');i.max=10;s.items=[i];a(G.recommend(s).rows.find(x=>x.type==='jersey').outside);});
+test('Import lehnt falsche Version, verdrehte Temperaturen und doppelte IDs ab',()=>{a.throws(()=>G.validate({}));const s=warm();s.weather.min=40;a.throws(()=>G.validate(s));s.weather.min=20;const i=G.item('jersey');s.items=[i,i];a.throws(()=>G.validate(s));});
+test('Import lehnt ungültige Pflege und Fahrt ab',()=>{const s=warm(),i=G.item('jersey');i.care=[{at:'gestern',action:'Gewaschen'}];s.items=[i];a.throws(()=>G.validate(s));s.items=[];s.activeRide={};a.throws(()=>G.validate(s));});
+test('JSON-Rundlauf erhält Historie und aktive Fahrt',()=>{const s=warm(),i=G.item('jersey');i.care=[{at:new Date().toISOString(),action:'Gewaschen'}];s.items=[i];s.activeRide={id:G.uid(),startedAt:new Date().toISOString(),weather:s.weather,items:[{id:i.id,name:i.name,type:i.type}]};a.deepEqual(G.validate(JSON.parse(JSON.stringify(s))),s);});
+test('Version-2-Backup aus alter App wird übernommen',()=>{const s=G.migrate([['old','Mein Trikot','jersey',true]],{old:{min:11,max:30}},{...G.weather});a.equal(s.items[0].name,'Mein Trikot');a.equal(s.items[0].min,11);a.equal(s.items[0].status,'available');});
