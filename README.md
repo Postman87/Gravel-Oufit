@@ -1,6 +1,10 @@
-# Gravel Outfit 0.9.1
+# Gravel Outfit 0.9.2
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
+
+## Korrektur 0.9.2
+
+Für kalte Temperaturstufen wird der Windschutz der Beine als eigene Anforderung berücksichtigt. Dadurch kann die verfügbare Lupra-Regenhose über einer normalen langen Hose als zusätzliche Schutzschicht gewählt werden. Unter „Ersatzkombination für die Beine“ werden die tatsächlich gewählten Teile und getrennte Aussagen zu Windschutz und Wärme angezeigt, jeweils für Start und Ende sowie die eigene Auswahl. Rot bewertete oder thermisch unzureichende Kombinationen bleiben als unzureichend erkennbar; Lupra wird nicht als Thermohose umgedeutet. Im Fall von 3 °C: RevolutionRace plus Lupra erfüllt im Modell den Windschutz, aber nicht die Wärmeisolierung einer Thermohose. Bei vorhandener passender winddichter Thermohose wird diese bevorzugt. Keine Änderung vorhandener Kleidungsstücke oder der Datenbankschemaversion.
 
 ## Ergänzung 0.9.1
 
