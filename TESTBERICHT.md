@@ -1,3 +1,11 @@
+# Korrekturprüfung · Gravel Outfit 0.9.2
+
+106 automatisierte Tests bestanden, 0 fehlgeschlagen. Acht zusätzliche Regressionstests sichern die getrennte Windanforderung in der Thermostufe, RR/Lupra bei 3 °C und Frost, expliziten Ersatz bei 7 °C trotz roter Quellenabweichung, Ausschluss unverfügbarer/archivierter Lupra, Bevorzugung passender winddichter Thermohosen, warmen Start mit kaltem Ende sowie korrekte eigene Auswahl ab. Fahrtsicherung und JSON bleiben kompatibel.
+
+Im Browser tatsächlich geprüft: Start/Ende 3 °C, schwacher Wind, trocken. RevolutionRace und Lupra werden zusammen gewählt; der sichtbare Bereich „Ersatzkombination für die Beine“ nennt beide Teile als Ersatz für eine winddichte Thermohose. Windschutz ist als im Modell erfüllt ausgewiesen, Wärme als unzureichend. Die rote Excel-Bewertung bleibt sichtbar. Bei 390 × 844 Pixeln kein horizontaler Überlauf (Dokumentbreite 390 Pixel), vollständige Karte bedienbar, Screenshot erstellt. Keine JavaScript-Konsolenfehler. Ein physischer iPhone-Test wurde nicht durchgeführt. Keine Veröffentlichung durch diese Prüfung.
+
+---
+
 # Ergänzungsprüfung · Gravel Outfit 0.9.1
 
 98 automatisierte Tests bestanden (93 bisherige und 5 zusätzliche), 0 fehlgeschlagen. Neue Fälle: eigener Hosenbein-Gepäckeintrag mit Eltern-ID, keine Mitnahme bei konstanten Temperaturen oder langem Start, Ausschluss nicht verfügbarer Hosen, unveränderlicher Fahrt-/JSON-Snapshot sowie Trennung von eigener Auswahl und ursprünglicher Empfehlung.
