@@ -1,6 +1,12 @@
-# Prüfung Gravel Outfit 0.16.0
+# Prüfung Gravel Outfit 0.16.1
 
-## Aktueller Stand 0.16.0
+## Aktueller Stand 0.16.1
+
+231 automatisierte Tests erfolgreich (227 bestehende plus vier Löschfälle). Geprüft: genau eine Tour samt eigener Wetterdaten/Bewertung entfernen, übrige Daten unverändert, Learning danach neu berechnet, laufende und unbekannte Tour geschützt, JSON-Rundlauf und unveränderte frühere Sicherung.
+
+Zusätzlicher DOM-Integrationstest mit tatsächlichen App-Dateien: Bestätigung abgelehnt erhält Tour; Bestätigung angenommen entfernt Tour ohne Kleidungsänderungen; laufender Wetterabruf wird abgebrochen; absichtlich dennoch spät aufgelöste Antwort stellt die Tour nicht wieder her. Bisherige Bereichs-, Retro-, Offline-/Online- und Feedbacktests weiterhin erfolgreich. Kein physischer iPhone-Test.
+
+## Bisheriger Stand 0.16.0
 
 - **227 automatisierte Tests erfolgreich.** Die bisherigen 204 Regressionstests behalten bewusst den früheren Modellpfad für vorhandene Datensätze ohne aktiviertes persönliches Modell. 23 neue Fälle prüfen den neuen produktiven persönlichen Modellpfad und nachträgliches Wetter. Die App aktiviert den neuen Pfad beim Öffnen und nach dem Import.
 - Persönliche Bereiche wirken sofort, auch außerhalb früherer Excel-Schwellen. Halstuch 15→14 nach wiederholtem Zu warm; manuelle neue Grundlage erhält alle Erfahrungen; Sonne/Wind-Kontexte; nur tatsächlich getragene Kleidung; geteilte Evidenz bei mehreren Schichten; Learning deaktivierbar; kurze Hose im Warmen; persönliche Handschuhgrenze; Verfügbarkeit und tragbare Schichten.

@@ -1,6 +1,12 @@
-# Gravel Outfit 0.16.0
+# Gravel Outfit 0.16.1
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
+
+## Einzelne Tour löschen · 0.16.1
+
+Unter Outfit → Letzte Fahrten die betreffende abgeschlossene Tour öffnen und Tour löschen wählen. Eine Bestätigung nennt Datum sowie die Entfernung von Bewertung, Wetterdaten und offenem Wetterauftrag. Abbrechen ändert nichts. Nach Bestätigung wird die Tour vollständig aus der lokalen Historie entfernt; das Learning wird ohne diese Erfahrung neu berechnet. Laufende Touren werden nicht gelöscht. Kleidungsstücke, Pflegeeinträge, Verfügbarkeit, Einstellungen und andere Fahrten bleiben erhalten. Eine Löschung setzt auch keine Kleidungsstücke automatisch auf Verfügbar zurück.
+
+Ein laufender Wetterabruf für die Tour wird abgebrochen. Falls dennoch eine verspätete Antwort eintrifft, kann sie die gelöschte Tour nicht wieder anlegen. Die Löschung wird lokal gespeichert und ist auch im nächsten JSON-Export wirksam. Eine vorher erstellte Sicherungsdatei wird nicht verändert; eine Wiederherstellung ist nur über einen entsprechenden Import möglich. Keine Datenbankmigration.
 
 ## Aktuelles Verhalten · 0.16.0
 
