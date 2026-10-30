@@ -1,6 +1,18 @@
-# Gravel Outfit 0.9.3
+# Gravel Outfit 0.10.0
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
+
+## Bewertung und Lernen nach Körperzonen · 0.10.0
+
+Nach dem Fahrtstart öffnet „Zu kalt“ oder „Zu warm“ beim Fahrtabschluss eine Auswahl für **Kopf, Gesicht, Hals, Oberkörper, Arme, Hände, Beine und Füße**. Betroffene Zonen markieren und für jede „Genau richtig“, „Zu kalt“ oder „Zu warm“ wählen. Gegensätzliche Bewertungen sind möglich, etwa Hände kalt und Oberkörper warm. Nicht gewählte Zonen bleiben unbewertet. Insgesamt „Genau richtig“ speichert alle acht Zonen als passend. Eine Kalt-/Warm-Bewertung ohne tatsächlich bewertete betroffene Zone wird mit verständlichem Hinweis abgefangen; die Fahrt bleibt aktiv.
+
+Die Historie zeigt die einzelnen Zonen; gegensätzliche Empfindungen erscheinen als „Gemischt“. Die optionale JSON-Eigenschaft `zoneFeedback` speichert nur tatsächlich bewertete Zonen. Alte Fahrten werden nicht umgeschrieben, Kleidungs-IDs und Einstellungen bleiben erhalten. Datenbankversion 6 und Sicherungsformat 7 sind unverändert.
+
+Das Lernen wird pro Zone berechnet: Nur passende Fahrten derselben Intensität und mit höchstens 5 °C Abstand zur mittleren Tourtemperatur, letzte zwölf Bewertungen **dieser Zone**, je Kalt-/Warm-Rückmeldung ±0,25 °C, begrenzt auf ±2 °C. Unbewertete Zonen erzeugen keine Lernbeiträge und verdrängen keine vorhandenen Zonenbewertungen. Genau richtig ist ein neutraler Lernbeitrag. Die gespeicherten Wetterwerte werden nicht verändert. Bisherige lernfähige pauschale Bewertungen gelten weiterhin für alle Zonen; Fahrten, die bisher nicht lernfähig waren, werden nicht nachträglich aktiviert.
+
+Beine und Oberkörper erhalten getrennte Anforderungen, Arme eine getrennte Bedeckungsanforderung. Kopf, Hals, Hände, Füße und Gesicht beeinflussen jeweils den zugehörigen Extraschutz. Verbundene Kleidungsstücke können mehrere Bereiche abdecken, die Lernwerte bleiben dennoch unabhängig. Unter „Persönliches Lernen nach Körperzonen“ stehen Anzahl passender Rückmeldungen und Richtung der Anpassung. Die Lernfunktion lässt sich weiterhin ausschalten. Rote Excel-Bewertungen und fehlende Schutzwirkung werden nicht durch Lernen aufgehoben.
+
+Für Gesichtsschutz gibt es eine passende Funktion unter Extras. Ein solcher Gegenstand muss tatsächlich im aktiven, verfügbaren Kleiderschrank vorhanden sein. Es wird kein Gesichtsschutz aus der Excel-Datei erfunden oder automatisch angelegt. Fehlt erforderlicher Schutz, zeigt die App eine Lücke.
 
 ## Korrektur 0.9.3
 
