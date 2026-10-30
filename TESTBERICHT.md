@@ -1,4 +1,4 @@
-# Prüfung Gravel Outfit 0.12.0
+# Prüfung Gravel Outfit 0.12.1
 
 - 174 automatisierte Tests erfolgreich: bestehende Bekleidungs-, Lern-, Daten- und Wettertests sowie 26 neue GPX-/Planungstests.
 - Zusätzlicher DOM-Integrationstest mit der tatsächlichen HTML-/JS-Anwendung und simuliertem IndexedDB: geplantes Datum bleibt nach Darstellungswechsel erhalten; Abruf verwendet den gewählten Zeitpunkt; Standortanzeige; GPX-Import ohne automatischen Upload; Hin-/Rückfahrt mit Aufenthalt; unterschiedliche Fahrtdauern; veraltete Prognose nach Planänderung.
@@ -10,3 +10,5 @@
 - Service-Worker-Dateiliste einschließlich route.js und planning.js auf vorhandene Dateien geprüft; bestehender Offlinebetrieb erhalten. Neue Wetterdaten benötigen Internet.
 
 Grenzen: Kein Test auf einem physischen iPhone und kein neuer visueller Bildschirmtest. DOM-Tests ersetzen keinen Safari-Gerätetest. Keine Bildschirmaufnahme verwendet. Die veröffentlichte Hauptversion wird nicht automatisch geändert.
+
+0.12.1: DOM-Test bestätigt Dropdown mit 25 Optionen: kein Aufenthalt und 30-Minuten-Schritte bis 12 Stunden. Hin-/Rückfahrt mit einer Stunde Aufenthalt erfolgreich berechnet. 174 Regressionstests weiterhin erfolgreich. Alte abweichende Aufenthaltswerte bleiben als zusätzliche gespeicherte Option erhalten.

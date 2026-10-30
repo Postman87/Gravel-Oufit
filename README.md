@@ -1,4 +1,4 @@
-# Gravel Outfit 0.12.0
+# Gravel Outfit 0.12.1
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
 
@@ -6,7 +6,7 @@ Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS
 
 Komoot-Tour als GPX exportieren und unter Outfit auswählen. Die Datei wird lokal eingelesen (bis 5 MB), auf höchstens 2000 Punkte reduziert und mit der JSON-Sicherung gespeichert. Ohne Wetterabruf wird nichts übertragen. Für Streckenwetter werden bis zu zwölf auf zwei Dezimalstellen gerundete Stützpunkte an Open-Meteo gesendet; die GPX-Datei selbst wird nicht hochgeladen. Der Gerätestandort wird dabei nicht abgefragt.
 
-Eine GPX kann die gesamte Tour oder nur die Hinfahrt beschreiben. Bei „Hinfahrt laut GPX + identischer Rückweg“ werden Hin- und Rückfahrtdauer getrennt in 30-Minuten-Schritten bis jeweils sechs Stunden gewählt. Ein Aufenthalt von 0 bis 1440 Minuten (5-Minuten-Schritte) verschiebt den Rückweg. Start, Ankunft, Rückfahrtbeginn und Ende werden angezeigt. Wetter während des Aufenthalts wird berücksichtigt; individuelle Auskühlung in der Pause wird nicht modelliert.
+Eine GPX kann die gesamte Tour oder nur die Hinfahrt beschreiben. Bei „Hinfahrt laut GPX + identischer Rückweg“ werden Hin- und Rückfahrtdauer getrennt in 30-Minuten-Schritten bis jeweils sechs Stunden gewählt. Ein Aufenthalt über ein Dropdown von „Kein Aufenthalt“ bis zwölf Stunden (30-Minuten-Schritte) verschiebt den Rückweg. Start, Ankunft, Rückfahrtbeginn und Ende werden angezeigt. Wetter während des Aufenthalts wird berücksichtigt; individuelle Auskühlung in der Pause wird nicht modelliert.
 
 Die Durchfahrtszeiten beruhen auf gleichmäßigem Tempo entlang der Entfernung, nicht auf Steigungen oder GPX-Zeitstempeln. Die Prognose ist eine Stichprobe, keine lückenlose Wettergarantie. Start-/Endtemperatur beziehen sich auf die passenden Orte und Zeiten; kältere und windigere/nassere Abschnitte beeinflussen die Mitnahme.
 
@@ -96,3 +96,5 @@ Nach einem Update alle alten App-Tabs bzw. die installierte PWA vollständig sch
 ## Projektdateien
 
 Laufzeit: `index.html`, `style.css`, `app.js`, `core.js`, `excel-rules.js`, `data/excel-source.json`, Manifest, Icons, `sw.js`, `version.json`. Bestehende ältere Verzeichnisse bleiben im vollständigen Paket erhalten. Die ursprüngliche Excel-Datei wurde nicht geändert und wird nicht zusätzlich veröffentlicht. Optionaler Wetterabruf von Open-Meteo; keine Cloud-Synchronisierung und keine externen JavaScript-Abhängigkeiten.
+
+Version 0.12.1: Aufenthaltsauswahl als Dropdown. Abweichende frühere Werte werden als „bisher gespeichert“ zusätzlich angezeigt und unverändert weiterverwendet, bis eine neue Auswahl erfolgt.
