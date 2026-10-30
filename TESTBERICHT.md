@@ -1,3 +1,15 @@
+# Nachprüfung · Gravel Outfit 0.9.3
+
+30. Oktober 2026. 108 automatisierte Tests bestanden, 0 fehlgeschlagen. Darunter eine vollständige Matrix mit 1497 Einzelfällen: 1377 konstante Wetterlagen (−10 bis +40 °C in ganzen Schritten × drei Windstufen × drei Regenstufen × drei Intensitäten), 108 Start-/Endverläufe und zwölf Varianten der hinterlegten Winddichtigkeit. Die Matrix wird in `tests/lupra-matrix.test.cjs` dauerhaft ausgeführt. Ein zusätzlicher gezielter Regressionstest prüft alle Temperaturen 6–10 °C mit „Sportlich“.
+
+Vor der Korrektur reproduziert: Bei 6–10 °C, trocken, schwachem Wind und Sportlich wird Lupra trotz fehlendem Bein-Windschutz ausgelassen. Ursache: Komfortvorteil der Atmungsaktivität überwiegt die Bewertung der Windschutzlücke. Nach Korrektur: Mit dem Excel-Testbestand wird RR plus verfügbare winddichte Lupra bei 6–10 °C in allen Intensitätsstufen kombiniert. Rot bewerteter thermischer Ersatz bleibt rot; Schutzwirkung und Atmung bleiben getrennt. Die Excel-Intensitätstabelle wurde nicht verändert.
+
+Weitere Beobachtung: Ist RR bereits als winddicht gespeichert, entfällt der zusätzliche Windschutzbedarf und Lupra kann bei trockenem Wetter bewusst fehlen. Ist Lupra nicht als winddicht gespeichert, trägt sie entsprechend nicht zum bestätigten Windschutz bei. Eigenschaften wurden in keinem Fall automatisch verändert. Das erklärt mögliche Unterschiede zum iPhone-Bestand, ist aber kein Nachweis für die dort tatsächlich gespeicherten Werte.
+
+Kein erneuter Browser-/Hardwaretest für die einzelne Bewertungsänderung durchgeführt; die Darstellung bleibt unverändert. Die Browserprüfungen der vorherigen Versionen sind unten dokumentiert. Hauptbranch/Pages unverändert; Update als separater Änderungsvorschlag und vollständiges ZIP.
+
+---
+
 # Korrekturprüfung · Gravel Outfit 0.9.2
 
 106 automatisierte Tests bestanden, 0 fehlgeschlagen. Acht zusätzliche Regressionstests sichern die getrennte Windanforderung in der Thermostufe, RR/Lupra bei 3 °C und Frost, expliziten Ersatz bei 7 °C trotz roter Quellenabweichung, Ausschluss unverfügbarer/archivierter Lupra, Bevorzugung passender winddichter Thermohosen, warmen Start mit kaltem Ende sowie korrekte eigene Auswahl ab. Fahrtsicherung und JSON bleiben kompatibel.

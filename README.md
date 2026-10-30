@@ -1,6 +1,10 @@
-# Gravel Outfit 0.9.2
+# Gravel Outfit 0.9.3
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
+
+## Korrektur 0.9.3
+
+Bei „Sportlich“ konnte die Atmungsaktivität einer einzelnen normalen Hose den erforderlichen Windschutz bei 6–10 °C verdrängen. Fehlender Windschutz an den Beinen wird jetzt stärker gegenüber Komfortnachteilen gewichtet. Die Original-Intensitätstabelle bleibt unverändert. Eine tatsächlich bereits winddichte Grundhose benötigt bei trockenem Wetter nicht automatisch eine zusätzliche Regenhose. Gespeicherte Eigenschaften werden nicht überschrieben; die RR-Hose darf nur dann als winddicht erfasst sein, wenn dies für das konkrete Modell zutrifft.
 
 ## Korrektur 0.9.2
 
