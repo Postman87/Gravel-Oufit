@@ -1,4 +1,4 @@
-# Gravel Outfit 0.13.0
+# Gravel Outfit 0.13.1
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
 
@@ -104,3 +104,11 @@ Nach einem Update alle alten App-Tabs bzw. die installierte PWA vollständig sch
 Laufzeit: `index.html`, `style.css`, `app.js`, `core.js`, `excel-rules.js`, `data/excel-source.json`, Manifest, Icons, `sw.js`, `version.json`. Bestehende ältere Verzeichnisse bleiben im vollständigen Paket erhalten. Die ursprüngliche Excel-Datei wurde nicht geändert und wird nicht zusätzlich veröffentlicht. Optionaler Wetterabruf von Open-Meteo; keine Cloud-Synchronisierung und keine externen JavaScript-Abhängigkeiten.
 
 Version 0.12.1: Aufenthaltsauswahl als Dropdown. Abweichende frühere Werte werden als „bisher gespeichert“ zusätzlich angezeigt und unverändert weiterverwendet, bis eine neue Auswahl erfolgt.
+
+## Bewertung nach Zeitraum · 0.13.1
+
+Bei Zu warm / Zu kalt ist der Zeitraum verpflichtend: Am Start, Am Ende oder Gesamte Tour. Start/Ende bedeuten erste/letzte bis zu 30 Minuten, bei kurzen Touren höchstens eine Hälfte. Der Zeitraum gilt für die ausgewählten Körperzonen. Genau richtig bestätigt die gesamte Tour. Zeitpunkt, Temperaturspanne und Datenbasis erscheinen in der Historie.
+
+Für das Learning wird aus dem gespeicherten Prognoseverlauf die zeitgewichtete Durchschnittstemperatur des bewerteten Abschnitts berechnet; Zwischenkälte fließt somit nur bei zeitlicher Überlappung ein. Startbewertungen beeinflussen nur Start-, Endbewertungen nur Endempfehlungen, Gesamtbewertungen beide. Neue Bewertungen werden außerdem nach vergleichbarer Wind-/Regenklasse gefiltert. GPX-Verlauf liefert punktbezogene Wind-/Regenwerte; bei reinen Standortprognosen stehen nur Start- und Gesamtwerte zur Verfügung, die spätere Einordnung bleibt entsprechend konservativ. Ohne Prognose gelten manuelle Start-/Endwerte; für die gesamte Tour deren Mittelwert und Spannweite. Es sind Prognosen, keine gemessenen Bedingungen. Die tatsächliche Pause und das tatsächliche Tempo können abweichen.
+
+Alle neuen Felder sind optional. Alte Bewertungen werden weder umgeschrieben noch gelöscht und behalten ihre bisherige Lernwirkung. Die besprochene Optimierung auf ein durchgehend getragenes Outfit ist mit dieser Änderung noch nicht umgesetzt.
