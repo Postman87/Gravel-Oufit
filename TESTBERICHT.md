@@ -1,3 +1,28 @@
+# Prüfung · Gravel Outfit 0.11.0
+
+30. Oktober 2026. **148 automatisierte Tests erfolgreich, 0 fehlgeschlagen** (132 bisherige plus 16 Wettertests). Zusätzlich echte Live-Anfragen an Open-Meteo mit öffentlichen Testkoordinaten in Berlin.
+
+## Automatisierte Fälle
+
+Jetzt / Zukunft, genaue Minuten und lokale Eingabe; ungültige, vergangene und zu weit entfernte Termine; aktuelle Modellwerte gegenüber geplanter Prognose; Rundung auf ganze Grad; Spitzenwind und Böen unterwegs; zeitanteiliger Niederschlag; Wahrscheinlichkeit und Dauerregen-Abgrenzung; aktueller Niederschlag trotz trockener Stundenprognose; zwischenzeitlicher Kälteeinbruch mit unveränderter echter Endtemperatur; reduzierbare Kombination bei steigenden Temperaturen; erst späterer Wind/Regen; lückenhafte, unplausible oder nicht abgedeckte Daten; Temperatur außerhalb Regler-/Modellbereich; gerundete Koordinaten; Standortablehnung, Zeitüberschreitung, fehlende Geolocation und Abbruch; HTTP-/Netzwerk-/JSON-Fehler; Quelle und Prognose im JSON-Rundlauf ohne Koordinaten; manipulierte Importe; unveränderte alte Daten.
+
+## Live- und Browserprüfung
+
+- Zuerst echter Jetzt-Abruf über das produktive Wettermodul für Berlin, 90 Minuten. Aktueller Modellwert und vollständiger Tourzeitraum erfolgreich verarbeitet.
+- Danach echter Abruf für den folgenden Tag, 120 Minuten. Kein fälschlich verwendeter aktueller Temperaturwert für den geplanten Start.
+- Dieselben beiden Fälle über `tests/weather-browser.html` im Browser live abgerufen: API-Antwort einschließlich Quellenangabe und Abrufzeit erfolgreich; damit auch browserübergreifender HTTPS-Abruf vom lokalen App-Ursprung bestätigt.
+- Synthetischen Prognose-Testbestand über die normale JSON-Importoberfläche in einem getrennten lokalen Testspeicher übernommen. Die App zeigt geplantes Datum, 120 Minuten, Start-/Endtemperatur, Wind/Böen, Niederschlag, Wahrscheinlichkeit, Temperaturverlauf und Quellen-/Lizenzlink korrekt an.
+- Dauer auf 90 Minuten geändert: Fahrtstart mit veralteter Prognose abgefangen und verständlich auf erforderliche Aktualisierung hingewiesen.
+- Eine Temperatur manuell verändert und Empfehlung aktualisiert: automatische Prognosezuordnung entfernt, manuelle Werte bleiben bedienbar. Anschließend Testprognose wiederhergestellt.
+- Mobile Ansicht 390 × 844 Pixel visuell geprüft. Danach Startauswahl und Datum für schmale Displays untereinander angeordnet. Auf Wunsch des Nutzers wurden anschließend keine weiteren Bildschirmaufnahmen erstellt; diese letzte Anordnung wurde nicht erneut visuell aufgenommen.
+- Alle zwölf zu ladenden Offline-Dateien einschließlich des Wettermoduls vorhanden. Kein erneuter vollständiger Offline-/Server-Ausfalltest dieser Version. API-Antworten werden nicht vom Service Worker gespeichert; die letzte übernommene Prognose liegt in IndexedDB.
+
+## Verbleibende Prüfung
+
+Echte Gerätestandort-Freigabe und GPS auf dem iPhone sowie physische iOS-PWA-/Offline-Prüfung stehen aus. Für Live-Tests wurde ausschließlich ein bewusst eingesetzter öffentlicher Teststandort verwendet; kein privater Gerätestandort abgefragt. Der produktive Standortpfad und seine Fehlerfälle sind automatisiert mit kontrollierter Geolocation geprüft. Kein Routenwetter und keine automatische Hintergrundaktualisierung. Keine Veröffentlichung auf GitHub Pages durch diese Arbeit.
+
+---
+
 # Prüfung · Gravel Outfit 0.10.0
 
 30. Oktober 2026. **132 automatisierte Tests erfolgreich, 0 fehlgeschlagen**; bisherige 108 einschließlich 1497 Lupra-Matrixfällen und 24 neue Zonentests. Ausführen: `node --test tests/*.test.cjs`.
