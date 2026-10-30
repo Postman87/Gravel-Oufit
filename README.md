@@ -1,4 +1,4 @@
-# Gravel Outfit 0.14.0
+# Gravel Outfit 0.14.1
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
 
@@ -124,3 +124,11 @@ Extras werden je Körperzone geprüft. Später nötige Teile können sofort getr
 Beispiel mit unverändertem Excel-Bestand, trocken und wenig Wind: 12 → 10 °C ergibt eine gemeinsame Kombination ohne zusätzliche Mitnahme oder Zip-off-Umstellung; 12 → 9 °C löst ebenfalls nicht pauschal Gepäck aus. Bei 18 → 7 °C bzw. 25 → 7 °C bleiben Ergänzungen vorgesehen. Wind-/Regenschutz und fehlende Ausstattung bleiben separat sichtbar. Die endgültige Auswahl hängt vom eigenen aktiven Bestand und dem persönlichen Learning ab.
 
 Lernen bleibt aktiv: zeitbezogene Rückmeldungen ändern weiterhin Wärmebedarf und Komfort je Körperzone. Eine Startbewertung Zu warm kann eine zuvor akzeptierte Zusatzwärme künftig weniger passend machen. Die Präferenz, Wechsel zu vermeiden, bleibt dabei bestehen. Prognoseminimum und -maximum werden berücksichtigt; individuelle Auskühlung während eines Aufenthalts ist weiterhin nicht modelliert. Eigene Auswahl wird nicht automatisch umgestellt.
+
+## Wetter selbst eingeben · 0.14.1
+
+In der Tourübersicht öffnet „Wetter selbst eingeben“ direkt die Planungsansicht mit den manuellen Wetterfeldern. Start-/Endtemperaturen über die vorhandenen Ganzgradregler, Wind und Niederschlag selbst wählen und „Manuelle Wetterwerte übernehmen“ antippen. Für Wind/Regen die stärksten erwarteten Bedingungen wählen. Die Empfehlung wird aktualisiert und die Outfitübersicht wieder geöffnet. Funktioniert auch offline, ohne Standortfreigabe und mit gespeicherter GPX-Strecke.
+
+Nach einem fehlgeschlagenen automatischen Abruf erscheint zusätzlich „Wetter stattdessen selbst eingeben“. Bis zur bewussten Übernahme bleiben die gespeicherten Wetterwerte erhalten. Beim Übernehmen wird eine bisherige automatische Prognose ausdrücklich abgelöst, selbst wenn dieselben Temperaturen gewählt werden. Die Wetterquelle lautet danach Eigene Eingabe. Kein erfundener Zwischenverlauf oder Standortbezug. Zeitbezogenes Learning verwendet dann die gespeicherten manuellen Werte.
+
+Die Tourplanung muss weiterhin eine gültige Zeit und Fahrtdauer enthalten; GPX, Kleidung, Intensität und Einstellungen bleiben erhalten. Zurück zum Outfit ohne Übernahme speichert keine manuellen Änderungen. Ein späterer erfolgreicher Wetterabruf kann wieder auf automatische Daten umstellen.
