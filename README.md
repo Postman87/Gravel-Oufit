@@ -1,6 +1,12 @@
-# Gravel Outfit 0.12.1
+# Gravel Outfit 0.13.0
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
+
+## Kompakte Startseite · 0.13.0
+
+Outfit öffnet mit einer kurzen Tourübersicht: Start, Fahrzeit, Strecke/Standort und Wetter. Die Bekleidung folgt direkt darunter. „Planung ändern“ öffnet eine eigene Ansicht innerhalb von Outfit; „Zurück zum Outfit“ kehrt zur Übersicht zurück. Die drei Hauptbereiche bleiben erhalten. Manuelle Temperatur-, Wind- und Regenwerte sind unter „Wetter selbst einstellen“ zunächst geschlossen. Intensität, Dauer, Kälteempfinden und optionale Schutzwahl bleiben verfügbar. Nach „Empfehlung aktualisieren“ erscheint wieder das Outfit.
+
+„Wetter aktualisieren“ ist direkt in der Übersicht erreichbar. Quelle, Standort und Wetterverlauf stehen in aufklappbaren Details; Warnungen zu veralteten oder nicht passenden Prognosen bleiben sichtbar. Letzte Fahrten sind eingeklappt. Eine feste Leiste hält den Fahrtstart erreichbar; bei laufender Tour führt „Tour beenden“ zur Rückmeldung mit Körperzonen. Der Seiteninhalt hat zusätzlichen Abstand zur Leiste einschließlich iPhone-Sicherheitsbereich. Kein Datenmodellwechsel.
 
 ## GPX, Hin-/Rückfahrt und zuverlässige Planung · 0.12.0
 
