@@ -1,8 +1,8 @@
-# Gravel Outfit 0.17.5
+# Gravel Outfit 0.17.6
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
 
-## Kleiderschrankliste und aktueller Standort · 0.17.5
+## Kleiderschrankliste und aktueller Standort · 0.17.6
 
 Im Kleiderschrank erscheinen zunächst nur kompakte Zeilen mit Kleidungsname und Verfügbarkeit. Antippen öffnet die Details nach unten. Eigener Temperaturbereich, Schutzeigenschaften, Notizen, Bearbeiten, vollständige Eigenschaften, Archivierung und Pflegehistorie bleiben dort erreichbar. Geöffnete Zeilen bleiben bei Bearbeitung und Pflegeeinträgen offen; Suche und Filter bleiben erhalten. Kleidungsdaten werden durch die neue Darstellung nicht umgeschrieben.
 
@@ -227,14 +227,19 @@ Nach dem Übernehmen der Dateien alle Gravel-Outfit-Tabs und die installierte Ap
 
 Unter der Empfehlung ist Baselayer-Auswahl prüfen aufklappbar: tatsächlicher Berechnungsstand, Temperaturminimum, Anforderung, automatisch gewähltes Teil und gespeicherte Längen/Verfügbarkeit aller Basisschichten. Dies unterscheidet gespeicherte Daten, Ersatzlösung und Eigene Auswahl. Die automatische Auswahl überschreibt keine manuell zusammengestellte Kombination. Die Regel des Baselayer-Minimums selbst wird nicht abgeschwächt oder durch Namenserkennung ersetzt.
 
-## Zip-off-Prüfung 0.17.5
+## Zip-off-Prüfung 0.17.6
 Ärmel und Hosenbeine werden anhand der Art unterschieden. Bei warmem Start wird die kurze Variante nicht allein zur Vermeidung eines späteren Zip-off-Wechsels durch die lange verdrängt. Versionswechsel aktualisiert den Offline-Stand. Keine Änderung am Datenbankschema.
 
 ## Bezeichnung
 Das Modell ersetzt das separate Namensfeld und ist beim Anlegen erforderlich. Alte Bezeichnungen ohne Modell werden automatisch übernommen.
 
-## Surfblue und Schwarz (0.17.5)
+## Surfblue und Schwarz (0.17.6)
 Farbgebung visuell angelehnt an https://www.cube.eu/de-en/cube-nuroad-c-62-ex-surfblue-n-black/1136300 . Annäherung, keine offizielle CUBE-Farbdefinition: Surfblue #82adbb, Anthrazit #111719. Angepasste Hell-/Dunkelansichten, Regler, Schaltflächen und App-Icons. Semantische Grün-/Gelb-/Rotanzeigen bleiben getrennt.
 
-## Alltagstest 0.17.5
+## Alltagstest 0.17.6
 Ausgewähltes helles Icon B integriert: schwarzes Gravelrad auf Surfblue. Apple-Touch-Icon 180 px, PWA-Icons 192 und 512 px; alle offline enthalten. Hinweise in ALLTAGSTEST.md.
+
+## 0.17.6: Reihenfolge und Ortsnamen
+Empfehlungen und eigene Auswahl: Baselayer, Midlayer, Toplayer, Hose, Überhose, Extras. Innerhalb einer Kategorie bleibt die funktionale Reihenfolge erhalten. Regenhosen werden der neuen Kategorie Überhose zugeordnet; bestehende IDs, Eigenschaften und Erfahrungen bleiben erhalten. Art-Menü ohne neue Arten nach Kopf, Gesicht, Hals, Oberkörper, Arme, Hände, Beine, Füße sortiert.
+Standortwetter löst gerundete Gerätekoordinaten bei BigDataCloud in einen Ortsnamen auf. Ort wird in der Prognose gespeichert, Wiederholungen werden vermieden. GPX-Ortsangabe bleibt unverändert. Bei Fehlern bleiben Koordinaten sichtbar; Wetterabruf wird dadurch nicht verworfen. Keine Stationen oder Modellhinweise auf der Startseite ergänzt. Wetterquelle Open-Meteo und Ortsquelle BigDataCloud stehen in den Wetterdetails.
+Ortsauflösung benötigt Internet; gespeicherte Namen bleiben offline sichtbar. Es werden nur beim Standortwetter Koordinaten an den zusätzlichen Dienst gesendet. Quellen: https://www.bigdatacloud.com/docs/article/why-is-reverse-geocoding-api-free und https://open-meteo.com/en/docs .

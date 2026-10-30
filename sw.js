@@ -1,6 +1,6 @@
 'use strict';
-const CACHE='gravel-outfit-0.17.5',BASE=new URL('./',self.location.href).pathname;
-const FILES=['./','./index.html','./style.css?v=0.17.5','./core.js?v=0.17.5','./personal.js?v=0.17.5','./history-weather.js?v=0.17.5','./history-ui.js?v=0.17.5','./weather.js?v=0.17.5','./route.js?v=0.17.5','./planning.js?v=0.17.5','./excel-rules.js?v=0.17.5','./data/excel-source.json','./app.js?v=0.17.5','./ui-planning.js?v=0.17.5','./manifest.webmanifest','./icon-180.png','./icon-192.png','./icon-512.png'];
+const CACHE='gravel-outfit-0.17.6-final',BASE=new URL('./',self.location.href).pathname;
+const FILES=['./','./index.html','./style.css?v=0.17.6','./core.js?v=0.17.6','./personal.js?v=0.17.6','./history-weather.js?v=0.17.6','./history-ui.js?v=0.17.6','./weather.js?v=0.17.6','./route.js?v=0.17.6','./planning.js?v=0.17.6','./excel-rules.js?v=0.17.6','./data/excel-source.json','./app.js?v=0.17.6','./ui-planning.js?v=0.17.6','./manifest.webmanifest','./icon-180.png','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES))));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('gravel-outfit-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(e.request.method!=='GET'||u.origin!==self.location.origin||!u.pathname.startsWith(BASE)||u.pathname.endsWith('/version.json'))return;if(e.request.mode==='navigate'){e.respondWith(caches.open(CACHE).then(async c=>(await c.match(new URL('./index.html',self.location.href)))||fetch(e.request)));return;}e.respondWith(caches.open(CACHE).then(async c=>(await c.match(e.request))||fetch(e.request)));});

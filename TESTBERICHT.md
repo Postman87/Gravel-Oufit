@@ -1,6 +1,6 @@
-# Prüfung Gravel Outfit 0.17.5
+# Prüfung Gravel Outfit 0.17.6
 
-## Aktueller Stand 0.17.5
+## Aktueller Stand 0.17.6
 
 236 Tests erfolgreich (235 bisherige plus Test für frische Standortanforderung maximumAge 0 gegenüber dem bisherigen Standortcache). Erweiterter DOM-Test: Home-Abruf nach GPX/Manuell fordert erneut Geolocation an, zeigt geänderte Testkoordinaten, wechselt auf Standort und behält die GPX; Fehler lässt Wetter unverändert. Kein unterer manueller Knopf; neuer Standorttext; kein langer GPX-Hinweis beim Öffnen. Kleiderschrank zeigt geschlossene Details-Zeilen, öffnet nach unten und behält die Zeile nach Bearbeiten/Pflege offen. Vollständige Eigenschaften, Archiv/Wiederherstellen, Filter und alle IDs geprüft. Bisheriger Tour-/Learning-/Retro-/Wetter-/Lösch-DOM-Test weiterhin erfolgreich.
 
@@ -91,14 +91,21 @@ Zip-off ersetzt den separaten Haken. Gemeinsame Reihenfolge: Kurz, Lang, Ärmell
 
 Zip-off-Mitführteile werden anhand der Art als Ärmel oder Hosenbeine bezeichnet. Beide Komponententypen werden in Touren und JSON akzeptiert; bestehende Hosenbein-Einträge bleiben gültig. 240 Tests und DOM-Prüfung erfolgreich.
 
-## Abschließende Prüfung 0.17.5
-245 automatisierte Tests erfolgreich. Im echten Browser bei 402 × 874 geprüft: bestehende Zip-off-Hose im Editor, Oberteil auf Zip-off speichern, 25→7 °C kurze Hose und Kurzarm mit getrennten Hosenbein-/Ärmel-Mitführeinträgen, 25→25 °C kurze Varianten ohne Zusatzkomponenten, 3→3 °C lange Hose ohne Zusatzkomponenten. Oberkörper bei Kälte wählt im Testbestand Kurzarm plus vorhandene Armlinge als Alternative. Getrennter Testspeicher, Originaldaten unverändert. Keine Prüfung auf physischem iPhone. Offline-Cache erhält mit 0.17.5 eine neue Versionskennung.
+## Abschließende Prüfung 0.17.6
+245 automatisierte Tests erfolgreich. Im echten Browser bei 402 × 874 geprüft: bestehende Zip-off-Hose im Editor, Oberteil auf Zip-off speichern, 25→7 °C kurze Hose und Kurzarm mit getrennten Hosenbein-/Ärmel-Mitführeinträgen, 25→25 °C kurze Varianten ohne Zusatzkomponenten, 3→3 °C lange Hose ohne Zusatzkomponenten. Oberkörper bei Kälte wählt im Testbestand Kurzarm plus vorhandene Armlinge als Alternative. Getrennter Testspeicher, Originaldaten unverändert. Keine Prüfung auf physischem iPhone. Offline-Cache erhält mit 0.17.6 eine neue Versionskennung.
 
-## Modell statt Name (0.17.5)
+## Modell statt Name (0.17.6)
 Separates Namensfeld entfernt. Modell ist die Bezeichnung im Kleiderschrank und in Empfehlungen. Fehlendes Modell wird aus dem bisherigen Namen übernommen; bei abweichender vorhandener Modellangabe bleibt der frühere Name als previousName erhalten. IDs, Erfahrungen und historische Tour-Snapshots bleiben erhalten. 245 Tests und DOM-Tests für Anlegen/Bearbeiten, Historie und Datenerhalt erfolgreich. Formular im echten Browser geprüft.
 
-## Farbgebung 0.17.5
+## Farbgebung 0.17.6
 Hellmodus und automatischer Dunkelmodus im Browser bei 402 × 874 visuell geprüft, ursprünglichen automatischen Farbmodus wiederhergestellt. 245 Tests erfolgreich. Ausschließlich Farb-/Icon- und Versionsanpassungen gegenüber 0.17.3, unveränderte Datenbank und Empfehlungslogik.
 
-## 0.17.5
+## 0.17.6
 245 automatisierte Tests erfolgreich. Icon B auf 180/192/512 px aufbereitet, HTML-/Manifest-/Offline-Verweise geprüft. IndexedDB und Bekleidungslogik unverändert gegenüber 0.17.4. Alltagstest auf physischem iPhone steht aus.
+
+## 0.17.6: Reihenfolge und Ortsnamen
+Empfehlungen und eigene Auswahl: Baselayer, Midlayer, Toplayer, Hose, Überhose, Extras. Innerhalb einer Kategorie bleibt die funktionale Reihenfolge erhalten. Regenhosen werden der neuen Kategorie Überhose zugeordnet; bestehende IDs, Eigenschaften und Erfahrungen bleiben erhalten. Art-Menü ohne neue Arten nach Kopf, Gesicht, Hals, Oberkörper, Arme, Hände, Beine, Füße sortiert.
+Standortwetter löst gerundete Gerätekoordinaten bei BigDataCloud in einen Ortsnamen auf. Ort wird in der Prognose gespeichert, Wiederholungen werden vermieden. GPX-Ortsangabe bleibt unverändert. Bei Fehlern bleiben Koordinaten sichtbar; Wetterabruf wird dadurch nicht verworfen. Keine Stationen oder Modellhinweise auf der Startseite ergänzt. Wetterquelle Open-Meteo und Ortsquelle BigDataCloud stehen in den Wetterdetails.
+Ortsauflösung benötigt Internet; gespeicherte Namen bleiben offline sichtbar. Es werden nur beim Standortwetter Koordinaten an den zusätzlichen Dienst gesendet. Quellen: https://www.bigdatacloud.com/docs/article/why-is-reverse-geocoding-api-free und https://open-meteo.com/en/docs .
+
+250 automatisierte Tests erfolgreich. Zusätzliche DOM-Prüfung: Ortsname aus kontrollierter Testantwort, Quelle, Reihenfolge der Arten und Überhose. Browser bei 402 × 874: Reihenfolge der gewählten Kleidung, Art-Optionen und Kategorie Überhose mit Regenhose geprüft. Kein echter Gerätestandort für diese Prüfung abgefragt. Physisches iPhone und externer Ortsdienst im Alltag noch zu prüfen.
