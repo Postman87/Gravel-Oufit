@@ -1,4 +1,4 @@
-# Prüfung Gravel Outfit 0.14.0
+# Prüfung Gravel Outfit 0.14.1
 
 - 174 automatisierte Tests erfolgreich: bestehende Bekleidungs-, Lern-, Daten- und Wettertests sowie 26 neue GPX-/Planungstests.
 - Zusätzlicher DOM-Integrationstest mit der tatsächlichen HTML-/JS-Anwendung und simuliertem IndexedDB: geplantes Datum bleibt nach Darstellungswechsel erhalten; Abruf verwendet den gewählten Zeitpunkt; Standortanzeige; GPX-Import ohne automatischen Upload; Hin-/Rückfahrt mit Aufenthalt; unterschiedliche Fahrtdauern; veraltete Prognose nach Planänderung.
@@ -28,3 +28,7 @@ Zusätzlich geprüft: Tourstart über die feste Leiste, Umschalten zur laufenden
 188 Tests erfolgreich. Sieben neue Tests: 12→10 ohne Gepäck/Variantenwechsel, 12→9 ohne starre Drei-Grad-Auslösung, 18/25→7 mit Ergänzung, Verfügbarkeit und explizite Keine-Auswahl, späterer Regen, warmes Zwischenmaximum, zeitbezogenes Start-Learning. Zwei alte Erwartungen angepasst: 11→7 muss keinen Wechsel mehr erzwingen; die Lupra-Matrix prüft unverändert notwendige Schutzabdeckung, erlaubt jetzt sinnvolles Durchtragen über Temperaturgrenzen. Alle 1497 Matrixszenarien werden weiter geprüft.
 
 DOM-Integration der tatsächlichen App-Dateien mit simuliertem IndexedDB erfolgreich: Planung, Wetter/GPX, feste Leiste, Tourstart, Rückmeldung mit Zeitraum und Zonen, Historie und Navigation. Kein physischer iPhone-Test. Datenbank-/Schema-Versionen unverändert. ZIP byteweise mit Quelldateien abgeglichen und Offline-Dateien vorhanden.
+
+## Manuelles Wetter 0.14.1
+
+188 Regressionstests erfolgreich. Erweiterter DOM-Integrationstest mit den tatsächlichen App-Dateien: fehlgeschlagener GPX-Wetterabruf erhält die vorherige Prognose; manueller Einstieg öffnet und fokussiert Temperaturfelder; explizite Übernahme auch unveränderter Werte entfernt die automatische Quellenzuordnung; Rückkehr zur Outfitübersicht; offline 12→10 °C mit manuellem Wind/Regen gespeichert; GPX und Kleidungsdaten unverändert. Bisherige DOM-Fälle einschließlich Tourstart und zeitbezogener Bewertung bleiben erfolgreich. Keine Datenmigration; kein physischer iPhone-Test. Vollständiges ZIP und Offline-Dateiliste geprüft.
