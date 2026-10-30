@@ -18,3 +18,5 @@
 .forecast-controls{border:1px solid var(--border,#819286);padding:1rem;border-radius:14px;margin:1rem 0}.forecast-controls[hidden],#forecast-date-label[hidden]{display:none}.forecast-summary{margin-top:1rem}.forecast-summary small{display:block;line-height:1.6}#forecast-date,#ride-minutes{min-height:44px;min-width:0;max-width:100%}#forecast-status:empty{display:none}
 
 @media(max-width:600px){.forecast-controls .grid{grid-template-columns:minmax(0,1fr)}}#forecast-date{width:100%}
+
+.route-controls{border-bottom:1px solid var(--border,#819286);padding-bottom:1rem;margin-bottom:1rem}#route-plan[hidden],#return-plan[hidden],#route-remove[hidden]{display:none}#plan-preview{margin:1rem 0}#plan-preview p{line-height:1.7}#route-file{max-width:100%}
