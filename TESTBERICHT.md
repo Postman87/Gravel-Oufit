@@ -1,3 +1,25 @@
+# Prüfung · Gravel Outfit 0.10.0
+
+30. Oktober 2026. **132 automatisierte Tests erfolgreich, 0 fehlgeschlagen**; bisherige 108 einschließlich 1497 Lupra-Matrixfällen und 24 neue Zonentests. Ausführen: `node --test tests/*.test.cjs`.
+
+Neue Tests prüfen alle acht Zonen, pauschal Genau richtig, gemischte Bewertungen, nicht bewertete Bereiche, fehlende/ungültige Angaben, entgegengesetzte und begrenzte Lernwerte, Abschalten, Intensitäts-/Temperaturfilter sowie die Beeinflussung jeder Zone ohne Lernänderungen anderer Zonen. Beispiele: kalte Hände ergänzen Handschutz, ohne die Beine wärmer zu bewerten; warmer Oberkörper senkt sein Wärmeziel; kalte Arme ändern die Bedeckungsanforderung unabhängig vom Wärmeziel des Rumpfs; Gesichtsschutz wird ausschließlich aus vorhandenem Bestand genommen. Alte Historien, JSON-Rundlauf, tatsächliche Kleidung, Empfehlung und Wäsche bleiben erhalten. Rote Excel-Ersatzlösungen bleiben rot.
+
+## Browserprüfung dieser Version
+
+- Neue Oberfläche auf getrenntem lokalen Testspeicher geöffnet, reale IndexedDB-Speicherung verwendet.
+- Fahrt gestartet: Genau richtig vorausgewählt, Zonenbereich geschlossen. Zu kalt/Zu warm öffnet alle acht Bereiche.
+- Kalt ohne betroffene Zone: Speichern abgewiesen, Fahrt bleibt aktiv und Formular bedienbar.
+- Hände kalt, Oberkörper warm, Beine passend: jede Zone unabhängig eingestellt. Wechsel der Gesamtbewertung zu Genau richtig und zurück erhält die vorherige Auswahl.
+- 390 × 844 Pixel: acht Auswahlfelder, 51 Pixel hohe Zeilen; Dokumentbreite 390 Pixel, kein seitlicher Überlauf. Hell- und Dunkelmodus visuell geprüft und dokumentiert.
+- Gemischte Fahrt gespeichert und neu geladen. Historie zeigt Gemischt sowie die drei gespeicherten Einzelbewertungen und die Notiz.
+- Lerndiagnose nach Neuladen: Hände ein passender Beitrag / mehr Wärmeschutz, Oberkörper ein Beitrag / weniger Wärmeschutz, Beine ein Beitrag / neutral; nicht bewertete Zonen null Beiträge / neutral.
+- Zweite Fahrt mit Genau richtig abgeschlossen, ohne Zonen auswählen zu müssen. JSON-Export aus dem Browser enthält beide Fahrten mit korrekten Einzelwerten; Export mit der tatsächlichen Importvalidierung geprüft. Alle zwölf Kleidungsstücke erhalten.
+- Keine JavaScript-Konsolenfehler. Alle elf vorzuladenden Offline-Dateien vorhanden; neue Cache-Version 0.10.0. Kein erneuter Server-Ausfalltest; die bestehende Offline-Speicherarchitektur bleibt erhalten.
+
+Kein physisches iPhone verfügbar; mobile Prüfung im Browser mit iPhone-Abmessungen. Keine Änderung der veröffentlichten Pages-Version durch diese Arbeit. Die folgenden Berichte dokumentieren frühere Versionen.
+
+---
+
 # Nachprüfung · Gravel Outfit 0.9.3
 
 30. Oktober 2026. 108 automatisierte Tests bestanden, 0 fehlgeschlagen. Darunter eine vollständige Matrix mit 1497 Einzelfällen: 1377 konstante Wetterlagen (−10 bis +40 °C in ganzen Schritten × drei Windstufen × drei Regenstufen × drei Intensitäten), 108 Start-/Endverläufe und zwölf Varianten der hinterlegten Winddichtigkeit. Die Matrix wird in `tests/lupra-matrix.test.cjs` dauerhaft ausgeführt. Ein zusätzlicher gezielter Regressionstest prüft alle Temperaturen 6–10 °C mit „Sportlich“.
