@@ -1,10 +1,22 @@
-# Gravel Outfit 0.11.0
+# Gravel Outfit 0.12.0
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
 
+## GPX, Hin-/Rückfahrt und zuverlässige Planung · 0.12.0
+
+Komoot-Tour als GPX exportieren und unter Outfit auswählen. Die Datei wird lokal eingelesen (bis 5 MB), auf höchstens 2000 Punkte reduziert und mit der JSON-Sicherung gespeichert. Ohne Wetterabruf wird nichts übertragen. Für Streckenwetter werden bis zu zwölf auf zwei Dezimalstellen gerundete Stützpunkte an Open-Meteo gesendet; die GPX-Datei selbst wird nicht hochgeladen. Der Gerätestandort wird dabei nicht abgefragt.
+
+Eine GPX kann die gesamte Tour oder nur die Hinfahrt beschreiben. Bei „Hinfahrt laut GPX + identischer Rückweg“ werden Hin- und Rückfahrtdauer getrennt in 30-Minuten-Schritten bis jeweils sechs Stunden gewählt. Ein Aufenthalt von 0 bis 1440 Minuten (5-Minuten-Schritte) verschiebt den Rückweg. Start, Ankunft, Rückfahrtbeginn und Ende werden angezeigt. Wetter während des Aufenthalts wird berücksichtigt; individuelle Auskühlung in der Pause wird nicht modelliert.
+
+Die Durchfahrtszeiten beruhen auf gleichmäßigem Tempo entlang der Entfernung, nicht auf Steigungen oder GPX-Zeitstempeln. Die Prognose ist eine Stichprobe, keine lückenlose Wettergarantie. Start-/Endtemperatur beziehen sich auf die passenden Orte und Zeiten; kältere und windigere/nassere Abschnitte beeinflussen die Mitnahme.
+
+Datum, Uhrzeit und Dauer werden sofort als Planung gespeichert und überleben Ansichtswechsel. Eine geänderte Planung kennzeichnet die bisherige Prognose als veraltet und erfordert einen neuen Abruf oder bewusste manuelle Übernahme. Gerätezeitzone, gewählter Start und erwartetes Ende sind sichtbar. Der Standort der geladenen Prognose wird mit gerundeten Koordinaten und einem optionalen OpenStreetMap-Link angezeigt; es erfolgt keine zusätzliche Ortsnamenabfrage.
+
+Vorhandene Kleidungsstücke, Einstellungen und Fahrthistorien bleiben erhalten. Keine Änderung der IndexedDB-Version; neue Felder sind optional. Alte gespeicherte Dauern bleiben erhalten, bis eine neue Dauer gewählt wird. Kein automatisches Veröffentlichen auf GitHub Pages.
+
 ## Automatisches Wetter und Zeitplanung · 0.11.0
 
-Unter Outfit zuerst die **Fahrtdauer in Minuten** einstellen (15–720 Minuten, Schritte von 5 Minuten), Tourstart **Jetzt** oder **Datum und Uhrzeit planen** wählen und **Standort verwenden & Wetter laden** antippen. Standortfreigabe im Browser erlauben. Der Abruf aktualisiert Temperaturen und Empfehlung; Intensität, Kälteempfinden und optionale Schutzwahl bleiben erhalten. Es gibt keine automatische Standortabfrage beim Öffnen der App.
+Unter Outfit zuerst die **Fahrtdauer** einstellen (30 Minuten bis 6 Stunden, Schritte von 30 Minuten), Tourstart **Jetzt** oder **Datum und Uhrzeit planen** wählen und **Standort verwenden & Wetter laden** antippen. Standortfreigabe im Browser erlauben. Der Abruf aktualisiert Temperaturen und Empfehlung; Intensität, Kälteempfinden und optionale Schutzwahl bleiben erhalten. Es gibt keine automatische Standortabfrage beim Öffnen der App.
 
 Für Jetzt wird ein aktueller Modellwert für den Tourstart verwendet, soweit frisch verfügbar. Endtemperatur und geplante Starts stammen aus der Stundenprognose; Zwischenzeiten werden interpoliert, alle Temperaturen in ganzen Celsiusgraden angezeigt. Exakte Start-/Endzeit, Abrufzeit, Quelle, Wind/Böen, zeitanteiliger Niederschlag, Wahrscheinlichkeit und Temperaturverlauf stehen in der Wetterkarte. Planung ist bis sechs Tage im Voraus möglich, sofern die gesamte Tour durch die Prognose abgedeckt ist. Zeitangaben und Datumsfeld verwenden ausdrücklich die Gerätezeitzone; API-Zeitpunkte werden als absolute UTC-Zeitpunkte verarbeitet.
 
@@ -12,9 +24,9 @@ Die Empfehlung betrachtet Startbedingungen getrennt vom späteren Schutzbedarf. 
 
 ### Quelle und Standort
 
-**[Open-Meteo Forecast API](https://open-meteo.com/en/docs), automatische Best-Match-Modellwahl**, Daten unter [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Es handelt sich um Modellwerte am aktuellen Standort, keine Messung einer Wetterstation und keine Wettervorhersage entlang einer Route. Die freie API ist für diese private, nicht kommerzielle Anwendung vorgesehen; [Nutzungsbedingungen und Datenschutz](https://open-meteo.com/en/terms). Die Attribution in der App bleibt auch bei gespeicherten Prognosen sichtbar.
+**[Open-Meteo Forecast API](https://open-meteo.com/en/docs), automatische Best-Match-Modellwahl**, Daten unter [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Es handelt sich um Modellwerte am aktuellen Standort, keine Messung einer Wetterstation ; bei ausgewählter GPX werden mehrere Punkte entlang der Route abgefragt. Die freie API ist für diese private, nicht kommerzielle Anwendung vorgesehen; [Nutzungsbedingungen und Datenschutz](https://open-meteo.com/en/terms). Die Attribution in der App bleibt auch bei gespeicherten Prognosen sichtbar.
 
-Nur beim bewusst ausgelösten Abruf werden auf zwei Nachkommastellen gerundete Koordinaten (etwa Kilometerauflösung) an Open-Meteo übertragen. Keine Cookies oder Zugangsdaten. Die App speichert keine Standortkoordinaten, sondern lediglich Wetterwerte, Zeitraum, Quellenangabe und Abrufzeit. Browser-/Standortfreigabe erfordert HTTPS oder localhost. Bildschirmaufnahme ist keine Funktion oder Voraussetzung von Gravel Outfit.
+Nur beim bewusst ausgelösten Abruf werden auf zwei Nachkommastellen gerundete Koordinaten (etwa Kilometerauflösung) an Open-Meteo übertragen. Keine Cookies oder Zugangsdaten. Die App speichert die gerundeten Abfragekoordinaten zur sichtbaren Standortanzeige, außerdem Wetterwerte, Zeitraum, Quellenangabe und Abrufzeit. Ältere Prognosen ohne Standortangabe müssen einmal neu geladen werden. Browser-/Standortfreigabe erfordert HTTPS oder localhost. Bildschirmaufnahme ist keine Funktion oder Voraussetzung von Gravel Outfit.
 
 ### Grenzen und Offlinebetrieb
 
