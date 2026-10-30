@@ -1,4 +1,4 @@
-# Prüfung Gravel Outfit 0.14.2
+# Prüfung Gravel Outfit 0.15.0
 
 - 174 automatisierte Tests erfolgreich: bestehende Bekleidungs-, Lern-, Daten- und Wettertests sowie 26 neue GPX-/Planungstests.
 - Zusätzlicher DOM-Integrationstest mit der tatsächlichen HTML-/JS-Anwendung und simuliertem IndexedDB: geplantes Datum bleibt nach Darstellungswechsel erhalten; Abruf verwendet den gewählten Zeitpunkt; Standortanzeige; GPX-Import ohne automatischen Upload; Hin-/Rückfahrt mit Aufenthalt; unterschiedliche Fahrtdauern; veraltete Prognose nach Planänderung.
@@ -36,3 +36,9 @@ DOM-Integration der tatsächlichen App-Dateien mit simuliertem IndexedDB erfolgr
 ## Baselayer-Minimum 0.14.2
 
 195 Tests erfolgreich: sieben zusätzliche Fälle für 11→9, 9→11, exakte 10-Grad-Grenze, Zwischenminimum, nicht verfügbare Kurzarm-Basis/Langarmersatz, fehlende Längenangaben mit Warnung, Thermobasis beim Kälteminimum und warme Tour samt unverändertem Zustand. Bestehende 188 Tests einschließlich Lernfunktion und Outfit-Wechselpräferenz bleiben erfolgreich. DOM-Integration mit tatsächlichen App-Dateien erfolgreich. Kein physischer iPhone-Test und keine Änderung gespeicherter Bekleidung oder IndexedDB-Version.
+
+## Explizite Wetterquellen 0.15.0
+
+200 Tests erfolgreich (195 bestehende plus fünf neue Quellenfälle). Geprüft: Quelle mit JSON erhalten, unveränderte GPX, unabhängige Zeitplanung, Routenanforderung ohne Datei, passende Prognosequelle, alte Planung ohne Quellenfeld und ungültige Auswahl. Bestehender Planungstest berücksichtigt die zusätzliche abgeleitete Quellenangabe.
+
+Erweiterter DOM-Test mit tatsächlichen App-Dateien: Route→Standort mit vorhandenem GPX; zusätzlicher Geolocation-Aufruf und Standortprognose; vollständige 270-Minuten-Tour inklusive 60 Minuten Aufenthalt bei 210 Minuten Fahrzeit; JSON-Rundlauf der optionalen Zeitplanmetadaten; Route zurück ohne neuen Dateiimport und ohne Geolocation; Manuell öffnet Eingabe, übernimmt Werte und lässt GPX unverändert. Bestehende Fehler-/Offline-, Bewertungs-, Navigations- und Planungsfälle bleiben erfolgreich. Kein physischer iPhone-Test. ZIP und Offline-Dateien geprüft.

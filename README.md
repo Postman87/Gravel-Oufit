@@ -1,4 +1,4 @@
-# Gravel Outfit 0.14.2
+# Gravel Outfit 0.15.0
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
 
@@ -138,3 +138,13 @@ Die Tourplanung muss weiterhin eine gültige Zeit und Fahrtdauer enthalten; GPX,
 Der Baselayer wird einmal für die gesamte Tour ausgewählt und von Anfang an getragen. Grundlage ist das Minimum aus Start-, End- und gespeicherter Prognose-Minimaltemperatur. Die Excel-Kategorie 6–10 °C verlangt mindestens Kurzarm; vorhandener Kurzarm wird vor Langarm gewählt, ärmellos nicht als gleichwertig gerechnet. Im Kältebereich wird eine verfügbare Thermo-Langarm-Basis bevorzugt. Wärmere Bereiche behalten ihre leichte bzw. ärmellose Basis. Intensität und persönliches Learning beeinflussen weiterhin Wärme und Schichten; sie stufen die vorgegebene Mindestbedeckung nicht auf ärmellos zurück.
 
 Vorhandene Alternativen bleiben erlaubt: Langarm als Ersatz für Kurzarm; bei fehlender Thermobasis lange nichtthermische Basis; unbekannte Ärmel oder ärmellos nur als gekennzeichnet eingeschränkter Ersatz. Die Daten werden nicht automatisch ergänzt. Ist die Länge nicht hinterlegt, muss sie im Kleiderschrank geprüft werden. Ein Midlayer oder eine Weste ersetzt diese Mindestanforderung an die Basis nicht. Keine zweite Basis zum späteren Wechseln im Gepäck, keine Änderung der eigenen manuellen Auswahl.
+
+## Wetterquelle ausdrücklich wählen · 0.15.0
+
+In der kompakten Tourübersicht und in der Planung steht eine gespeicherte Auswahl Standort / Route / Manuell. Standort verwendet Geolocation auch bei geladener GPX. Route verwendet die vorhandene GPX und fragt keinen Gerätestandort ab. Manuell öffnet die eigenen Wetterwerte ohne Wetter-/Standortabfrage. Bei fehlender Route wird zur GPX-Auswahl aufgefordert. Nach einem Import wird Route ausgewählt; die anderen Quellen lassen die GPX und deren Eigenschaften unverändert gespeichert.
+
+Der Quellenwechsel allein startet keinen Abruf und überschreibt keine Wetterwerte. Bisherige Prognosen werden als nicht passend markiert und dürfen bis zur Aktualisierung bzw. bewussten manuellen Übernahme nicht als passende Wetterdaten für einen Fahrtstart verwendet werden. Nach manueller Übernahme lautet die Quelle Eigene Eingabe. Standort und Route werden erst über Wetter aktualisieren geladen. Die Auswahl überlebt Neuladen, Darstellungswechsel und JSON-Export/Import. Alte Planungen werden anhand ihrer bisherigen Prognose bzw. gespeicherten Route vorbelegt, ohne Umschreibung.
+
+Die Tourplanung ist unabhängig von der Wetterquelle: Eine gespeicherte GPX mit Hin-/Rückfahrt und Aufenthalt liefert weiter die vollständige Zeitspanne. Bei Standortwetter wird diese ganze Zeitspanne ausschließlich am Gerätestandort abgefragt, die Route liefert keine anderen Wetterorte. Hierzu dient ein optionales journey-Feld in der Prognose; die Fahrzeit bleibt ohne Aufenthalt gespeichert. Bei Route dagegen werden weiterhin Wetterstützpunkte entlang der Strecke abgefragt. Beim Wechsel auf Manuell bleibt die Zeitplanung ebenfalls erhalten; es gibt keine automatische Prognose.
+
+Die IndexedDB-Version bleibt unverändert. Neue optionale Felder werden validiert; alte Sicherungen bleiben lesbar. Keine neuen Frameworks, kein automatisches Veröffentlichen.
