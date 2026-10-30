@@ -1,4 +1,4 @@
-# Gravel Outfit 0.14.1
+# Gravel Outfit 0.14.2
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
 
@@ -132,3 +132,9 @@ In der Tourübersicht öffnet „Wetter selbst eingeben“ direkt die Planungsan
 Nach einem fehlgeschlagenen automatischen Abruf erscheint zusätzlich „Wetter stattdessen selbst eingeben“. Bis zur bewussten Übernahme bleiben die gespeicherten Wetterwerte erhalten. Beim Übernehmen wird eine bisherige automatische Prognose ausdrücklich abgelöst, selbst wenn dieselben Temperaturen gewählt werden. Die Wetterquelle lautet danach Eigene Eingabe. Kein erfundener Zwischenverlauf oder Standortbezug. Zeitbezogenes Learning verwendet dann die gespeicherten manuellen Werte.
 
 Die Tourplanung muss weiterhin eine gültige Zeit und Fahrtdauer enthalten; GPX, Kleidung, Intensität und Einstellungen bleiben erhalten. Zurück zum Outfit ohne Übernahme speichert keine manuellen Änderungen. Ein späterer erfolgreicher Wetterabruf kann wieder auf automatische Daten umstellen.
+
+## Baselayer nach niedrigster Tourtemperatur · 0.14.2
+
+Der Baselayer wird einmal für die gesamte Tour ausgewählt und von Anfang an getragen. Grundlage ist das Minimum aus Start-, End- und gespeicherter Prognose-Minimaltemperatur. Die Excel-Kategorie 6–10 °C verlangt mindestens Kurzarm; vorhandener Kurzarm wird vor Langarm gewählt, ärmellos nicht als gleichwertig gerechnet. Im Kältebereich wird eine verfügbare Thermo-Langarm-Basis bevorzugt. Wärmere Bereiche behalten ihre leichte bzw. ärmellose Basis. Intensität und persönliches Learning beeinflussen weiterhin Wärme und Schichten; sie stufen die vorgegebene Mindestbedeckung nicht auf ärmellos zurück.
+
+Vorhandene Alternativen bleiben erlaubt: Langarm als Ersatz für Kurzarm; bei fehlender Thermobasis lange nichtthermische Basis; unbekannte Ärmel oder ärmellos nur als gekennzeichnet eingeschränkter Ersatz. Die Daten werden nicht automatisch ergänzt. Ist die Länge nicht hinterlegt, muss sie im Kleiderschrank geprüft werden. Ein Midlayer oder eine Weste ersetzt diese Mindestanforderung an die Basis nicht. Keine zweite Basis zum späteren Wechseln im Gepäck, keine Änderung der eigenen manuellen Auswahl.

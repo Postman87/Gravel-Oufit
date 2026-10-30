@@ -1,4 +1,4 @@
-# Prüfung Gravel Outfit 0.14.1
+# Prüfung Gravel Outfit 0.14.2
 
 - 174 automatisierte Tests erfolgreich: bestehende Bekleidungs-, Lern-, Daten- und Wettertests sowie 26 neue GPX-/Planungstests.
 - Zusätzlicher DOM-Integrationstest mit der tatsächlichen HTML-/JS-Anwendung und simuliertem IndexedDB: geplantes Datum bleibt nach Darstellungswechsel erhalten; Abruf verwendet den gewählten Zeitpunkt; Standortanzeige; GPX-Import ohne automatischen Upload; Hin-/Rückfahrt mit Aufenthalt; unterschiedliche Fahrtdauern; veraltete Prognose nach Planänderung.
@@ -32,3 +32,7 @@ DOM-Integration der tatsächlichen App-Dateien mit simuliertem IndexedDB erfolgr
 ## Manuelles Wetter 0.14.1
 
 188 Regressionstests erfolgreich. Erweiterter DOM-Integrationstest mit den tatsächlichen App-Dateien: fehlgeschlagener GPX-Wetterabruf erhält die vorherige Prognose; manueller Einstieg öffnet und fokussiert Temperaturfelder; explizite Übernahme auch unveränderter Werte entfernt die automatische Quellenzuordnung; Rückkehr zur Outfitübersicht; offline 12→10 °C mit manuellem Wind/Regen gespeichert; GPX und Kleidungsdaten unverändert. Bisherige DOM-Fälle einschließlich Tourstart und zeitbezogener Bewertung bleiben erfolgreich. Keine Datenmigration; kein physischer iPhone-Test. Vollständiges ZIP und Offline-Dateiliste geprüft.
+
+## Baselayer-Minimum 0.14.2
+
+195 Tests erfolgreich: sieben zusätzliche Fälle für 11→9, 9→11, exakte 10-Grad-Grenze, Zwischenminimum, nicht verfügbare Kurzarm-Basis/Langarmersatz, fehlende Längenangaben mit Warnung, Thermobasis beim Kälteminimum und warme Tour samt unverändertem Zustand. Bestehende 188 Tests einschließlich Lernfunktion und Outfit-Wechselpräferenz bleiben erfolgreich. DOM-Integration mit tatsächlichen App-Dateien erfolgreich. Kein physischer iPhone-Test und keine Änderung gespeicherter Bekleidung oder IndexedDB-Version.
