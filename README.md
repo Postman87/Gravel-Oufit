@@ -1,6 +1,32 @@
-# Gravel Outfit 0.10.0
+# Gravel Outfit 0.11.0
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
+
+## Automatisches Wetter und Zeitplanung · 0.11.0
+
+Unter Outfit zuerst die **Fahrtdauer in Minuten** einstellen (15–720 Minuten, Schritte von 5 Minuten), Tourstart **Jetzt** oder **Datum und Uhrzeit planen** wählen und **Standort verwenden & Wetter laden** antippen. Standortfreigabe im Browser erlauben. Der Abruf aktualisiert Temperaturen und Empfehlung; Intensität, Kälteempfinden und optionale Schutzwahl bleiben erhalten. Es gibt keine automatische Standortabfrage beim Öffnen der App.
+
+Für Jetzt wird ein aktueller Modellwert für den Tourstart verwendet, soweit frisch verfügbar. Endtemperatur und geplante Starts stammen aus der Stundenprognose; Zwischenzeiten werden interpoliert, alle Temperaturen in ganzen Celsiusgraden angezeigt. Exakte Start-/Endzeit, Abrufzeit, Quelle, Wind/Böen, zeitanteiliger Niederschlag, Wahrscheinlichkeit und Temperaturverlauf stehen in der Wetterkarte. Planung ist bis sechs Tage im Voraus möglich, sofern die gesamte Tour durch die Prognose abgedeckt ist. Zeitangaben und Datumsfeld verwenden ausdrücklich die Gerätezeitzone; API-Zeitpunkte werden als absolute UTC-Zeitpunkte verarbeitet.
+
+Die Empfehlung betrachtet Startbedingungen getrennt vom späteren Schutzbedarf. Wind und Niederschlag während der Tour können zusätzliche Mitnahme auslösen. Ein versehentlicher Fahrtstart jetzt mit einer deutlich später geplanten Prognose wird abgefangen; die Planung muss dafür aktualisiert oder bewusst auf manuelle Werte umgestellt werden. Ein Kälteeinbruch zwischen Start und Ende wird für die spätere Schutzkombination berücksichtigt und ausdrücklich erklärt; die tatsächliche erwartete Endtemperatur wird nicht durch einen Minimalwert überschrieben. Bei einer einfach wärmer werdenden Tour bleibt die Endkombination reduzierbar.
+
+### Quelle und Standort
+
+**[Open-Meteo Forecast API](https://open-meteo.com/en/docs), automatische Best-Match-Modellwahl**, Daten unter [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Es handelt sich um Modellwerte am aktuellen Standort, keine Messung einer Wetterstation und keine Wettervorhersage entlang einer Route. Die freie API ist für diese private, nicht kommerzielle Anwendung vorgesehen; [Nutzungsbedingungen und Datenschutz](https://open-meteo.com/en/terms). Die Attribution in der App bleibt auch bei gespeicherten Prognosen sichtbar.
+
+Nur beim bewusst ausgelösten Abruf werden auf zwei Nachkommastellen gerundete Koordinaten (etwa Kilometerauflösung) an Open-Meteo übertragen. Keine Cookies oder Zugangsdaten. Die App speichert keine Standortkoordinaten, sondern lediglich Wetterwerte, Zeitraum, Quellenangabe und Abrufzeit. Browser-/Standortfreigabe erfordert HTTPS oder localhost. Bildschirmaufnahme ist keine Funktion oder Voraussetzung von Gravel Outfit.
+
+### Grenzen und Offlinebetrieb
+
+Neue Wetterdaten benötigen Internet. Bei abgelehntem Standortzugriff, Netzwerkfehlern, Zeitüberschreitung, unvollständigen Daten oder nicht abgedeckter Planung bleiben bisherige Werte erhalten. Letzte Prognose und manuelle Bedienung stehen weiter zur Verfügung; ältere oder offline verwendete Prognosen werden gekennzeichnet. Eine manuelle Änderung an Temperatur, Wind oder Niederschlag löst die automatische Quellenzuordnung ab. Änderungen der Dauer bzw. Startplanung verlangen erneuten Abruf oder bewusste Übernahme manueller Werte vor dem Fahrtstart. Überholte parallele Abfragen dürfen neuere Eingaben nicht überschreiben.
+
+Windklassen entsprechen der bisherigen Auswahl: bis 15, über 15 bis 30 und über 30 km/h, stärkster erwarteter Mittelwind der Tour. Böen werden zusätzlich angezeigt. Niederschlag: trocken ohne relevante Menge/Wahrscheinlichkeit; Schauer bei mindestens 0,1 mm in einer betroffenen Prognosestunde oder mindestens 40 % Wahrscheinlichkeit; Dauerregen als grobe Modellableitung nur bei mindestens einer Stunde Tourdauer und mindestens zwei durchgehend nassen Prognosestunden. Niederschlagsmengen werden für angebrochene Stunden zeitanteilig summiert. Dies sind transparente Eingangsregeln für die Kleiderwahl, keine garantierte Wetterklassifikation.
+
+Bestehende Kleidungsstücke, Zonenfeedback, Lernen und JSON-Sicherungen bleiben erhalten. Datenbankversion 6 / Format 7 bleiben bestehen; Wetter-/Planungsmetadaten sind optional und werden bei Import geprüft. Alte unberührte Zwischenwerte werden nicht automatisch gerundet oder zurückgesetzt. Automatisch geladene Werte außerhalb der neuen Reglerspanne werden sichtbar mit ihrem tatsächlichen Ganzzahlwert erhalten; extremere Werte außerhalb des vom Datenmodell unterstützten Bereichs werden nicht übernommen.
+
+### Prüfung
+
+148 automatisierte Tests: `node --test tests/*.test.cjs`. Manueller Live-Integrationstest mit öffentlichen Berliner Koordinaten: `tests/weather-browser.html`. Dieser Test fragt absichtlich nicht den Gerätestandort ab und kann einen klar bezeichneten synthetischen Testbestand herunterladen. Nur in einem getrennten Testspeicher importieren.
 
 ## Bewertung und Lernen nach Körperzonen · 0.10.0
 
@@ -57,4 +83,4 @@ Nach einem Update alle alten App-Tabs bzw. die installierte PWA vollständig sch
 
 ## Projektdateien
 
-Laufzeit: `index.html`, `style.css`, `app.js`, `core.js`, `excel-rules.js`, `data/excel-source.json`, Manifest, Icons, `sw.js`, `version.json`. Bestehende ältere Verzeichnisse bleiben im vollständigen Paket erhalten. Die ursprüngliche Excel-Datei wurde nicht geändert und wird nicht zusätzlich veröffentlicht. Kein Wetterdienst, keine Cloud und keine externen Laufzeitabhängigkeiten.
+Laufzeit: `index.html`, `style.css`, `app.js`, `core.js`, `excel-rules.js`, `data/excel-source.json`, Manifest, Icons, `sw.js`, `version.json`. Bestehende ältere Verzeichnisse bleiben im vollständigen Paket erhalten. Die ursprüngliche Excel-Datei wurde nicht geändert und wird nicht zusätzlich veröffentlicht. Optionaler Wetterabruf von Open-Meteo; keine Cloud-Synchronisierung und keine externen JavaScript-Abhängigkeiten.
