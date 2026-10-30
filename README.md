@@ -1,8 +1,8 @@
-# Gravel Outfit 0.17.3
+# Gravel Outfit 0.17.4
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
 
-## Kleiderschrankliste und aktueller Standort · 0.17.3
+## Kleiderschrankliste und aktueller Standort · 0.17.4
 
 Im Kleiderschrank erscheinen zunächst nur kompakte Zeilen mit Kleidungsname und Verfügbarkeit. Antippen öffnet die Details nach unten. Eigener Temperaturbereich, Schutzeigenschaften, Notizen, Bearbeiten, vollständige Eigenschaften, Archivierung und Pflegehistorie bleiben dort erreichbar. Geöffnete Zeilen bleiben bei Bearbeitung und Pflegeeinträgen offen; Suche und Filter bleiben erhalten. Kleidungsdaten werden durch die neue Darstellung nicht umgeschrieben.
 
@@ -227,8 +227,11 @@ Nach dem Übernehmen der Dateien alle Gravel-Outfit-Tabs und die installierte Ap
 
 Unter der Empfehlung ist Baselayer-Auswahl prüfen aufklappbar: tatsächlicher Berechnungsstand, Temperaturminimum, Anforderung, automatisch gewähltes Teil und gespeicherte Längen/Verfügbarkeit aller Basisschichten. Dies unterscheidet gespeicherte Daten, Ersatzlösung und Eigene Auswahl. Die automatische Auswahl überschreibt keine manuell zusammengestellte Kombination. Die Regel des Baselayer-Minimums selbst wird nicht abgeschwächt oder durch Namenserkennung ersetzt.
 
-## Zip-off-Prüfung 0.17.3
+## Zip-off-Prüfung 0.17.4
 Ärmel und Hosenbeine werden anhand der Art unterschieden. Bei warmem Start wird die kurze Variante nicht allein zur Vermeidung eines späteren Zip-off-Wechsels durch die lange verdrängt. Versionswechsel aktualisiert den Offline-Stand. Keine Änderung am Datenbankschema.
 
 ## Bezeichnung
 Das Modell ersetzt das separate Namensfeld und ist beim Anlegen erforderlich. Alte Bezeichnungen ohne Modell werden automatisch übernommen.
+
+## Surfblue und Schwarz (0.17.4)
+Farbgebung visuell angelehnt an https://www.cube.eu/de-en/cube-nuroad-c-62-ex-surfblue-n-black/1136300 . Annäherung, keine offizielle CUBE-Farbdefinition: Surfblue #82adbb, Anthrazit #111719. Angepasste Hell-/Dunkelansichten, Regler, Schaltflächen und App-Icons. Semantische Grün-/Gelb-/Rotanzeigen bleiben getrennt.

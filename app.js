@@ -1,6 +1,6 @@
 'use strict';
 const W=GravelWeather,R=GravelRoute,P=GravelPlanning,G=Gravel,$=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const APP_VERSION='0.17.3';if(G.version!==APP_VERSION){const message=$('#message');message.textContent='Die Programmdateien stammen aus unterschiedlichen Versionen. Bitte alle Gravel-Outfit-Fenster schließen und die App bei bestehender Internetverbindung erneut öffnen. Deine gespeicherten Daten bleiben erhalten.';throw Error('Versionskonflikt: App '+APP_VERSION+', Bekleidungslogik '+(G.version||'älter'));}
+const APP_VERSION='0.17.4';if(G.version!==APP_VERSION){const message=$('#message');message.textContent='Die Programmdateien stammen aus unterschiedlichen Versionen. Bitte alle Gravel-Outfit-Fenster schließen und die App bei bestehender Internetverbindung erneut öffnen. Deine gespeicherten Daten bleiben erhalten.';throw Error('Versionskonflikt: App '+APP_VERSION+', Bekleidungslogik '+(G.version||'älter'));}
 let forecastLoading=false,forecastSequence=0,forecastController=null,routeImportSequence=0;
 let historyUI;let db,state,busy=false,queue=Promise.resolve(),editSession=0;
 const statusNames={available:'Verfügbar',laundry:'In Wäsche',unavailable:'Nicht verfügbar'};
