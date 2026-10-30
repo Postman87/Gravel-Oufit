@@ -1,4 +1,4 @@
-# Prüfung Gravel Outfit 0.13.1
+# Prüfung Gravel Outfit 0.14.0
 
 - 174 automatisierte Tests erfolgreich: bestehende Bekleidungs-, Lern-, Daten- und Wettertests sowie 26 neue GPX-/Planungstests.
 - Zusätzlicher DOM-Integrationstest mit der tatsächlichen HTML-/JS-Anwendung und simuliertem IndexedDB: geplantes Datum bleibt nach Darstellungswechsel erhalten; Abruf verwendet den gewählten Zeitpunkt; Standortanzeige; GPX-Import ohne automatischen Upload; Hin-/Rückfahrt mit Aufenthalt; unterschiedliche Fahrtdauern; veraltete Prognose nach Planänderung.
@@ -22,3 +22,9 @@ Zusätzlich geprüft: Tourstart über die feste Leiste, Umschalten zur laufenden
 ## Zeitbezogene Rückmeldung 0.13.1
 
 181 Tests erfolgreich: sieben neue Fälle für zeitliche Lerntrennung, Zonen, Genau richtig, Datenerhalt/JSON, ungültige Zeiträume, zeitgewichtete Prognose mit Zwischenkälte sowie Lernvergleich nach Abschnittstemperatur. DOM-Integration: Zeitraum bei Kritik sichtbar und verpflichtend, Zonenbewertung, Tourabschluss, Speicherung und Historienanzeige. Bisherige 174 Tests bleiben erfolgreich. Keine Datenbankmigration. Kein physischer iPhone-Test.
+
+## Durchgehende Kombination 0.14.0
+
+188 Tests erfolgreich. Sieben neue Tests: 12→10 ohne Gepäck/Variantenwechsel, 12→9 ohne starre Drei-Grad-Auslösung, 18/25→7 mit Ergänzung, Verfügbarkeit und explizite Keine-Auswahl, späterer Regen, warmes Zwischenmaximum, zeitbezogenes Start-Learning. Zwei alte Erwartungen angepasst: 11→7 muss keinen Wechsel mehr erzwingen; die Lupra-Matrix prüft unverändert notwendige Schutzabdeckung, erlaubt jetzt sinnvolles Durchtragen über Temperaturgrenzen. Alle 1497 Matrixszenarien werden weiter geprüft.
+
+DOM-Integration der tatsächlichen App-Dateien mit simuliertem IndexedDB erfolgreich: Planung, Wetter/GPX, feste Leiste, Tourstart, Rückmeldung mit Zeitraum und Zonen, Historie und Navigation. Kein physischer iPhone-Test. Datenbank-/Schema-Versionen unverändert. ZIP byteweise mit Quelldateien abgeglichen und Offline-Dateien vorhanden.
