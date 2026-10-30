@@ -1,4 +1,4 @@
-# Gravel Outfit 0.13.1
+# Gravel Outfit 0.14.0
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
 
@@ -111,4 +111,16 @@ Bei Zu warm / Zu kalt ist der Zeitraum verpflichtend: Am Start, Am Ende oder Ges
 
 Für das Learning wird aus dem gespeicherten Prognoseverlauf die zeitgewichtete Durchschnittstemperatur des bewerteten Abschnitts berechnet; Zwischenkälte fließt somit nur bei zeitlicher Überlappung ein. Startbewertungen beeinflussen nur Start-, Endbewertungen nur Endempfehlungen, Gesamtbewertungen beide. Neue Bewertungen werden außerdem nach vergleichbarer Wind-/Regenklasse gefiltert. GPX-Verlauf liefert punktbezogene Wind-/Regenwerte; bei reinen Standortprognosen stehen nur Start- und Gesamtwerte zur Verfügung, die spätere Einordnung bleibt entsprechend konservativ. Ohne Prognose gelten manuelle Start-/Endwerte; für die gesamte Tour deren Mittelwert und Spannweite. Es sind Prognosen, keine gemessenen Bedingungen. Die tatsächliche Pause und das tatsächliche Tempo können abweichen.
 
-Alle neuen Felder sind optional. Alte Bewertungen werden weder umgeschrieben noch gelöscht und behalten ihre bisherige Lernwirkung. Die besprochene Optimierung auf ein durchgehend getragenes Outfit ist mit dieser Änderung noch nicht umgesetzt.
+Alle neuen Felder sind optional. Alte Bewertungen werden weder umgeschrieben noch gelöscht und behalten ihre bisherige Lernwirkung. Die Optimierung auf möglichst durchgehend getragene Kleidung ist ab Version 0.14.0 umgesetzt.
+
+## Möglichst ohne Kleidungswechsel · 0.14.0
+
+Nach der bisherigen Start-/Später-Planung prüft die App für Oberkörper und Beine durchgehend tragbare Alternativen. Sie bevorzugt eine gemeinsame Kombination, wenn deren Schutzlücken weder am Start noch später größer sind, sie legal geschichtet ist und am wärmsten prognostizierten Abschnitt nur mäßige zusätzliche Wärme verursacht. Kleidungswechsel, Mitnahme und Zip-off-Umstellungen erhalten ein zusätzliches Modellgewicht. Die Excel-Kategorien bleiben fachliche Ausgangswerte und Diagnose; ihre Stufensprünge erzwingen bei dieser Komfortentscheidung keinen Wechsel. Rote Ersatzbewertungen werden nicht aufgewertet.
+
+Modellgrenzen: maximal 0,9 zusätzliche Wärme-Modellpunkte und sechs zusätzliche physische Kostenpunkte gegenüber dem bisherigen Outfit am wärmsten Abschnitt. Übergangskosten betragen fünf Punkte je zusätzlichem/abgelegtem Teil oder Variantenwechsel. Neue Schutzhosen/-jacken werden bei zunehmendem Regen/Wind oder gefühlten Temperaturen über 14 °C nicht allein zur Wechselvermeidung vorgezogen. Das sind abstimmbare Modellwerte, keine physiologischen Messgrößen.
+
+Extras werden je Körperzone geprüft. Später nötige Teile können sofort getragen werden, wenn die gefühlte Höchsttemperatur höchstens drei Grad über der jeweiligen Modell-Komfortgrenze liegt, die Wärmedifferenz begrenzt ist und kein erst später einsetzender Wind/Regen die Ursache ist. Diese Komfortgrenze bezieht sich auf die jeweilige Zone, nicht auf einen pauschalen Unterschied zwischen Start und Ende. Explizite Keine-Auswahl bleibt erhalten.
+
+Beispiel mit unverändertem Excel-Bestand, trocken und wenig Wind: 12 → 10 °C ergibt eine gemeinsame Kombination ohne zusätzliche Mitnahme oder Zip-off-Umstellung; 12 → 9 °C löst ebenfalls nicht pauschal Gepäck aus. Bei 18 → 7 °C bzw. 25 → 7 °C bleiben Ergänzungen vorgesehen. Wind-/Regenschutz und fehlende Ausstattung bleiben separat sichtbar. Die endgültige Auswahl hängt vom eigenen aktiven Bestand und dem persönlichen Learning ab.
+
+Lernen bleibt aktiv: zeitbezogene Rückmeldungen ändern weiterhin Wärmebedarf und Komfort je Körperzone. Eine Startbewertung Zu warm kann eine zuvor akzeptierte Zusatzwärme künftig weniger passend machen. Die Präferenz, Wechsel zu vermeiden, bleibt dabei bestehen. Prognoseminimum und -maximum werden berücksichtigt; individuelle Auskühlung während eines Aufenthalts ist weiterhin nicht modelliert. Eigene Auswahl wird nicht automatisch umgestellt.
