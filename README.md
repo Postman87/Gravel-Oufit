@@ -1,6 +1,16 @@
-# Gravel Outfit 0.17.0
+# Gravel Outfit 0.17.1
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
+
+## Kleiderschrankliste und aktueller Standort · 0.17.1
+
+Im Kleiderschrank erscheinen zunächst nur kompakte Zeilen mit Kleidungsname und Verfügbarkeit. Antippen öffnet die Details nach unten. Eigener Temperaturbereich, Schutzeigenschaften, Notizen, Bearbeiten, vollständige Eigenschaften, Archivierung und Pflegehistorie bleiben dort erreichbar. Geöffnete Zeilen bleiben bei Bearbeitung und Pflegeeinträgen offen; Suche und Filter bleiben erhalten. Kleidungsdaten werden durch die neue Darstellung nicht umgeschrieben.
+
+Wetter aktualisieren auf der Startseite bedeutet jetzt ausdrücklich: den aktuellen Gerätestandort erneut bestimmen und dafür Wetter laden, auch nach GPX- oder manueller Planung. Der Standortcache wird für diesen expliziten Abruf nicht verwendet (maximumAge 0). Die gespeicherte GPX bleibt erhalten; Startzeit, Dauer und gegebenenfalls die Hin-/Rückfahrt-/Aufenthaltsplanung bleiben bestehen. Die Quelle wechselt auf Standort. Für Streckenwetter weiterhin Tour planen → GPX-Planung → Speichern verwenden. Bei verweigerter Standortfreigabe oder Netzwerkfehlern bleiben die letzten Wetterwerte erhalten und werden nicht als neuer Abruf ausgegeben.
+
+Der Rückwechsel in der Planung heißt Aktueller Standort. Der zusätzliche untere Manuelles Wetter verwenden-Knopf ist vollständig entfernt; manuelle Eingabe erfolgt über den oberen Einstieg. Der lange Hinweis beim bloßen Öffnen der GPX-Planung entfällt. Erst beim Speichern ohne erforderliche Datei erscheint eine kurze Aufforderung, damit keine ungültige Planung angewendet wird. Die Dateiauswahl erhält einheitlichen Abstand zum davorliegenden Standortknopf und zu weiteren Elementen.
+
+Die folgenden Abschnitte dokumentieren frühere Stände; bei Standortaktualisierung und Kleiderschrank gilt die Beschreibung oben.
 
 ## Kompakte Tourplanung und Startseite · 0.17.0
 

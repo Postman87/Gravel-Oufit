@@ -1,6 +1,12 @@
-# Prüfung Gravel Outfit 0.17.0
+# Prüfung Gravel Outfit 0.17.1
 
-## Aktueller Stand 0.17.0
+## Aktueller Stand 0.17.1
+
+236 Tests erfolgreich (235 bisherige plus Test für frische Standortanforderung maximumAge 0 gegenüber dem bisherigen Standortcache). Erweiterter DOM-Test: Home-Abruf nach GPX/Manuell fordert erneut Geolocation an, zeigt geänderte Testkoordinaten, wechselt auf Standort und behält die GPX; Fehler lässt Wetter unverändert. Kein unterer manueller Knopf; neuer Standorttext; kein langer GPX-Hinweis beim Öffnen. Kleiderschrank zeigt geschlossene Details-Zeilen, öffnet nach unten und behält die Zeile nach Bearbeiten/Pflege offen. Vollständige Eigenschaften, Archiv/Wiederherstellen, Filter und alle IDs geprüft. Bisheriger Tour-/Learning-/Retro-/Wetter-/Lösch-DOM-Test weiterhin erfolgreich.
+
+Sichtbarer Browser im festen iPhone-Rahmen: kompakte Liste und nach unten geöffnete Eigenschaften geprüft. Dokument-/Inhaltsbreite jeweils 402 Pixel. Neue UI nicht auf einem physischen iPhone geprüft. Vollständiges ZIP und Offline-Einträge abgeglichen; keine Datenmigration oder Änderung der Bekleidungslogik.
+
+## Bisheriger Stand 0.17.0
 
 235 automatisierte Tests erfolgreich (231 bestehende plus vier Viertelstunden-/Kalenderfälle). Geprüft: 96 neue Uhrzeitoptionen, unveränderte frühere Uhrzeit, Viertelstundenvorschlag über Mitternacht und vollständige Datums-/Uhrzeitangaben. PWA-Versions-/Offline-Test um das neue UI-Hilfsmodul erweitert.
 
