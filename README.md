@@ -1,4 +1,4 @@
-# Gravel Outfit 0.15.0
+# Gravel Outfit 0.15.1
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
 
@@ -148,3 +148,13 @@ Der Quellenwechsel allein startet keinen Abruf und überschreibt keine Wetterwer
 Die Tourplanung ist unabhängig von der Wetterquelle: Eine gespeicherte GPX mit Hin-/Rückfahrt und Aufenthalt liefert weiter die vollständige Zeitspanne. Bei Standortwetter wird diese ganze Zeitspanne ausschließlich am Gerätestandort abgefragt, die Route liefert keine anderen Wetterorte. Hierzu dient ein optionales journey-Feld in der Prognose; die Fahrzeit bleibt ohne Aufenthalt gespeichert. Bei Route dagegen werden weiterhin Wetterstützpunkte entlang der Strecke abgefragt. Beim Wechsel auf Manuell bleibt die Zeitplanung ebenfalls erhalten; es gibt keine automatische Prognose.
 
 Die IndexedDB-Version bleibt unverändert. Neue optionale Felder werden validiert; alte Sicherungen bleiben lesbar. Keine neuen Frameworks, kein automatisches Veröffentlichen.
+
+## Konsistenter Update-Stand und Baselayer-Prüfung · 0.15.1
+
+Der gemeldete Fall Pro-Function / Dünnes Baselayer / Kurzarm / verfügbar / 0–10 °C wird mit Tourstart 11 °C und Tourende 8 °C reproduziert. Die aktuelle Berechnung wählt Pro-Function. Die tatsächliche Abweichung auf dem iPhone ließ sich ohne dessen gespeicherten Gesamtzustand und Laufzeitdateien nicht nachweisen. Eine mögliche Ursache ist jedoch im bisherigen Updateverfahren nachweisbar: Navigation lud neue HTML aus dem Netzwerk, während Skripte noch aus einem älteren Offline-Cache stammen konnten. Die HTML-Versionsanzeige allein garantierte deshalb keinen aktuellen Berechnungsstand.
+
+Ab jetzt tragen Skripte und Styles eine feste Versionskennung in der URL; dieselben URLs werden offline vorgeladen. Der Service Worker lädt Navigation aus seinem installierten Cache und Dateien aus genau diesem Versionscache. App und Bekleidungslogik prüfen zusätzlich ihre Versionskennung; bei Abweichung erscheint ein konkreter Updatehinweis statt normal weiterzurechnen. Alte Daten oder IndexedDB-Speicher werden nicht gelöscht.
+
+Nach dem Übernehmen der Dateien alle Gravel-Outfit-Tabs und die installierte App schließen und einmal mit Internetverbindung erneut öffnen, damit ein wartender Service Worker aktiviert wird. Nicht Browserdaten oder Website-Speicher löschen. Eine neue Version wird bei geöffneten älteren Fenstern gegebenenfalls erst nach deren Schließen aktiv.
+
+Unter der Empfehlung ist Baselayer-Auswahl prüfen aufklappbar: tatsächlicher Berechnungsstand, Temperaturminimum, Anforderung, automatisch gewähltes Teil und gespeicherte Längen/Verfügbarkeit aller Basisschichten. Dies unterscheidet gespeicherte Daten, Ersatzlösung und Eigene Auswahl. Die automatische Auswahl überschreibt keine manuell zusammengestellte Kombination. Die Regel des Baselayer-Minimums selbst wird nicht abgeschwächt oder durch Namenserkennung ersetzt.

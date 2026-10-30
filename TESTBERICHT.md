@@ -1,4 +1,4 @@
-# Prüfung Gravel Outfit 0.15.0
+# Prüfung Gravel Outfit 0.15.1
 
 - 174 automatisierte Tests erfolgreich: bestehende Bekleidungs-, Lern-, Daten- und Wettertests sowie 26 neue GPX-/Planungstests.
 - Zusätzlicher DOM-Integrationstest mit der tatsächlichen HTML-/JS-Anwendung und simuliertem IndexedDB: geplantes Datum bleibt nach Darstellungswechsel erhalten; Abruf verwendet den gewählten Zeitpunkt; Standortanzeige; GPX-Import ohne automatischen Upload; Hin-/Rückfahrt mit Aufenthalt; unterschiedliche Fahrtdauern; veraltete Prognose nach Planänderung.
@@ -42,3 +42,9 @@ DOM-Integration der tatsächlichen App-Dateien mit simuliertem IndexedDB erfolgr
 200 Tests erfolgreich (195 bestehende plus fünf neue Quellenfälle). Geprüft: Quelle mit JSON erhalten, unveränderte GPX, unabhängige Zeitplanung, Routenanforderung ohne Datei, passende Prognosequelle, alte Planung ohne Quellenfeld und ungültige Auswahl. Bestehender Planungstest berücksichtigt die zusätzliche abgeleitete Quellenangabe.
 
 Erweiterter DOM-Test mit tatsächlichen App-Dateien: Route→Standort mit vorhandenem GPX; zusätzlicher Geolocation-Aufruf und Standortprognose; vollständige 270-Minuten-Tour inklusive 60 Minuten Aufenthalt bei 210 Minuten Fahrzeit; JSON-Rundlauf der optionalen Zeitplanmetadaten; Route zurück ohne neuen Dateiimport und ohne Geolocation; Manuell öffnet Eingabe, übernimmt Werte und lässt GPX unverändert. Bestehende Fehler-/Offline-, Bewertungs-, Navigations- und Planungsfälle bleiben erfolgreich. Kein physischer iPhone-Test. ZIP und Offline-Dateien geprüft.
+
+## Updatekonsistenz und konkreter Baselayer-Fall 0.15.1
+
+204 Tests erfolgreich. Vier zusätzliche Tests: feste HTML-/Offline-Asset-URLs, zusammengehöriger Cache für Navigation und Logik, reproduzierbares Risiko des alten Netzwerk-HTML/Cache-Skript-Verhaltens und exakter Screenshot-Datensatz. Letzterer prüft Pro-Function Kurzarm 0–10 °C bei 11→8 über alle drei Intensitäten und Kälteempfindlichkeiten. Kein alleiniger Schluss aus dem Kleidungstitel.
+
+Erweiterte DOM-Integration speichert den originalen Pro-Function-Eintrag über den tatsächlichen Editor mit Kurzarm und 0–10 °C, prüft die Auswahl, sichtbaren Berechnungsstand und JSON-Rundlauf. Bisherige Quellen-/Offline-/Tour-/Bewertungsfälle erfolgreich. Die Datei-Konsistenz wurde in einer simulierten Service-Worker-Umgebung geprüft; kein physischer iPhone-/Safari-Test. Die konkrete Ursache auf dem Nutzergerät bleibt ohne dessen vollständige Laufzeitdaten unbestätigt. Vollständiges ZIP und Offline-Dateiliste geprüft.
