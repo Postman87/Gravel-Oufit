@@ -1,6 +1,42 @@
-# Gravel Outfit 0.15.1
+# Gravel Outfit 0.16.0
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
+
+## Aktuelles Verhalten · 0.16.0
+
+### Deine Bereiche und das Learning
+
+Die im Kleiderschrank gespeicherten Unter-/Obergrenzen sind die persönliche Referenz und wirken unmittelbar. Excel bleibt als anfängliche Grobeinteilung und aufklappbare Orientierung erhalten; seine Kategorien bestimmen nicht mehr zwingend ein Kleidungsstück oder eine Temperaturschwelle. Die App aktiviert das neue Modell beim Öffnen, ebenso nach Import alter Sicherungen, ohne Kleidungswerte umzuschreiben. Verfügbarkeit, echte Schichtenfunktionen, Wind-/Nässeschutz und kombinierte Wärme werden getrennt berücksichtigt. Eine Regenjacke wird weiterhin nicht zur Thermojacke. Bei Wärme wird bei vergleichbaren Eigenschaften die kurze Hosenvariante bevorzugt. Die Präferenz für möglichst wenige Kleidungswechsel bleibt bestehen.
+
+Im Editor und unter den Outfitdetails stehen dein Startbereich und die aktuell gelernte Empfehlung getrennt. Das Learning verändert deine eingestellten Werte nicht heimlich. Es berechnet die Anpassung jeweils aus den gespeicherten Erfahrungen neu. Wenn du den Startbereich änderst, bleiben sämtliche Fahrten und Bewertungen erhalten. Der bisherige Korrekturwert wird nicht einfach blind auf die neue Grundlage addiert.
+
+Zusätzlich bleibt der zeitbezogene Körperzonenkomfort für die Wärme-/Bedeckungsbewertung aktiv, auch wenn eine Einzelgrenze noch nicht angepasst werden kann.
+
+Die letzten bis zu 30 zum Kleidungsstück passenden Erfahrungen werden herangezogen: tatsächlich getragen, passende Körperzone, bewerteter Abschnitt, gleiche Intensität sowie vergleichbare Wind-/Regenklassen. Verfügbare Sonneneinstrahlung und Bewölkung trennen unterschiedliche Wettersituationen. Mehrere Kleidungsstücke derselben Zone teilen die Evidenz; ein einziges Teil wird nicht automatisch allein verantwortlich gemacht. Mitgenommene, nicht bestätigte Kleidung wird ausgeschlossen.
+
+Nachträglich ergänzte Wetterdaten zählen mit Gewicht 1, die ursprüngliche Prognose mit 0,5, manuelle Angaben mit 0,25. Ab 1,5 gewichteten übereinstimmenden Erfahrungen kann eine Grenze einen ganzen Grad wandern; maximal drei Grad von deiner aktuellen Grundlage. Wiederholt zu warm nahe der oberen Grenze kann diese beispielsweise von 15 auf 14 °C senken. Wiederholt zu kalt nahe der unteren Grenze kann sie anheben: Das Teil reicht dort offenbar nicht aus und soll nicht einfach für noch kältere Bedingungen als ausreichend gelten. Neuere passende Genau-richtig-Bewertungen begrenzen widersprechende Anpassungen. Die Zahlen sind konservative Modellwerte, keine physiologischen Messwerte. Deaktivieren des Learnings verwendet deine Grundlage unverändert, ohne Historie zu löschen.
+
+### Touren nachtragen und Wetter automatisch ergänzen
+
+Unter Outfit → Letzte Fahrten → Tour nachtragen: Ort suchen und eindeutigen Treffer auswählen oder GPX verwenden, vergangene Startzeit, tatsächliche Dauer, Intensität, wirklich getragene Kleidung/Tragevarianten und Bewertung eingeben. Start/Ende/Gesamte Tour und unabhängige Körperzonen bleiben verfügbar. Der tatsächliche Kleidungsbestand darf auch heute in Wäsche, nicht verfügbar oder archiviert sein. Die Tour wird sofort lokal gespeichert; bis zum Wetterabruf werden keine erfundenen Temperaturen zum Lernen verwendet.
+
+Die nachträgliche Dauer kann minutengenau bis 36 Stunden angegeben werden; die bisherige Vorabplanung bleibt bei 30 Minuten bis sechs Stunden je Fahrt. Für nachgetragene Hin-/Rückfahrten wird die verbleibende Fahrzeit nach Abzug des gewählten Aufenthalts gleich auf Hin- und Rückweg verteilt. Bei vorab geplanten Touren werden die geplanten Zeitverhältnisse auf den tatsächlichen Zeitraum abgebildet. GPX und gleichmäßiges Tempo sind Annahmen, keine aufgezeichnete tatsächliche Bewegung. Für eine genaue Wiedergabe ungeplanter Stopps oder Umwege fehlt weiterhin ein aufgezeichneter Track.
+
+Auch nach regulärem Tourende wird ein Wetterauftrag angelegt. Beim Beenden bestätigst du die getragenen Teile und gegebenenfalls Start/Ende/Gesamte Tour je Teil. Fehlt ein Ort, fragt die App danach; sie verwendet nicht stillschweigend deinen jetzigen Standort. Frühere Touren mit eindeutig gespeichertem Gerätestandort erhalten einen Auftrag. Bei alten Routentouren ohne gespeicherte Geometrie wird ein Ort benötigt; die heute geladene GPX wird nicht ungefragt einer alten Tour zugeordnet.
+
+Wetteraufträge starten automatisch beim Öffnen, nach dem Speichern, bei Rückkehr zur App und wiederhergestellter Verbindung. Fehlgeschlagene Abfragen werden gespeichert und mit Wartezeiten erneut versucht. Kleine Pakete von höchstens fünf Touren und Wartezeit zwischen Paketen begrenzen die Abrufe; in unterstützten Browsern verhindert eine gemeinsame Sperre parallele Abgleiche. Die App muss dafür geöffnet und online sein. Eine vollständig geschlossene iPhone-PWA kann nicht zuverlässig selbst aufwachen. Die Erfassung und bisherige Daten bleiben offline nutzbar; eine neue Ortssuche benötigt Internet. Bekannte GPX-Strecken können offline erfasst werden.
+
+### Quelle, Datenschutz und Genauigkeit
+
+Open-Meteo liefert Temperatur, Wind, Regen, Bewölkung und kurzwellige Sonneneinstrahlung. Für die letzten Tage wird die Forecast API mit vergangenen Tagen verwendet (archiviertes Modellwetter), ab sieben Tagen die Historical Weather API mit ERA5-Reanalyse. Das sind Modellwerte bzw. Reanalysen, keine exakten Messungen am Fahrrad oder Gewissheit über Schatten auf der Strecke. Die App behauptet daher keine sichere Ursache für dein Wärmeempfinden. Quelle, Datenart und Abrufzeit werden angezeigt. Die ursprüngliche Prognose bleibt getrennt von der nachträglichen Ergänzung erhalten.
+
+Es werden ausgewählte Ortsnamen zur Open-Meteo-Ortssuche und auf zwei Dezimalstellen gerundete Koordinaten zur Wetterabfrage übertragen. GPX-Dateien, Kleidungsstücke, Notizen und Bewertungen werden nicht an den Wetteranbieter gesendet. Bei GPX werden bis zu acht räumliche Stützpunkte verwendet; Rückweg und Aufenthalt werden zeitlich zusätzlich abgebildet. Touren und Wetteraufträge bleiben lokal und sind in der JSON-Sicherung enthalten. Die IndexedDB-Version bleibt 6, das bisherige Datenschema 7; neue Felder sind optional und validiert.
+
+Quellen: [Forecast API](https://open-meteo.com/en/docs), [Historical Weather API](https://open-meteo.com/en/docs/historical-weather-api), [Ortssuche](https://open-meteo.com/en/docs/geocoding-api), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), [beschränkte Hintergrundsynchronisierung](https://developer.mozilla.org/en-US/docs/Web/API/Web_Periodic_Background_Synchronization_API).
+
+## Frühere Versionsnotizen
+
+Die folgenden Abschnitte beschreiben frühere Entwicklungsstände. Für Temperaturprioritäten und Learning gilt der aktuelle Abschnitt oben.
 
 ## Kompakte Startseite · 0.13.0
 
