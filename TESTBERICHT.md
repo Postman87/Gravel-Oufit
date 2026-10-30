@@ -1,6 +1,6 @@
-# Prüfung Gravel Outfit 0.17.1
+# Prüfung Gravel Outfit 0.17.2
 
-## Aktueller Stand 0.17.1
+## Aktueller Stand 0.17.2
 
 236 Tests erfolgreich (235 bisherige plus Test für frische Standortanforderung maximumAge 0 gegenüber dem bisherigen Standortcache). Erweiterter DOM-Test: Home-Abruf nach GPX/Manuell fordert erneut Geolocation an, zeigt geänderte Testkoordinaten, wechselt auf Standort und behält die GPX; Fehler lässt Wetter unverändert. Kein unterer manueller Knopf; neuer Standorttext; kein langer GPX-Hinweis beim Öffnen. Kleiderschrank zeigt geschlossene Details-Zeilen, öffnet nach unten und behält die Zeile nach Bearbeiten/Pflege offen. Vollständige Eigenschaften, Archiv/Wiederherstellen, Filter und alle IDs geprüft. Bisheriger Tour-/Learning-/Retro-/Wetter-/Lösch-DOM-Test weiterhin erfolgreich.
 
@@ -85,3 +85,11 @@ Erweiterter DOM-Test mit tatsächlichen App-Dateien: Route→Standort mit vorhan
 204 Tests erfolgreich. Vier zusätzliche Tests: feste HTML-/Offline-Asset-URLs, zusammengehöriger Cache für Navigation und Logik, reproduzierbares Risiko des alten Netzwerk-HTML/Cache-Skript-Verhaltens und exakter Screenshot-Datensatz. Letzterer prüft Pro-Function Kurzarm 0–10 °C bei 11→8 über alle drei Intensitäten und Kälteempfindlichkeiten. Kein alleiniger Schluss aus dem Kleidungstitel.
 
 Erweiterte DOM-Integration speichert den originalen Pro-Function-Eintrag über den tatsächlichen Editor mit Kurzarm und 0–10 °C, prüft die Auswahl, sichtbaren Berechnungsstand und JSON-Rundlauf. Bisherige Quellen-/Offline-/Tour-/Bewertungsfälle erfolgreich. Die Datei-Konsistenz wurde in einer simulierten Service-Worker-Umgebung geprüft; kein physischer iPhone-/Safari-Test. Die konkrete Ursache auf dem Nutzergerät bleibt ohne dessen vollständige Laufzeitdaten unbestätigt. Vollständiges ZIP und Offline-Dateiliste geprüft.
+
+## Längenmenü
+Zip-off ersetzt den separaten Haken. Gemeinsame Reihenfolge: Kurz, Lang, Ärmellos, Zip-off; passend zur Kleidungsart gefiltert. Bestehende Varianten bleiben erhalten. DOM-Test: Zip-off anlegen, erneut öffnen und zu Kurz ändern erfolgreich. Alle 236 Tests erfolgreich.
+
+Zip-off-Mitführteile werden anhand der Art als Ärmel oder Hosenbeine bezeichnet. Beide Komponententypen werden in Touren und JSON akzeptiert; bestehende Hosenbein-Einträge bleiben gültig. 240 Tests und DOM-Prüfung erfolgreich.
+
+## Abschließende Prüfung 0.17.2
+245 automatisierte Tests erfolgreich. Im echten Browser bei 402 × 874 geprüft: bestehende Zip-off-Hose im Editor, Oberteil auf Zip-off speichern, 25→7 °C kurze Hose und Kurzarm mit getrennten Hosenbein-/Ärmel-Mitführeinträgen, 25→25 °C kurze Varianten ohne Zusatzkomponenten, 3→3 °C lange Hose ohne Zusatzkomponenten. Oberkörper bei Kälte wählt im Testbestand Kurzarm plus vorhandene Armlinge als Alternative. Getrennter Testspeicher, Originaldaten unverändert. Keine Prüfung auf physischem iPhone. Offline-Cache erhält mit 0.17.2 eine neue Versionskennung.

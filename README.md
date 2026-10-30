@@ -1,8 +1,8 @@
-# Gravel Outfit 0.17.1
+# Gravel Outfit 0.17.2
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
 
-## Kleiderschrankliste und aktueller Standort · 0.17.1
+## Kleiderschrankliste und aktueller Standort · 0.17.2
 
 Im Kleiderschrank erscheinen zunächst nur kompakte Zeilen mit Kleidungsname und Verfügbarkeit. Antippen öffnet die Details nach unten. Eigener Temperaturbereich, Schutzeigenschaften, Notizen, Bearbeiten, vollständige Eigenschaften, Archivierung und Pflegehistorie bleiben dort erreichbar. Geöffnete Zeilen bleiben bei Bearbeitung und Pflegeeinträgen offen; Suche und Filter bleiben erhalten. Kleidungsdaten werden durch die neue Darstellung nicht umgeschrieben.
 
@@ -226,3 +226,6 @@ Ab jetzt tragen Skripte und Styles eine feste Versionskennung in der URL; diesel
 Nach dem Übernehmen der Dateien alle Gravel-Outfit-Tabs und die installierte App schließen und einmal mit Internetverbindung erneut öffnen, damit ein wartender Service Worker aktiviert wird. Nicht Browserdaten oder Website-Speicher löschen. Eine neue Version wird bei geöffneten älteren Fenstern gegebenenfalls erst nach deren Schließen aktiv.
 
 Unter der Empfehlung ist Baselayer-Auswahl prüfen aufklappbar: tatsächlicher Berechnungsstand, Temperaturminimum, Anforderung, automatisch gewähltes Teil und gespeicherte Längen/Verfügbarkeit aller Basisschichten. Dies unterscheidet gespeicherte Daten, Ersatzlösung und Eigene Auswahl. Die automatische Auswahl überschreibt keine manuell zusammengestellte Kombination. Die Regel des Baselayer-Minimums selbst wird nicht abgeschwächt oder durch Namenserkennung ersetzt.
+
+## Zip-off-Prüfung 0.17.2
+Ärmel und Hosenbeine werden anhand der Art unterschieden. Bei warmem Start wird die kurze Variante nicht allein zur Vermeidung eines späteren Zip-off-Wechsels durch die lange verdrängt. Versionswechsel aktualisiert den Offline-Stand. Keine Änderung am Datenbankschema.
