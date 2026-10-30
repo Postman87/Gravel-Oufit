@@ -1,6 +1,22 @@
-# Gravel Outfit 0.16.1
+# Gravel Outfit 0.17.0
 
 Fortführung der bestehenden Version 0.8 aus `postman87/Gravel-Oufit`: HTML, CSS, Vanilla JavaScript, IndexedDB, offlinefähige PWA für GitHub Pages. Keine Frameworks, kein Build notwendig.
+
+## Kompakte Tourplanung und Startseite · 0.17.0
+
+Die Startseite zeigt die Wetterquelle nur noch als Information: Standort, Route (GPX) mit Routenname oder Manuell. Ohne abweichende gespeicherte Planung ist Standort der Ausgangswert; vorhandene Planungen und Quellen werden nicht zurückgesetzt. Wetterdaten und der benutzte gerundete Standort bleiben in aufklappbaren Details prüfbar. Start-/Endtemperatur, ein gegebenenfalls kälterer Zwischenabschnitt, Regen/Wind sowie Startzeit und Dauer stehen kompakt oben. Veraltete oder noch nicht geladene Daten bleiben gekennzeichnet; vorhandene Werte werden nicht als neuer Abruf ausgegeben.
+
+Tour planen öffnet zwei Einstiege: GPX-Planung und Manuelles Wetter. Bei GPX wird eine Datei ausgewählt; Speichern lädt die passende Prognose und führt zur Startseite mit Route (GPX) zurück. Bei Manuell werden die eigenen Werte übernommen. Ein kleiner Wieder Standort verwenden-Knopf ermöglicht den Rückwechsel, ohne die gespeicherte GPX zu löschen. Die Planung fragt nach dem Speichern nicht nach weiteren Angaben.
+
+Startzeit bietet Jetzt / Planen. Bei Planen stehen ein natives Datumsfeld und eine Uhrzeitauswahl in 15-Minuten-Schritten zur Verfügung. Auf unterstützten Browsern wird die Datumswahl direkt geöffnet, sonst durch Antippen des Datums. Unter dem Kalender steht Dauer mit 30 Minuten bis sechs Stunden in 30-Minuten-Schritten. Bestehende Uhrzeiten außerhalb des neuen Rasters werden als bisher gespeichert zusätzlich angeboten, nicht stillschweigend gerundet. Der Tourstart wird weiterhin in Gerätezeit interpretiert. Die GPX ersetzt die ausdrücklich gewählte Dauer nicht; Hin-/Rückfahrt und Aufenthalt bleiben als zusätzliche Planung verfügbar.
+
+Intensität und Kälteempfinden sind kleine, unaufdringliche Dropdowns in der Tourübersicht. Änderungen wirken sofort auf die Empfehlung und lösen keine zusätzliche Abfrage oder automatische Standortabfrage aus.
+
+Reihenfolge auf der Startseite: Tour/Wetter → Anziehen → Mitführen → Einordnung mit verbleibenden Schutzlücken bzw. Ersatzkombinationen → Details → Eigene Auswahl. Lange technische Texte, persönliche Lernwerte, Excel-Orientierung und Diagnosen sind aufklappbar. Kleidungsstücke bleiben antippbar. Ein erkannter Modellrestbedarf wird nicht pauschal als zwingender Neukauf ausgegeben: gespeicherte Eigenschaften und vorhandene Kombinationen sind zuerst zu prüfen. Die eigene Auswahl bleibt beim Umschalten erhalten; der Fahrtstart speichert weiterhin tatsächliche Auswahl und ursprüngliche Empfehlung getrennt.
+
+Speichern schließt die Planung nach dem Wetterabruf bzw. der manuellen Übernahme. Bei einem fehlgeschlagenen automatischen Abruf bleibt die Planung gespeichert, die Übersicht nennt den Fehler und gibt alte Werte nicht als aktuelle Prognose aus. Ohne GPX, gültige Startzeit oder zulässige Dauer wird eine passende Korrektur angefordert. Keine IndexedDB-Migration, kein Zurücksetzen persönlicher Werte oder Erfahrungen.
+
+Die folgenden Abschnitte dokumentieren frühere Entwicklungsstände. Für Anordnung und Bedienung gilt dieser Abschnitt.
 
 ## Einzelne Tour löschen · 0.16.1
 

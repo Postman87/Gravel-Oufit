@@ -1,6 +1,16 @@
-# Prüfung Gravel Outfit 0.16.1
+# Prüfung Gravel Outfit 0.17.0
 
-## Aktueller Stand 0.16.1
+## Aktueller Stand 0.17.0
+
+235 automatisierte Tests erfolgreich (231 bestehende plus vier Viertelstunden-/Kalenderfälle). Geprüft: 96 neue Uhrzeitoptionen, unveränderte frühere Uhrzeit, Viertelstundenvorschlag über Mitternacht und vollständige Datums-/Uhrzeitangaben. PWA-Versions-/Offline-Test um das neue UI-Hilfsmodul erweitert.
+
+Neuer DOM-Integrationstest mit tatsächlichen App-Dateien: kein Wetterquellenauswahlfeld mehr auf der Startseite; Tour planen mit genau zwei Einstiegen; Standort als frischer Standard; Datum, 15-Minuten-Zeitwahl und Dauer; Speichern lädt Wetter und schließt; Route (GPX) samt Namen erscheint; manuelle Übernahme ohne Prognosezuordnung; stille Intensitäts-/Kälte-Dropdowns; Kleidungs-/Einordnungs-/Eigenauswahl-Reihenfolge; eigene Auswahl bleibt beim Umschalten erhalten; alte Uhrzeit ohne Rundung; JSON gültig.
+
+Der vollständige bisherige DOM-Test für persönliche Bereiche, Retro-Touren, Ortsauswahl, Hintergrundwetter, Offline/Online, laufende Bewertung und sichere Tourlöschung besteht ebenfalls mit dem neuen Aufbau. Keine Änderung an der Empfehlungslogik außer der Versionskennung.
+
+Sichtbarer Browser im festen 402×874-iPhone-Vorschaurahmen: kompakte Startseite und Tourplanung mit Kalender, Viertelstunden und Dauer geprüft. Interne Dokumentbreite 402 Pixel, Inhaltsbreite 402 Pixel. Vorhandene lokale Daten einschließlich früherer geplanter Uhrzeit bleiben erhalten. Kein physischer iPhone-Test. Vollständiges ZIP und Offline-Dateiliste geprüft. Kein automatisches Veröffentlichen.
+
+## Bisheriger Stand 0.16.1
 
 231 automatisierte Tests erfolgreich (227 bestehende plus vier Löschfälle). Geprüft: genau eine Tour samt eigener Wetterdaten/Bewertung entfernen, übrige Daten unverändert, Learning danach neu berechnet, laufende und unbekannte Tour geschützt, JSON-Rundlauf und unveränderte frühere Sicherung.
 
