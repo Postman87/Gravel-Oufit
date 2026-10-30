@@ -1,4 +1,19 @@
-# Prüfung Gravel Outfit 0.15.1
+# Prüfung Gravel Outfit 0.16.0
+
+## Aktueller Stand 0.16.0
+
+- **227 automatisierte Tests erfolgreich.** Die bisherigen 204 Regressionstests behalten bewusst den früheren Modellpfad für vorhandene Datensätze ohne aktiviertes persönliches Modell. 23 neue Fälle prüfen den neuen produktiven persönlichen Modellpfad und nachträgliches Wetter. Die App aktiviert den neuen Pfad beim Öffnen und nach dem Import.
+- Persönliche Bereiche wirken sofort, auch außerhalb früherer Excel-Schwellen. Halstuch 15→14 nach wiederholtem Zu warm; manuelle neue Grundlage erhält alle Erfahrungen; Sonne/Wind-Kontexte; nur tatsächlich getragene Kleidung; geteilte Evidenz bei mehreren Schichten; Learning deaktivierbar; kurze Hose im Warmen; persönliche Handschuhgrenze; Verfügbarkeit und tragbare Schichten.
+- Historischer Abruf: gerundete Koordinaten, vergangene Zeiten, jüngste Modelle/ältere Reanalyse, Strahlung/Bewölkung, GPX mit Hin-/Rückfahrt und Aufenthalt, fehlende Daten/ungültige Zukunft, eindeutige Ortsauswahl, getrennte Prognose, JSON-Rundlauf und zeitgewichtete Bewertung.
+- DOM-Integration mit tatsächlichen HTML-/JS-Dateien und simuliertem IndexedDB: Bereich im Editor ändern und Empfehlung prüfen; Retro-Tour mit Ortssuche, Kleidung und Zonenbewertung offline speichern; Online-Ereignis startet Abgleich; Prognose/Originaldaten bleiben erhalten; laufendes Feedbackformular wird nicht zurückgesetzt; Bestätigung tatsächlicher Kleidung und Ortsnachtrag; JSON-Validierung.
+- Live-API-Test mit öffentlichen Berliner Koordinaten erfolgreich: jüngste Tour und 14 Tage zurückliegende Tour, unterschiedliche APIs/Datenarten und Sonnen-/Wolkendaten. Keine persönlichen Orts-/GPX-Daten verwendet.
+- Sichtbarer In-App-Browser: komplette nachträgliche Testtour (Berlin, 29.10.2026, 120 Minuten) mit Kleidung und Hals Zu warm/Gesamte Tour gespeichert; Ortssuche mit Auswahl, automatischer Wetterabgleich und sichtbare Quelldaten erfolgreich. Als TESTTOUR gekennzeichnet, nur lokale Vorschau.
+- Responsive Browserprüfung bei 390 × 844 Pixeln: Seitenbreite 390, keine horizontale Überbreite, feste Startleiste und Wetter-/Bewertungsanzeige bedienbar. Browser-Vorschaubild gespeichert. Kein physisches iPhone getestet.
+- Neue Module personal.js, history-weather.js, history-ui.js liegen in der Offline-Dateiliste. Keine Frameworks. ZIP wird byteweise mit vollständigen Quellen abgeglichen. IndexedDB 6 / Schema 7 bleiben bestehen; Kleidungswerte, Pflegehistorie und alte Bewertungen werden nicht zurückgesetzt.
+
+Offene Grenzen: Kein Aufwachen einer vollständig geschlossenen iPhone-PWA garantiert. GPX-Durchfahrtszeiten bleiben ohne Trackaufzeichnung geschätzt. Wetter ist modelliert, keine persönliche Messung; lokale Beschattung und tatsächlicher Fahrtwind nicht vollständig erfasst. Modellgewichte müssen mit weiterer Nutzung geprüft werden. Keine automatische Veröffentlichung.
+
+## Frühere Prüfprotokolle
 
 - 174 automatisierte Tests erfolgreich: bestehende Bekleidungs-, Lern-, Daten- und Wettertests sowie 26 neue GPX-/Planungstests.
 - Zusätzlicher DOM-Integrationstest mit der tatsächlichen HTML-/JS-Anwendung und simuliertem IndexedDB: geplantes Datum bleibt nach Darstellungswechsel erhalten; Abruf verwendet den gewählten Zeitpunkt; Standortanzeige; GPX-Import ohne automatischen Upload; Hin-/Rückfahrt mit Aufenthalt; unterschiedliche Fahrtdauern; veraltete Prognose nach Planänderung.
