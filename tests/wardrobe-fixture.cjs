@@ -1,0 +1,1 @@
+exports.populate=(s,G)=>{for(const c of require('./wardrobe-fixture.json'))s.items.push({...G.item(c.type,c.name),manufacturer:c.manufacturer,model:c.model,excelKey:c.key,length:c.length,variants:c.variants||[]});return s;};

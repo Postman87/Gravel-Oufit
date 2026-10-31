@@ -1,5 +1,5 @@
 const {test}=require('node:test'),a=require('node:assert/strict'),G=require('../core');
-function state(){const s=G.seed();G.importExcelItems(s);s.weather={...s.weather,startTemp:12,endTemp:8};return s;}
+function state(){const s=G.seed();require('./wardrobe-fixture.cjs').populate(s,G);s.weather={...s.weather,startTemp:12,endTemp:8};return s;}
 function record(s,period,feedback='hot'){G.startRide(s,'2026-10-30T09:00:00Z');return G.finishRide(s,{feedback,feedbackPeriod:period,zoneFeedback:{torso:feedback}},'2026-10-30T11:00:00Z');}
 test('Startkritik lernt nur für den Start und die bewertete Zone',()=>{const s=state();record(s,'start');a.equal(G.learningOffset(s,G.pointWeather(s.weather,'start'),'torso').offset,-.25);a.equal(G.learningOffset(s,G.pointWeather(s.weather,'end'),'torso').count,0);a.equal(G.learningOffset(s,G.pointWeather(s.weather,'start'),'hands').count,0);G.validate(s);});
 test('Endkritik lernt nur für das Ende',()=>{const s=state();record(s,'end','cold');a.equal(G.learningOffset(s,G.pointWeather(s.weather,'start'),'torso').count,0);a.equal(G.learningOffset(s,G.pointWeather(s.weather,'end'),'torso').offset,.25);});

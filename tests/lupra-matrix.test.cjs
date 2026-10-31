@@ -1,15 +1,7 @@
 const G=require('../core'),a=require('node:assert/strict'),{test}=require('node:test');
-test('Lupra: vollständige Temperatur-/Wind-/Regen-/Intensitätsmatrix und Bestandseigenschaften',()=>{
-let count=0;const results=[];
-function setup(start,end,wind,rain,effort){const s=G.seed();G.importExcelItems(s);s.weather={...s.weather,startTemp:start,endTemp:end,wind,rain,effort};return s;}
-for(let temp=-10;temp<=40;temp++)for(let wind=0;wind<=2;wind++)for(let rain=0;rain<=2;rain++)for(let effort=0;effort<=2;effort++){
- const s=setup(temp,temp,wind,rain,effort),r=G.recommend(s),selected=r.rows.some(x=>x.item.excelKey==='lupra-pants');
- a.equal(selected,temp<=10||wind===2||rain>0,JSON.stringify({temp,wind,rain,effort}));a.equal(new Set(r.rows.map(x=>x.item.id)).size,r.rows.length);results.push({temp,wind,rain,effort,lupra:selected});count++;
-}
-for(const [start,end] of [[25,3],[25,7],[11,7],[7,11]])for(let wind=0;wind<=2;wind++)for(let rain=0;rain<=2;rain++)for(let effort=0;effort<=2;effort++){
- const s=setup(start,end,wind,rain,effort),r=G.recommend(s),wear=r.rows.filter(x=>x.group==='start').map(x=>x.item),endItems=r.endItems;
- if(start<=10||wind===2||rain>0)a(wear.some(x=>x.excelKey==='lupra-pants'));if(end<=10||wind===2||rain>0)a(endItems.some(x=>x.excelKey==='lupra-pants'));if(start>=19&&wind<2&&rain===0)a(!wear.some(x=>x.excelKey==='lupra-pants'));a.equal(new Set(r.rows.map(x=>x.item.id)).size,r.rows.length);count++;
-}
-for(const [rrWind,lupraWind] of [[false,true],[true,true],[false,false]])for(const temp of [3,7,10,13]){const s=setup(temp,temp,0,0,1);s.items.find(i=>i.excelKey==='rr').wind=rrWind;s.items.find(i=>i.excelKey==='lupra-pants').wind=lupraWind;const included=G.recommend(s).rows.some(x=>x.item.excelKey==='lupra-pants');if(rrWind)a.equal(included,false);else if(lupraWind)a.equal(included,temp<=10);else a.equal(included,temp===3);count++;}
-a.equal(count,1497);
-});
+test('Neue Quelle: 1497 Wetter-/Verfügbarkeitsfälle mit realen Schichten und Regenschutz',()=>{let count=0;function setup(start,end,wind,rain,effort){const s=G.seed();require('./wardrobe-fixture.cjs').populate(s,G);s.items.find(i=>i.excelKey==='pro-base').length='short';s.rangeModel='personal-v1';s.weather={...s.weather,startTemp:start,endTemp:end,wind,rain,effort};return s;}
+function check(s){const before=JSON.stringify(s),r=G.recommend(s);a.equal(JSON.stringify(s),before);a.equal(new Set(r.rows.map(x=>x.item.id)).size,r.rows.length);for(const row of r.rows)a(s.items.some(i=>i.id===row.item.id&&G.usable(i)));for(const items of [r.rows.filter(x=>x.group==='start').map(x=>x.item),r.endItems])for(const z of ['torso','legs'])a(G.legal(items.filter(i=>G.traits(i).zone===z),z));if(s.weather.rain===2){for(const stage of [r.assessment,r.endAssessment]){a.equal(stage.torso.gaps.rain,0);a.equal(stage.legs.gaps.rain,0);}}if(s.weather.wind===2){a.equal(r.assessment.legs.gaps.wind,0);a.equal(r.assessment.torso.gaps.wind,0);}if(s.weather.startTemp>=25&&s.weather.rain===0&&s.weather.wind<2)a(!r.rows.some(x=>x.group==='start'&&x.item.type==='luprapants'));count++;return r;}
+for(let t=-10;t<=40;t++)for(let wind=0;wind<=2;wind++)for(let rain=0;rain<=2;rain++)for(let effort=0;effort<=2;effort++)check(setup(t,t,wind,rain,effort));
+for(const [start,end] of [[25,3],[25,7],[11,7],[7,11]])for(let wind=0;wind<=2;wind++)for(let rain=0;rain<=2;rain++)for(let effort=0;effort<=2;effort++)check(setup(start,end,wind,rain,effort));
+for(const [rrWind,shellWind]of [[false,true],[true,true],[false,false]])for(const t of [3,7,10,13]){const s=setup(t,t,0,0,1);s.items.find(i=>i.type==='rr').wind=rrWind;s.items.find(i=>i.type==='luprapants').wind=shellWind;const r=check(s);if(rrWind&&t>=11)a(!r.rows.some(x=>x.item.type==='luprapants'));}
+a.equal(count,1497);});

@@ -28,7 +28,7 @@
 
 html[data-theme="dark"] .planning-options [aria-pressed=true]{background:#2a4e5c;color:#ecf8fc;border-color:#82adbb}@media(prefers-color-scheme:dark){html:not([data-theme="light"]) .planning-options [aria-pressed=true]{background:#2a4e5c;color:#ecf8fc;border-color:#82adbb}}
 
-/* Compact wardrobe rows and consistent planning spacing, 0.17.6 */
+/* Compact wardrobe rows and consistent planning spacing, 0.18.0 */
 #items{display:block}.wardrobe-garment{margin:0 0 10px;background:#fff;border:1px solid #d5e0e5;border-radius:14px;overflow:hidden}.wardrobe-garment>summary{display:grid;grid-template-columns:minmax(0,1fr) auto 14px;gap:10px;align-items:center;min-height:64px;padding:15px 16px;list-style:none;font-size:14px}.wardrobe-garment>summary::-webkit-details-marker{display:none}.wardrobe-garment>summary::after{content:'⌄';font-size:20px}.wardrobe-garment[open]>summary::after{transform:rotate(180deg)}.wardrobe-garment>summary strong{overflow-wrap:anywhere}.wardrobe-garment>summary .chip{font-size:10px}.garment-details{border-top:1px solid #b9ccd4;padding:4px 16px 18px}.garment-details p{font-size:13px}.garment-details .actions{gap:8px}.garment-details button{font-size:12px}#source-panels{margin-top:20px}#route-controls>.file{display:block;width:100%;margin:0 0 16px;padding:14px}#choose-device{margin-top:4px;margin-bottom:0}#route-info p{margin:14px 0}html[data-theme="dark"] .wardrobe-garment{background:#1b282f;border-color:#425d6a}@media(prefers-color-scheme:dark){html:not([data-theme="light"]) .wardrobe-garment{background:#1b282f;border-color:#425d6a}}
 
 /* Surfblue and black, inspired by CUBE Nuroad C:62 EX. Status colors stay semantic. */
