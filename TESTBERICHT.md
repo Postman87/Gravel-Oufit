@@ -1,7 +1,9 @@
-# Prüfung 0.19.2 – 31.10.2026
+# Abschlussrunde 0.20.0 – 31.10.2026
 
-274 automatisierte Tests bestanden, 0 fehlgeschlagen. Enthalten: aktualisierte Tabellenwerte/Farben, 6/8/10 °C mit normalem Kurzarmtrikot und Armlingen plus Regenjacke, Kurzarm-Thermotrikot mit isolierenden Armlingen, direktes Langarmtrikot, unverfügbare Regenjacke, warme trockene Tour ohne Regenschicht, persönliche Bereiche/Learning, Datenbestand, JSON, Offline-Dateiversionen und übrige Regressionstests.
+287 automatisierte Tests bestanden (0 Fehler), einschließlich bisheriger Regressionstests, Fahrwetter/Aufenthalt, Regen-Sicherheitspuffer, Dauerregen, Altprognosen, präzisierter Bestandsmeldungen, Archivlöschung, Fahrtenlöschung und Learning, JSON-Erhalt sowie Offline-Dateikonsistenz.
 
-Browserprüfung mit Kopie der Nutzersicherung: bei 6, 8 und 10 °C wird die Lupra-Jacke mit Kurzarmtrikot und Armlingen berechnet, bei trockenen 20 °C nicht. Alle vier Fälle bestanden. Berechnung ohne Speicherung. App 0.19.2 im Browser geladen. Kein realer iPhone-Gerätetest in diesem Durchlauf.
+30-Tage-Simulation mit Nutzersicherung und bereits geladenen Open-Meteo-Archivdaten für Wulften am Harz 01.–30.10.2026 wiederholt: 30 Durchläufe erfolgreich; nur aktive verfügbare Teile, keine doppelten Kleidungsstücke, zulässige Schichten, Sichtbarkeitsweste außen, keine Speicherung oder simulierten Rückmeldungen. Mitnahme an 16 statt zuvor 18 Tagen. Ein Tag mit optionalem Regen nur im Aufenthalt und ein Tag mit zusätzlichem Regenpuffer-Hinweis. Rohdaten unverändert.
 
-Die Wetterauswertung während des Aufenthalts wurde nicht geändert. Kein Datenbankschemawechsel und keine Veröffentlichung.
+Die App wurde lokal im Browser geladen. Kein physischer iPhone-Gerätetest und keine Veröffentlichung. Die Sicht- und Alltagsprüfung auf dem iPhone steht aus; Anleitung in IPHONE_TEST.md.
+
+Grenzen: stündliche Ortsdaten / GPX-Stichproben sind kein lückenloses Wetter. Ältere gespeicherte Prognosen ohne Wetterwerte pro Zeitabschnitt werden konservativ weiter genutzt und zeigen einen Aktualisierungshinweis. Ein nachträglicher Datenabruf wird nicht stillschweigend durchgeführt.

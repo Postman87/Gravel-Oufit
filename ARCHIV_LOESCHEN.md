@@ -1,4 +1,4 @@
-# 0.19.2 – Archivierte Kleidung löschen
+# 0.20.0 – Archivierte Kleidung löschen
 
 Im Kleiderschrank den Filter „Archiviert“ wählen, ein Teil aufklappen und „Endgültig löschen“ wählen. Vor der Löschung erscheint eine Bestätigung. Aktive Teile müssen zuerst archiviert werden.
 
