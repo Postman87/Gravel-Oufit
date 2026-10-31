@@ -1,48 +1,7 @@
-# Prüfung Gravel Outfit 0.19.0
+# Prüfung 0.19.1 – 31.10.2026
 
-## Quelle
+274 automatisierte Tests bestanden, 0 fehlgeschlagen. Enthalten: aktualisierte Tabellenwerte/Farben, 6/8/10 °C mit normalem Kurzarmtrikot und Armlingen plus Regenjacke, Kurzarm-Thermotrikot mit isolierenden Armlingen, direktes Langarmtrikot, unverfügbare Regenjacke, warme trockene Tour ohne Regenschicht, persönliche Bereiche/Learning, Datenbestand, JSON, Offline-Dateiversionen und übrige Regressionstests.
 
-Korrigierte Radbekleidung_KI_2.xlsx, ein Blatt „Kategorien nach T. (2)“, A–G. SHA-256: 37835bcc62c72729b5ca6bdc876ad2c1c1d3feff3a9768e6c8e1dc47acfe216f. Zelltexte, Farben und Quellenadressen wurden übernommen. Alte Excel-Produktbewertungen und Intensitätstexte wurden aus der Laufzeitberechnung entfernt. Frühere Fahrten/Kleidung bleiben Nutzerdaten, keine Regelquelle. Einige Regressionstests verwenden unveränderte Beispielprodukte als Testszenarien; diese sind nicht Teil der Laufzeitregeln.
+Browserprüfung mit Kopie der Nutzersicherung: bei 6, 8 und 10 °C wird die Lupra-Jacke mit Kurzarmtrikot und Armlingen berechnet, bei trockenen 20 °C nicht. Alle vier Fälle bestanden. Berechnung ohne Speicherung. App 0.19.1 im Browser geladen. Kein realer iPhone-Gerätetest in diesem Durchlauf.
 
-## Automatisierte Prüfungen
-
-267 Tests erfolgreich, keine Fehler. Die bisherigen Tests mit inzwischen ausdrücklich ersetzten Regeln wurden durch Prüfungen der neuen Quelle ersetzt; die Zahl ist deshalb nicht direkt mit früheren Versionen vergleichbar.
-
-- Vollständige neue Temperaturstufen, Farben und Schutzspalte, überlappender Nullpunkt.
-- Verfügbare Thermokleidung, vorübergehend nicht verfügbare Kleidung, fehlende Schutzkleidung.
-- Kurzarm-Baselayer nach tiefster Tourtemperatur, keine erfundenen Teile.
-- Regenjacke über Windweste oder Thermojacke; keine doppelte Nutzung, keine unvereinbaren Schichten.
-- Regen- und Windschutz getrennt von Wärmeisolierung, Warnungen für verbleibende Lücken.
-- Stirnband bei 7 °C bevorzugt; vorhandene Mütze bei nicht verfügbarem Stirnband.
-- Zusätzliche Regenbarriere bei unzureichender Kombination, auch bei bereits winddicht erfasster Hose.
-- Kurze/lange Zip-off-Variante, separate Hosenbeine, kleine Wetteränderungen ohne unnötiges Gepäck.
-- Eine Matrix mit 1.497 Fällen von −10 bis +40 °C, drei Intensitäten, Wind/Regen und geänderten Bestandseigenschaften. Sie ist ein einzelner Test innerhalb der 238 Tests.
-- Persönliche Kleidungsbereiche wirken sofort; Learning behält Kontext, Zonen, Intensität und Zeitraum.
-- Zwischenbewertung: aktive Tour bleibt erhalten; getragene Kleidung erforderlich; keine Wäsche beim Zwischenstand; Pause, tatsächlicher Rückfahrtstart, getrennte final gespeicherte Bewertung.
-- Hinweg-Learning sofort verfügbar, später nicht doppelt gezählt. Tatsächliche Teilzeiten für nachträgliches Streckenwetter. Aufenthalt bleibt aus der Auswertung ausgeschlossen.
-- JSON erhält beide Teilbewertungen und Varianten. Löschen der Tour entfernt beide aus dem Learning.
-- Bestehende Datenmigration, Pflege, Verfügbarkeit, Archivierung, GPX/Wetterplanung, Quellenwahl, Offline-/Cache-Konsistenz und Import/Export.
-
-Zusätzliche DOM-Tests prüfen bearbeitete Kleider, Zip-off, Planung, Geolokalisierung mit kontrollierten Wetterantworten, Fehlersituationen, Hinweg-Zonenbewertung, Aufenthalt, Rückfahrtstart, Historie, nachträgliches Wetter und Tourlöschung.
-
-## Browser
-
-Getrennte lokale Testspeicher; echte vorhandene Nutzerdaten nicht für die Testfahrten verändert. iPhone-Layout 402 × 874 im Browser:
-
-- 3 °C trocken: kurze Basis, Kurzarmtrikot plus Armlinge, Windweste und Lupra-Jacke sowie lange RR-Hose mit Lupra-Hose; Wärmelücken sichtbar.
-- 25 °C mit Dauerregen: kurze Hose und verfügbare äußere Regenbekleidung an Oberkörper und Beinen.
-- Tour starten, Hinweg als „Zu warm“ am Oberkörper bewerten, speichern, Seite neu laden: Tour und Zwischenstand erhalten.
-- Rückfahrt starten, Rückweg „Genau richtig“ speichern: eine abgeschlossene Tour mit separater Hinwegbewertung und Rückwegbewertung.
-
-Keine Prüfung auf einem physischen iPhone und kein Alltagstest mit echten Touren. Externe Wetteranbieter wurden bei diesen Browserprüfungen nicht mit einem echten Gerätestandort abgefragt. Die Isolierung der Teilzeiträume einschließlich einer heißen Pause wurde separat mit kontrollierten Wetterserien getestet.
-
-## Korrektur 0.19.0
-267 Tests erfolgreich, davon zehn neue Prüfungen für Wind-Armlinge: 6/7/8/9/10 °C mit zusätzlicher Regenjacke und eingeschränkter Midlayer-Bewertung, unbekannte Isolierung, ausreichend isolierende Armlinge, geeignetes Langarmtrikot, nicht verfügbare Regenjacke und warme Tour. Die 1.497-Fall-Matrix und die Zwischenbewertungs-/Learning-Prüfungen bestehen weiterhin. Zusätzliche DOM-Prüfungen erfolgreich. Echter Browser, 402 × 874, getrennter Testspeicher: 7 °C trocken mit schwachem Wind, reine Wind-Armlinge, Kurzarmtrikot, Weste und zusätzliche Lupra-Jacke sichtbar; Hinweis auf unbestätigte Arm-Isolierung sichtbar. Keine Prüfung auf physischem iPhone.
-
-## Sichtbarkeit und Nebel 0.19.0
-
-267 automatisierte Tests erfolgreich. Neue Fälle: Dämmerung/Dunkelheit/Nebel mit markierter Weste über Regenjacke; Weste über Thermojacke ohne unvereinbare Schichten; normales Tageslicht; unmarkierte und nicht verfügbare Westen; wasserabweisende Hose gegenüber zusätzlicher Regenhose; wasserdichter Ersatz; fehlender Feuchtigkeitsschutz; eigene Auswahl; JSON; WMO 45/48; Sonnenzeiten und Dämmerungsgrenzen; alte Prognosen und fehlende polare Sonnenzeiten; Nebel und Dunkelheit während Standort-/GPX-Touren; getrennter Nebelkontext im Learning.
-
-Zusätzliche DOM-Prüfung: bestehende persönliche Weste automatisch markieren, Markierung entfernen und erneut speichern, manuell Nebel und Dämmerung planen. Die bisherigen DOM-Prüfungen für Kleiderschrank, Wetter/GPX, Zwischenbewertung und nachträgliches Wetter bestehen weiter.
-
-Echter Browser bei 402 × 874 mit getrenntem Testspeicher: 7 °C, Nebel, Dämmerung und Regen. Die Everyday-Weste steht nach der Lupra-Jacke und trägt den Hinweis „Sichtbarkeit: außen über den Oberkörperschichten tragen“. Kein echter Standortabruf für diese Prüfung, kein physischer iPhone-Test. Wetterantworten und Sonnenzeiten wurden in den automatisierten Prüfungen kontrolliert vorgegeben.
+Die Wetterauswertung während des Aufenthalts wurde nicht geändert. Kein Datenbankschemawechsel und keine Veröffentlichung.

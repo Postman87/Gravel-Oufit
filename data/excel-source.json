@@ -1,6 +1,6 @@
 {
   "file": "Radbekleidung_KI_2.xlsx",
-  "sha256": "37835bcc62c72729b5ca6bdc876ad2c1c1d3feff3a9768e6c8e1dc47acfe216f",
+  "sha256": "a1eeffe88104278e39142eddc312589aa6590914734b7a4454791e6d58f24ac1",
   "sheets": [
     {
       "name": "Kategorien nach T. (2)",
@@ -9,349 +9,361 @@
           "cell": "A2",
           "value": "Fahrradbekleidung nach Temperatur",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"none\" /></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType=None, fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "A3",
           "value": "Quelle: Löffler – Die richtige Fahrradbekleidung nach Temperatur",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"none\" /></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType=None, fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "A4",
           "value": "https://www.loeffler.at/de/die-richtige-fahrradbekleidung-nach-temperatur/",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"none\" /></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType=None, fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "A5",
           "value": "Abgerufen am 29.10.2026. Tabelleninhalt aus den beiden Originaltabellen.",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"none\" /></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType=None, fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "A7",
           "value": "Temperatur",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF27485E\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF27485E', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "B7",
           "value": "Baselayer",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF27485E\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF27485E', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "C7",
           "value": "Oberkörper Midlayer",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF27485E\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF27485E', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "D7",
           "value": "Toplayer",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF27485E\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF27485E', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "E7",
           "value": "Hose",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF27485E\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF27485E', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "F7",
           "value": "Nässe- und Windschutz",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF27485E\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF27485E', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "G7",
           "value": "Extras",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF27485E\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF27485E', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "A8",
           "value": "16- >20°C",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFEEF3F6\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFEEF3F6', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "B8",
           "value": "Baselayer ärmellos",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "C8",
           "value": "Kurzarm-Trikot",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "D8",
           "value": "–",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFEEF3F6\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFEEF3F6', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "E8",
           "value": "Kurze Radhose",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "F8",
           "value": "Regenbekleidung",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "G8",
           "value": "UV-Schutz",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFEEF3F6\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFEEF3F6', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "A9",
           "value": "11-15°C",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFEEF3F6\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFEEF3F6', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "B9",
           "value": "Baselayer, kurz",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "C9",
           "value": "Kurzarm-Trikot",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "D9",
           "value": "Windweste (in Tasche packbar)",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "E9",
           "value": "Lange Radhose",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "F9",
           "value": "Regenbekleidung",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "G9",
           "value": "Dünne Handschuhe bei Wind",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "A10",
           "value": "6-10°C",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFEEF3F6\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFEEF3F6', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "B10",
           "value": "Baselayer, kurz",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "C10",
-          "value": "Langarm-Trikot oder Kurzarm-Trikot in Kombination mit Armlingen",
+          "value": "Langarm-Trikot oder Kurzarm--Thermo Trikot in Kombination mit Armlingen",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "D10",
           "value": "Windweste",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "E10",
           "value": "Winddichte Hose",
           "color": "red",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFFF0000\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFF0000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "F10",
           "value": "Regenbekleidung",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "G10",
           "value": "Strinband, Halstuch, Armlinge, Fingerhandschuhe",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "A11",
           "value": "Alternative in Kombination",
           "color": "yellow",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFFFFF00\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFFFF00', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
+        },
+        {
+          "cell": "C11",
+          "value": "Kurzarm-Trikot mit Armlingen in Kombination mit Regenjack",
+          "color": "yellow",
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFFFF00', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "E11",
           "value": "Lange Radhose mit Regenhose",
           "color": "yellow",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFFFFF00\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFFFF00', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
+        },
+        {
+          "cell": "G11",
+          "value": "Mütze als Ersatz für Stirnband",
+          "color": "yellow",
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFFFF00', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "A12",
           "value": "0-5°C",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFEEF3F6\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFEEF3F6', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "B12",
           "value": "Thermo-Baselayer, lang",
           "color": "red",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFFF0000\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFF0000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "C12",
           "value": "Thermotrikot Langarm",
           "color": "red",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFFF0000\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFF0000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "D12",
           "value": "Windjacke oder Thermojacke",
           "color": "red",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFFF0000\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFF0000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "E12",
           "value": "Thermo-Hose",
           "color": "red",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFFF0000\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFF0000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "F12",
           "value": "Regenbekleidung",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "G12",
           "value": "Mütze, Halstuch, Fingerhandschuhe, Überschuhe",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "A13",
           "value": "Alternative in Kombination",
           "color": "yellow",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFFFFF00\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFFFF00', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "B13",
           "value": "Baselayer, kurz mit Armlingen",
           "color": "yellow",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFFFFF00\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFFFF00', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "C13",
           "value": "Kurzarm-Trikot mit Armlingen",
           "color": "yellow",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFFFFF00\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFFFF00', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "D13",
           "value": "Regenjacke mit Windweste",
           "color": "yellow",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFFFFF00\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFFFF00', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "E13",
           "value": "Lange Radhose mit Regenhose",
           "color": "yellow",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFFFFF00\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFFFF00', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "A14",
           "value": "0°C und kälter",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFEEF3F6\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFEEF3F6', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "B14",
           "value": "Thermo-Baselayer, lang",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFEEF3F6\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFEEF3F6', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "C14",
           "value": "Thermotrikot Langarm",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFEEF3F6\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFEEF3F6', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "D14",
           "value": "Thermo-Jacke",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFEEF3F6\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFEEF3F6', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "E14",
           "value": "Thermo-Hose",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFEEF3F6\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFEEF3F6', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "F14",
           "value": "Regenbekleidung",
           "color": "green",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FF92D050\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FF92D050', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "G14",
           "value": "Mütze, Halstuch, Winterhandschuhe, Überschuhe",
           "color": "neutral",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFEEF3F6\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFEEF3F6', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb'"
         },
         {
           "cell": "A15",
           "value": "Alternative in Kombination",
           "color": "yellow",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFFFFF00\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFFFF00', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "B15",
           "value": "Baselayer, kurz mit Armlingen",
           "color": "yellow",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFFFFF00\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFFFF00', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "C15",
           "value": "Kurzarm-Trikot mit Armlingen",
           "color": "yellow",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFFFFF00\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFFFF00', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "D15",
           "value": "Regenjacke mit Windweste",
           "color": "yellow",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFFFFF00\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFFFF00', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         },
         {
           "cell": "E15",
           "value": "Lange Radhose mit Regenhose",
           "color": "yellow",
-          "fill": "<ns0:fill xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><ns0:patternFill patternType=\"solid\"><ns0:fgColor rgb=\"FFFFFF00\" /><ns0:bgColor indexed=\"64\" /></ns0:patternFill></ns0:fill>"
+          "fill": "<openpyxl.styles.fills.PatternFill object>\nParameters:\npatternType='solid', fgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb='FFFFFF00', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>\nParameters:\nrgb=None, indexed=64, auto=None, theme=None, tint=0.0, type='indexed'"
         }
       ]
     }
