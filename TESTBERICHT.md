@@ -1,4 +1,4 @@
-# Prüfung Gravel Outfit 0.18.0
+# Prüfung Gravel Outfit 0.18.1
 
 ## Quelle
 
@@ -35,3 +35,6 @@ Getrennte lokale Testspeicher; echte vorhandene Nutzerdaten nicht für die Testf
 - Rückfahrt starten, Rückweg „Genau richtig“ speichern: eine abgeschlossene Tour mit separater Hinwegbewertung und Rückwegbewertung.
 
 Keine Prüfung auf einem physischen iPhone und kein Alltagstest mit echten Touren. Externe Wetteranbieter wurden bei diesen Browserprüfungen nicht mit einem echten Gerätestandort abgefragt. Die Isolierung der Teilzeiträume einschließlich einer heißen Pause wurde separat mit kontrollierten Wetterserien getestet.
+
+## Korrektur 0.18.1
+248 Tests erfolgreich, davon zehn neue Prüfungen für Wind-Armlinge: 6/7/8/9/10 °C mit zusätzlicher Regenjacke und eingeschränkter Midlayer-Bewertung, unbekannte Isolierung, ausreichend isolierende Armlinge, geeignetes Langarmtrikot, nicht verfügbare Regenjacke und warme Tour. Die 1.497-Fall-Matrix und die Zwischenbewertungs-/Learning-Prüfungen bestehen weiterhin. Zusätzliche DOM-Prüfungen erfolgreich. Echter Browser, 402 × 874, getrennter Testspeicher: 7 °C trocken mit schwachem Wind, reine Wind-Armlinge, Kurzarmtrikot, Weste und zusätzliche Lupra-Jacke sichtbar; Hinweis auf unbestätigte Arm-Isolierung sichtbar. Keine Prüfung auf physischem iPhone.

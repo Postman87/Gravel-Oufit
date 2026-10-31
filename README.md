@@ -1,4 +1,4 @@
-# Gravel Outfit 0.18.0
+# Gravel Outfit 0.18.1
 
 Offlinefähige PWA mit HTML, CSS, Vanilla JavaScript und IndexedDB für das bestehende Repository postman87/Gravel-Oufit.
 
@@ -10,7 +10,7 @@ Ausschließliche Excel-Regelquelle ist die korrigierte Radbekleidung_KI_2.xlsx v
 |---|---|---|---|---|
 | ab 16 °C | ärmellos | Kurzarm | kein zusätzlicher Toplayer | kurz |
 | 11–15 °C | Kurzarm | Kurzarm | Windweste | lang |
-| 6–10 °C | Kurzarm | Langarm oder Kurzarm plus Armlinge | Windweste | winddicht |
+| 6–10 °C | Kurzarm | Langarm-/Thermotrikot; Kurzarm plus Armlinge nur als Ersatz | Windweste | winddicht |
 | 1–5 °C | Thermo-Langarm | Thermo-Langarm | Wind- oder Thermojacke | Thermo |
 | 0 °C und kälter | Thermo-Langarm | Thermo-Langarm | Thermojacke | Thermo |
 
@@ -32,6 +32,9 @@ Hin- und Rückmeldung bleiben in einer Tour gespeichert. Das Learning berücksic
 
 Bestehende Kleidung, IDs, persönliche Temperaturbereiche, Pflege, Einstellungen und Fahrtrückmeldungen bleiben erhalten. Die Datenbank wird nicht gelöscht oder zurückgesetzt. Zusätzliche Bewertungsfelder sind rückwärtskompatibel ergänzt; IndexedDB-Version 6 und Datenschema 7 bleiben bestehen. Bei Regenjacken wird nur die Anzeige der Kategorie auf „Nässe-/Windschutz“ aktualisiert. Historische Empfehlungen bleiben als damalige Snapshots erhalten.
 
-Vor dem Aktualisieren JSON exportieren. ZIP entpacken und Inhalte auf derselben Repository-Ebene wie bisher übernehmen; index.html liegt direkt im Projektordner. Nach GitHub-Pages-Veröffentlichung alle App-Tabs schließen und die gewohnte Adresse erneut online öffnen. Einstellungen müssen Version 0.18.0 zeigen. Danach sind Kleiderschrank, Planung mit manuellem Wetter und Rückmeldungen offline nutzbar. Wetterabfragen benötigen Internet.
+Vor dem Aktualisieren JSON exportieren. ZIP entpacken und Inhalte auf derselben Repository-Ebene wie bisher übernehmen; index.html liegt direkt im Projektordner. Nach GitHub-Pages-Veröffentlichung alle App-Tabs schließen und die gewohnte Adresse erneut online öffnen. Einstellungen müssen Version 0.18.1 zeigen. Danach sind Kleiderschrank, Planung mit manuellem Wetter und Rückmeldungen offline nutzbar. Wetterabfragen benötigen Internet.
 
 Kein automatisches Deployment. Details zu Prüfungen in TESTBERICHT.md.
+
+## Korrektur 0.18.1
+Nach persönlicher Präzisierung vom 31.10.2026: winddichte Armlinge belegen keine ausreichende Isolierung. Bei 6–10 °C gelten Kurzarmtrikot und Armlinge ohne hinterlegte ausreichende Wärmeleistung als eingeschränkter Ersatz. Eine verfügbare windschützende Regenjacke wird zusätzlich eingeplant. Die Wärmeleistung der Regenjacke bleibt gering; ein Hinweis auf unbestätigte Arm-Isolierung bleibt sichtbar. Ausreichend isolierende Armlinge oder eine geeignete lange Trikotschicht lösen keine pauschale Regenjackenpflicht aus. Vorhandene Temperaturbereiche und Materialangaben werden nicht verändert. Der Rohdatensatz der Excel-Datei bleibt unverändert; diese Präzisierung ist eine zusätzliche Nutzerregel.
