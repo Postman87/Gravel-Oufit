@@ -1,4 +1,4 @@
-# Gravel Outfit 0.18.1
+# Gravel Outfit 0.19.0
 
 Offlinefähige PWA mit HTML, CSS, Vanilla JavaScript und IndexedDB für das bestehende Repository postman87/Gravel-Oufit.
 
@@ -32,9 +32,21 @@ Hin- und Rückmeldung bleiben in einer Tour gespeichert. Das Learning berücksic
 
 Bestehende Kleidung, IDs, persönliche Temperaturbereiche, Pflege, Einstellungen und Fahrtrückmeldungen bleiben erhalten. Die Datenbank wird nicht gelöscht oder zurückgesetzt. Zusätzliche Bewertungsfelder sind rückwärtskompatibel ergänzt; IndexedDB-Version 6 und Datenschema 7 bleiben bestehen. Bei Regenjacken wird nur die Anzeige der Kategorie auf „Nässe-/Windschutz“ aktualisiert. Historische Empfehlungen bleiben als damalige Snapshots erhalten.
 
-Vor dem Aktualisieren JSON exportieren. ZIP entpacken und Inhalte auf derselben Repository-Ebene wie bisher übernehmen; index.html liegt direkt im Projektordner. Nach GitHub-Pages-Veröffentlichung alle App-Tabs schließen und die gewohnte Adresse erneut online öffnen. Einstellungen müssen Version 0.18.1 zeigen. Danach sind Kleiderschrank, Planung mit manuellem Wetter und Rückmeldungen offline nutzbar. Wetterabfragen benötigen Internet.
+Vor dem Aktualisieren JSON exportieren. ZIP entpacken und Inhalte auf derselben Repository-Ebene wie bisher übernehmen; index.html liegt direkt im Projektordner. Nach GitHub-Pages-Veröffentlichung alle App-Tabs schließen und die gewohnte Adresse erneut online öffnen. Einstellungen müssen Version 0.19.0 zeigen. Danach sind Kleiderschrank, Planung mit manuellem Wetter und Rückmeldungen offline nutzbar. Wetterabfragen benötigen Internet.
 
 Kein automatisches Deployment. Details zu Prüfungen in TESTBERICHT.md.
 
-## Korrektur 0.18.1
+## Korrektur 0.19.0
 Nach persönlicher Präzisierung vom 31.10.2026: winddichte Armlinge belegen keine ausreichende Isolierung. Bei 6–10 °C gelten Kurzarmtrikot und Armlinge ohne hinterlegte ausreichende Wärmeleistung als eingeschränkter Ersatz. Eine verfügbare windschützende Regenjacke wird zusätzlich eingeplant. Die Wärmeleistung der Regenjacke bleibt gering; ein Hinweis auf unbestätigte Arm-Isolierung bleibt sichtbar. Ausreichend isolierende Armlinge oder eine geeignete lange Trikotschicht lösen keine pauschale Regenjackenpflicht aus. Vorhandene Temperaturbereiche und Materialangaben werden nicht verändert. Der Rohdatensatz der Excel-Datei bleibt unverändert; diese Präzisierung ist eine zusätzliche Nutzerregel.
+
+## Sichtbarkeit und Nebel (0.19.0)
+
+Die persönliche Windweste kann mit „Gut sichtbar – bei Dämmerung, Dunkelheit und Nebel außen tragen“ markiert werden. Die vorhandene Everyday-Weste bzw. eine eindeutig einzige vorhandene Windweste erhält die persönliche Markierung beim Update; eine bereits ausdrücklich gesetzte oder entfernte Markierung bleibt bestehen. Andere Westen bekommen keine pauschale Sonderrolle. Die Markierung kann im Kleiderschrank geändert werden.
+
+Bei schlechter Sicht wird eine aktive verfügbare markierte Weste zusätzlich berücksichtigt und als äußerste Oberkörperschicht angezeigt: über Regenjacke oder Thermojacke. Die gespeicherte Bekleidungskategorie bleibt Toplayer. Bei normalem Tageslicht ohne Nebel gilt die normale Reihenfolge. Nicht verfügbare Westen werden nicht erfunden. In der eigenen Auswahl wird nur die ausgewählte Kleidung sortiert; eine fehlende Weste wird dort als Hinweis benannt.
+
+Die automatische Standort- und GPX-Prognose fragt zusätzlich weather_code, is_day und tägliche Sonnenzeiten ab. WMO 45 und 48 werden als Nebel erkannt. Dämmerung ist für diese Version eine Näherung von 30 Minuten vor bis 30 Minuten nach Sonnenauf- oder -untergang; andere Zeiten werden anhand der Sonnenzeiten bzw. des Tag-/Nachtfelds eingeordnet. Fehlende ältere Lichtdaten gelten als unbekannt. Nebel und geringe Helligkeit zwischen Start und Ende werden ebenfalls berücksichtigt.
+
+Unter „Tour planen → Manuelles Wetter“ sind „Nebel erwartet“ und ein Dropdown für Tageslicht, Dämmerung oder Dunkelheit verfügbar. Nebel ist kein Regen: Die Regenstufe bleibt unverändert. Die Empfehlung bevorzugt funktional passende wasserabweisende Kleidung. Vorhandene wasserdichte Stücke können als Ersatz dienen; fehlender Feuchtigkeitsschutz wird angezeigt. Feuchte- und Regenschutz haben in der Diagnose einen gemeinsamen Schutzwert, die Wetterbedingungen bleiben getrennt. Neue bekannte Nebelbedingungen werden auch bei der Zuordnung von Lernerfahrungen getrennt berücksichtigt; alte Erfahrungen ohne diese Angabe werden erhalten.
+
+Quelle der Wetterfelder und Codes: https://open-meteo.com/en/docs . Manuelle Angaben bleiben offline nutzbar. Ein erneuter automatischer Abruf ersetzt die manuellen Nebel-/Lichtbedingungen wieder durch die Prognose. IDs, Kleidungseigenschaften, persönliche Temperaturbereiche, Pflege und frühere Fahrten bleiben erhalten.

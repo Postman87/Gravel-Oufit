@@ -1,4 +1,4 @@
-# Prüfung Gravel Outfit 0.18.1
+# Prüfung Gravel Outfit 0.19.0
 
 ## Quelle
 
@@ -6,7 +6,7 @@ Korrigierte Radbekleidung_KI_2.xlsx, ein Blatt „Kategorien nach T. (2)“, A�
 
 ## Automatisierte Prüfungen
 
-238 Tests erfolgreich, keine Fehler. Die bisherigen Tests mit inzwischen ausdrücklich ersetzten Regeln wurden durch Prüfungen der neuen Quelle ersetzt; die Zahl ist deshalb nicht direkt mit früheren Versionen vergleichbar.
+267 Tests erfolgreich, keine Fehler. Die bisherigen Tests mit inzwischen ausdrücklich ersetzten Regeln wurden durch Prüfungen der neuen Quelle ersetzt; die Zahl ist deshalb nicht direkt mit früheren Versionen vergleichbar.
 
 - Vollständige neue Temperaturstufen, Farben und Schutzspalte, überlappender Nullpunkt.
 - Verfügbare Thermokleidung, vorübergehend nicht verfügbare Kleidung, fehlende Schutzkleidung.
@@ -36,5 +36,13 @@ Getrennte lokale Testspeicher; echte vorhandene Nutzerdaten nicht für die Testf
 
 Keine Prüfung auf einem physischen iPhone und kein Alltagstest mit echten Touren. Externe Wetteranbieter wurden bei diesen Browserprüfungen nicht mit einem echten Gerätestandort abgefragt. Die Isolierung der Teilzeiträume einschließlich einer heißen Pause wurde separat mit kontrollierten Wetterserien getestet.
 
-## Korrektur 0.18.1
-248 Tests erfolgreich, davon zehn neue Prüfungen für Wind-Armlinge: 6/7/8/9/10 °C mit zusätzlicher Regenjacke und eingeschränkter Midlayer-Bewertung, unbekannte Isolierung, ausreichend isolierende Armlinge, geeignetes Langarmtrikot, nicht verfügbare Regenjacke und warme Tour. Die 1.497-Fall-Matrix und die Zwischenbewertungs-/Learning-Prüfungen bestehen weiterhin. Zusätzliche DOM-Prüfungen erfolgreich. Echter Browser, 402 × 874, getrennter Testspeicher: 7 °C trocken mit schwachem Wind, reine Wind-Armlinge, Kurzarmtrikot, Weste und zusätzliche Lupra-Jacke sichtbar; Hinweis auf unbestätigte Arm-Isolierung sichtbar. Keine Prüfung auf physischem iPhone.
+## Korrektur 0.19.0
+267 Tests erfolgreich, davon zehn neue Prüfungen für Wind-Armlinge: 6/7/8/9/10 °C mit zusätzlicher Regenjacke und eingeschränkter Midlayer-Bewertung, unbekannte Isolierung, ausreichend isolierende Armlinge, geeignetes Langarmtrikot, nicht verfügbare Regenjacke und warme Tour. Die 1.497-Fall-Matrix und die Zwischenbewertungs-/Learning-Prüfungen bestehen weiterhin. Zusätzliche DOM-Prüfungen erfolgreich. Echter Browser, 402 × 874, getrennter Testspeicher: 7 °C trocken mit schwachem Wind, reine Wind-Armlinge, Kurzarmtrikot, Weste und zusätzliche Lupra-Jacke sichtbar; Hinweis auf unbestätigte Arm-Isolierung sichtbar. Keine Prüfung auf physischem iPhone.
+
+## Sichtbarkeit und Nebel 0.19.0
+
+267 automatisierte Tests erfolgreich. Neue Fälle: Dämmerung/Dunkelheit/Nebel mit markierter Weste über Regenjacke; Weste über Thermojacke ohne unvereinbare Schichten; normales Tageslicht; unmarkierte und nicht verfügbare Westen; wasserabweisende Hose gegenüber zusätzlicher Regenhose; wasserdichter Ersatz; fehlender Feuchtigkeitsschutz; eigene Auswahl; JSON; WMO 45/48; Sonnenzeiten und Dämmerungsgrenzen; alte Prognosen und fehlende polare Sonnenzeiten; Nebel und Dunkelheit während Standort-/GPX-Touren; getrennter Nebelkontext im Learning.
+
+Zusätzliche DOM-Prüfung: bestehende persönliche Weste automatisch markieren, Markierung entfernen und erneut speichern, manuell Nebel und Dämmerung planen. Die bisherigen DOM-Prüfungen für Kleiderschrank, Wetter/GPX, Zwischenbewertung und nachträgliches Wetter bestehen weiter.
+
+Echter Browser bei 402 × 874 mit getrenntem Testspeicher: 7 °C, Nebel, Dämmerung und Regen. Die Everyday-Weste steht nach der Lupra-Jacke und trägt den Hinweis „Sichtbarkeit: außen über den Oberkörperschichten tragen“. Kein echter Standortabruf für diese Prüfung, kein physischer iPhone-Test. Wetterantworten und Sonnenzeiten wurden in den automatisierten Prüfungen kontrolliert vorgegeben.
