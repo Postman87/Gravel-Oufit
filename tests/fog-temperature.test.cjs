@@ -1,0 +1,7 @@
+const {test}=require('node:test'),a=require('node:assert/strict'),G=require('../core');
+function state(t,fog=true){const s=G.seed();require('./wardrobe-fixture.cjs').populate(s,G);s.rangeModel='personal-v1';s.weather={...s.weather,startTemp:t,endTemp:t,wind:0,rain:0,fog,light:'day'};return s;}
+test('31 Grad und Nebel erzwingen weder Lupra-Jacke noch Regenhose',()=>{const r=G.recommend(state(31));a(!r.rows.some(x=>['lupra','luprapants'].includes(x.item.type)));a.equal(r.assessment.torso.gaps.moisture,0);a(r.warnings.some(x=>x.includes('Warmer Nebel')));});
+test('Nebel bei 10 Grad benötigt weiterhin Feuchtigkeitsschutz',()=>a.equal(G.requirements(G.pointWeather(state(10).weather)).torso.moisture,1));
+test('Hohe Luftfeuchte ohne gemeldeten Nebel bleibt ohne Schutzbedarf',()=>{const s=state(31,false);s.weather.humidity=100;a.equal(G.requirements(G.pointWeather(s.weather)).torso.moisture,0);a(!G.pointWeather(s.weather).fog);});
+test('Warmer Nebel und getrennte kalte klare Stunde werden nicht zu kaltem Nebel vermischt',()=>{const w={...state(31).weather,endTemp:10,forecast:{start:{fog:true,wind:0,rain:0},end:{fog:false},wind:0,rain:0,fog:true,minTemperature:10,maxTemperature:31,timeline:[{temperature:31,fog:true},{temperature:10,fog:false}]}};a.equal(G.requirements(G.pointWeather(w,'end')).torso.moisture,0);});
+test('Regen bei 31 Grad bleibt trotz Wärme ein eigenständiger Nässeschutzbedarf',()=>{const s=state(31);s.weather.rain=2;a.equal(G.requirements(G.pointWeather(s.weather)).torso.rain,2);});
