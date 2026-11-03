@@ -1,4 +1,4 @@
-# 0.21.6 – Nebel temperaturgerecht bewerten
+# 0.21.7 – Nebel temperaturgerecht bewerten
 
 Luftfeuchtigkeit aus Abruf und Anzeige entfernt. Bereits gespeicherte Wetterwerte bleiben unangetastet. Nebel weiterhin ausschließlich aus gemeldeten Wettercodes 45/48 oder manueller Angabe.
 
