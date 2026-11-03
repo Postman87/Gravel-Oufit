@@ -33,3 +33,5 @@ html[data-theme="dark"] .planning-options [aria-pressed=true]{background:#2a4e5c
 
 /* Surfblue and black, inspired by CUBE Nuroad C:62 EX. Status colors stay semantic. */
 header{background:#111719;color:#edf4f7}header h1 span{color:#82adbb}input[type=checkbox],input[type=range]{accent-color:#528b9e}dialog::backdrop{background:#070d12b8}
+
+.feedback-tree details{margin:12px 0;padding:12px;border:1px solid var(--border,#8b9fa5);border-radius:12px}.feedback-tree summary{font-weight:600;cursor:pointer}.feedback-branch label{margin-top:10px}#measurement-fields{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}#wardrobe-sort{margin-bottom:16px}
