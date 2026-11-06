@@ -36,13 +36,17 @@
     const make = (from,to,side,fallback) => {
       const samples = points.filter(p => Date.parse(p.at) >= from && Date.parse(p.at) <= to);
       const weather = overlap(from,to);
-      const temperatures = [...samples.map(p=>p.temperature), ...weather.map(p=>p.temperature)].filter(Number.isFinite);
+      const temperatures = weather.map(p=>p.temperature).filter(Number.isFinite);
+      const sampleTemperatures = samples.map(p=>p.temperature).filter(Number.isFinite);
+      if (!temperatures.length) temperatures.push(...sampleTemperatures);
+      const maxima = weather.length && weather.every(p=>Number.isFinite(p.maxTemperature)) ?
+        weather.map(p=>p.maxTemperature) : [...temperatures,...sampleTemperatures];
       const wind = Math.max(0,...[...samples,...weather].map(p=>p.windKmH || 0));
       const light = w.light && w.light !== 'auto' ? ['night','twilight'].includes(w.light) :
         [...samples,...weather].some(p=>p.lowLight);
       const fog = f ? [...samples,...weather].some(p=>p.fog) : !!w.fog;
       return {t: temperatures.length ? Math.min(...temperatures) : fallback,
-        max: temperatures.length ? Math.max(...temperatures) : fallback,
+        max: maxima.length ? Math.max(...maxima) : fallback,
         wind: samples.length || weather.length ? wind : [0,22,34][w.wind] || 0,
         visible: light || fog, fog, ...combine(weather.length ? weather : samples.length ? samples :
           [{rain:f ? (side==='start'?f.start.rain:f.rain) : w.rain}]),
@@ -121,7 +125,7 @@
     function gloves(p){
       if(state.optional.hands==='none')return null;
       const candidates=items.filter(i=>['wintergloves','gloves'].includes(i.type));
-      if(p.t<=10)return candidates.sort((x,y)=>distance(p,x)-distance(p,y)||G.traits(y).warmth-G.traits(x).warmth)[0];
+      if(p.t<=10)return best(p,candidates.filter(i=>i.type==='wintergloves'))||best(p,candidates);
       return best(p,candidates.filter(i=>i.type==='gloves'&&distance(p,i)===0&&(!i.wind||p.t<16)));
     }
     let ga=gloves(a),gb=gloves(b);
