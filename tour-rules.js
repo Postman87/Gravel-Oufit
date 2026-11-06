@@ -132,7 +132,7 @@
       ga=gb=warmPair;sharedGloves=true;
     }
     function dress(p,core,hand) {
-      const worn=[], warnings=[], reasons=new Map(), gaps={foundation:false,outer:false,rain:0,wind:0,warmth:0};
+      const worn=[], warnings=[], reasons=new Map(), gaps=Object.fromEntries(['torso','legs'].map(zone=>[zone,{foundation:false,outer:false,rain:0,wind:0,warmth:0}]));
       const add=(i,why)=>{
         if(!i)return;
         if(!worn.some(x=>x.id===i.id))worn.push({...i});
@@ -144,7 +144,7 @@
       const requireItem=(i,reason)=>i?add(i,reason):warnings.push('Bestandslücke: '+reason+'.');
       const base=core?.base||best(p,bases),mid=core?.mid||best(p,mids);
       add(base,sharedBase?'Gemeinsamer Baselayer':'Baselayer');add(mid,core?.learned?'Trikot · vergleichbare Rückmeldungen berücksichtigt':'Trikot');
-      if(!base||!mid){gaps.foundation=true;warnings.push('Baselayer oder Trikot fehlt.');}
+      if(!base||!mid){gaps.torso.foundation=true;warnings.push('Baselayer oder Trikot fehlt.');}
       const long=[base,mid].some(i=>i?.length==='long');
       const fullWind=()=>{
         if(worn.some(i=>['lupra','winterjacket'].includes(i.type)&&i.wind))return;
@@ -181,7 +181,7 @@
       if((p.t<=10&&pants?.type!=='thermolegs')||p.rain===2||p.mixed||
         p.rain===1&&L.wetNeed(state,p,worn,'legs'))requireItem(overpants,p.mixed?'Nässeschutz bei Schnee mit Regenanteil':p.rain===2?'Regenschutz an den Beinen':'Wind- oder Nässeschutz an den Beinen');
       if(p.t<=0&&pants?.type!=='thermolegs')warnings.push('Zusätzliche Beinisolierung durch eine lange Unterhose erforderlich.');
-      if(!pants)gaps.foundation=true;
+      if(!pants)gaps.legs.foundation=true;
       add(hand,sharedGloves?'Ein Paar für die gesamte Tour':'Handschutz');
       if(p.t<=10&&!hand&&state.optional.hands!=='none')warnings.push('Bestandslücke: geeignete Handschuhe.');
       if(state.optional.cap!=='none'&&p.t<=10){
@@ -195,8 +195,9 @@
         requireItem(covers,p.t<=5?'Fußwärme':'Nässeschutz an den Füßen');
         if(p.rain&&covers&&!covers.rain)warnings.push('Überschuhe bieten begrenzten Nässeschutz.');
       }
-      if(p.t<=5&&core?.order>3&&!core.windException){gaps.warmth=1;warnings.push('Zusätzliche Wärmeisolierung am Oberkörper erforderlich.');}
-      if(p.rain&&!shell||p.rain===2&&!overpants||p.mixed&&!overpants)gaps.rain=p.rain;
+      if(p.t<=5&&core?.order>3&&!core.windException){gaps.torso.warmth=1;warnings.push('Zusätzliche Wärmeisolierung am Oberkörper erforderlich.');}
+      if(p.rain&&!shell)gaps.torso.rain=p.rain;
+      if((p.rain===2||p.mixed)&&!overpants)gaps.legs.rain=p.rain;
       if(p.unknown)warnings.push('Schnee mit unbekanntem Regenanteil: Lupra-Jacke und -Hose als optionale Reserve prüfen.');
       for(const i of worn)if(distance(p,i)>0)warnings.push(i.name+' liegt für diese Fahrphase außerhalb deines persönlichen oder gelernten Bereichs ('+reasons.get(i.id)+').');
       return {items:G.sortItems(worn),reasons,warnings,gaps,wearable:!!(base&&mid&&pants)};
@@ -224,7 +225,7 @@
     const assessment=x=>Object.fromEntries(['torso','legs'].map(zone=>{
       const traits=x.items.filter(i=>G.traits(i).zone===zone).map(G.traits);
       return [zone,{warmth:traits.reduce((n,p)=>n+p.warmth,0),wind:Math.max(0,...traits.map(p=>p.wind)),
-        rain:Math.max(0,...traits.map(p=>p.rain)),breathability:Math.min(3,...traits.map(p=>p.breathability)),gaps:x.gaps}];
+        rain:Math.max(0,...traits.map(p=>p.rain)),breathability:Math.min(3,...traits.map(p=>p.breathability)),gaps:x.gaps[zone]}];
     }));
     const substitute=phase=>{
       const pants=phase.items.filter(i=>['rr','shorts','cyclingpants','luprapants'].includes(i.type));
