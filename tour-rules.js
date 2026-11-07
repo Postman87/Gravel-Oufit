@@ -17,6 +17,35 @@
     return {rain: Number.isFinite(code) ? (totalMm > 0 && rainMm !== 0 ? 1 : 0) : (rain || 0)};
   }
 
+  function lightShowerReserve(state,weather){
+    const f=state.weather.forecast;
+    if(!f?.weatherIntervals?.length)return false;
+    const start=Date.parse(f.startAt),end=Date.parse(f.endAt);
+    const journey=f.route||f.journey;
+    const spans=weather.split&&journey?
+      [[start,Date.parse(journey.arrivalAt)],[Date.parse(journey.returnStartAt),end]]:[[start,end]];
+    const duration=spans.reduce((sum,[from,to])=>sum+to-from,0);
+    const wet=[];
+    let cold=false;
+    for(const [from,to] of spans){
+      for(const i of f.weatherIntervals.filter(i=>i.from<to&&i.to>from)){
+        cold||=i.temperature<=7;
+        const condition=precipitation(i);
+        if(condition.snow||condition.rain>1||[56,57,66].includes(i.code))return false;
+        if(!condition.rain)continue;
+        if(!Number.isFinite(i.rainMm)||i.rainMm>0.3)return false;
+        wet.push([Math.max(from,i.from),Math.min(to,i.to)]);
+      }
+    }
+    wet.sort((a,b)=>a[0]-b[0]);
+    let wetDuration=0,coveredUntil=-Infinity;
+    for(const [from,to] of wet){
+      wetDuration+=Math.max(0,to-Math.max(from,coveredUntil));
+      coveredUntil=Math.max(coveredUntil,to);
+    }
+    return cold&&wetDuration>0&&wetDuration<=Math.min(hour,duration/2);
+  }
+
   function phaseWeather(state) {
     const w = state.weather, f = w.forecast;
     const route = f?.route || f?.journey;
@@ -113,7 +142,11 @@
   function recommend(state,G) {
     const fixedBase=state.tourRules===version;
     const useMatrix=fixedBase||state.tourRules==='tour-v2';
-    const weather=phaseWeather(state), a=weather.start, b=weather.end, L=learning();
+    const weather=phaseWeather(state), L=learning();
+    const showerReserve=useMatrix&&lightShowerReserve(state,weather);
+    const outfitWeather=p=>showerReserve&&p.rain===1?{...p,rain:0}:p;
+    const a=outfitWeather(weather.start), b=outfitWeather(weather.end);
+    const laterWeather=weather.outboundLater&&outfitWeather(weather.outboundLater);
     const items=G.expandItems(state.items.filter(G.usable));
     const distance=(p,i)=>{
       const range=L.range(i,state,p);
@@ -195,7 +228,7 @@
       pairs.sort((x,y)=>x[0].score+x[1].score-y[0].score-y[1].score);
       if(pairs.length){[first,last]=pairs[0];sharedBase=true;}
     }
-    const laterCore=useMatrix&&weather.outboundLater?cores(weather.outboundLater)[0]:null;
+    const laterCore=useMatrix&&weather.outboundLater?cores(laterWeather)[0]:null;
     const tourBase=fixedBase?(last?.base||laterCore?.base||first?.base):null;
     if(tourBase){
       first={...first,base:tourBase};
@@ -341,11 +374,12 @@
     const continuous=!weather.split&&a.t>b.t&&a.t-b.t<=2&&a.rain===b.rain&&a.snow===b.snow&&
       a.visible===b.visible&&Math.abs(a.wind-b.wind)<=5&&end.wearable;
     const start=continuous?end:dress(a,first,ga);
-    const outbound=weather.outboundLater?dress(weather.outboundLater,tourBase?{...laterCore,base:tourBase}:useMatrix?laterCore:first,useMatrix?gloves(weather.outboundLater):ga):null;
+    const outbound=weather.outboundLater?dress(laterWeather,tourBase?{...laterCore,base:tourBase}:useMatrix?laterCore:first,useMatrix?gloves(laterWeather):ga):null;
     const startIds=new Set(start.items.map(i=>i.id)),endIds=new Set(end.items.map(i=>i.id));
     const later=[...new Map([...(outbound?.items||[]),...end.items].filter(i=>!startIds.has(i.id)).map(i=>[i.id,i])).values()];
     const snowReserve=[a,b,weather.outboundLater].some(p=>p?.unknown);
-    const bufferParts=weather.buffer.rain||snowReserve ? [byType(b,'lupra')] : [];
+    const reserveShell=showerReserve?byType(b,'lupra'):null;
+    const bufferParts=weather.buffer.rain||snowReserve||reserveShell ? [byType(b,'lupra')] : [];
     if(weather.buffer.rain===2||weather.buffer.mixed||snowReserve)bufferParts.push(byType(b,'luprapants'));
     if(weather.buffer.rain===2&&state.optional.covers!=='none')bufferParts.push(byType(b,'covers'));
     const windReserve=useMatrix&&[a,b,weather.outboundLater].some(p=>p&&matrixTarget(p).outer==='reserveVest')?byType(b,'vest'):null;
@@ -358,7 +392,7 @@
     });
     const packComponents=variantChanges.filter(v=>v.from==='short'&&v.to==='long').map(v=>G.zipoffComponent(start.items.find(i=>i.id===v.id)));
     const row=(item,group,reason)=>({item,type:item.type,group,reason});
-    const rows=[...start.items.map(i=>row(i,'start',start.reasons.get(i.id))),...pack.map(i=>row(i,'pack',outbound?.reasons.has(i.id)?'Später auf dem Hinweg: '+outbound.reasons.get(i.id):end.reasons.get(i.id)||(i.id===windReserve?.id?'Optionale Windweste für Abfahrten':snowReserve?'Optionale Reserve bei unklarem Regenanteil':'Regenschutzreserve im Wetterpuffer')))];
+    const rows=[...start.items.map(i=>row(i,'start',start.reasons.get(i.id))),...pack.map(i=>row(i,'pack',outbound?.reasons.has(i.id)?'Später auf dem Hinweg: '+outbound.reasons.get(i.id):end.reasons.get(i.id)||(i.id===windReserve?.id?'Optionale Windweste für Abfahrten':i.id===reserveShell?.id?'Regenreserve bei möglichem kurzem Schauer':snowReserve?'Optionale Reserve bei unklarem Regenanteil':'Regenschutzreserve im Wetterpuffer')))];
     const assessment=x=>Object.fromEntries(['torso','legs'].map(zone=>{
       const traits=x.items.filter(i=>G.traits(i).zone===zone).map(G.traits);
       return [zone,{warmth:traits.reduce((n,p)=>n+p.warmth,0),wind:Math.max(0,...traits.map(p=>p.wind)),
@@ -378,6 +412,9 @@
       baselayerPlan:{minimum:Math.min(a.t,b.t),personal:true},assessment:assessment(start),endAssessment:assessment(end),
       sourceStatus:{start:[],end:[]},targets:[],endTargets,replacements:{start:substitute(start),end:substitute(end)},continuous,felt:a.t,endFelt:b.t,
       warnings:[...start.warnings.map(v=>'Tourstart: '+v),...(outbound?.warnings||[]).map(v=>'Später auf dem Hinweg: '+v),...end.warnings.map(v=>'Später: '+v),
+        ...(showerReserve?[reserveShell?
+          'Möglicher kurzer Schauer: Kälteschutz bleibt eingeplant. Regenjacke bei Bedarf anziehen.':
+          'Möglicher kurzer Schauer: Kälteschutz bleibt eingeplant. Keine Regenjacke als Reserve verfügbar.']:[]),
         ...L.experienceHints(state,a,start.items),...L.experienceHints(state,b,end.items),
         ...(continuous?['Bei geringer Abkühlung gleich etwas wärmer starten und unterwegs möglichst wenig wechseln.']:[]),
         ...(sharedBase?['Gemeinsamer Baselayer für beide Fahrabschnitte.']:[]),
