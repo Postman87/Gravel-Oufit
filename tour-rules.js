@@ -3,6 +3,7 @@
 (function (root) {
   const version = 'tour-v3';
   const hour = 3600000;
+  const neckCoverThreshold = 16;
   const learning = () => typeof module !== 'undefined' ? require('./season-learning') : root.GravelSeasonLearning;
 
   function precipitation({code, rainMm, snowCm, totalMm, rain}) {
@@ -249,7 +250,7 @@
       (Math.max(a.max,b.max)<=warmPair.max+4||(Math.round(a.t)===14&&Math.round(b.t)===10))){
       ga=gb=warmPair;sharedGloves=true;
     }
-    function dress(p,core,hand) {
+    function dress(p,core,hand,neckWeather=p) {
       const target=useMatrix?matrixTarget(p):null;
       const worn=[], warnings=[], reasons=new Map(), gaps=Object.fromEntries(['torso','legs'].map(zone=>[zone,{foundation:false,outer:false,rain:0,wind:0,warmth:0}]));
       const add=(i,why)=>{
@@ -356,8 +357,10 @@
         const cap=p.t<=5?byType(p,'cap'):byType(p,'headband','cap');
         if(cap&&(distance(p,cap)===0||p.t<=5))add(cap,'Kopfschutz');
       }
-      const buff=byType(p,'buff');
-      if(state.optional.buff!=='none'&&buff&&distance(p,buff)===0)add(buff,'Persönlicher Halsbereich');
+      const buff=byType(neckWeather,'buff');
+      if(state.optional.buff!=='none'&&buff&&(useMatrix?neckWeather.t<neckCoverThreshold:distance(neckWeather,buff)===0)){
+        add(buff,useMatrix?`Halsschutz unter ${neckCoverThreshold} °C`:'Persönlicher Halsbereich');
+      }
       if(state.optional.covers!=='none'&&((target?target.covers:p.t<=5)||p.rain===2||p.rain===1&&L.wetNeed(state,p,worn,'feet'))){
         const covers=byType(p,'covers');
         requireItem(covers,p.t<=5?'Fußwärme':'Nässeschutz an den Füßen');
@@ -367,13 +370,13 @@
       if(p.rain&&!shell)gaps.torso.rain=p.rain;
       if((p.rain===2||p.mixed)&&!overpants)gaps.legs.rain=p.rain;
       if(p.unknown)warnings.push('Schnee mit unbekanntem Regenanteil: Lupra-Jacke und -Hose als optionale Reserve prüfen.');
-      for(const i of worn)if(distance(p,i)>0)warnings.push(i.name+' liegt für diese Fahrphase außerhalb deines persönlichen oder gelernten Bereichs ('+reasons.get(i.id)+').');
+      for(const i of worn)if((!useMatrix||i.type!=='buff')&&distance(p,i)>0)warnings.push(i.name+' liegt für diese Fahrphase außerhalb deines persönlichen oder gelernten Bereichs ('+reasons.get(i.id)+').');
       return {items:G.sortItems(worn),reasons,warnings,gaps,wearable:!!(torsoReady&&pants)};
     }
     const end=dress(b,last,gb);
     const continuous=!weather.split&&a.t>b.t&&a.t-b.t<=2&&a.rain===b.rain&&a.snow===b.snow&&
       a.visible===b.visible&&Math.abs(a.wind-b.wind)<=5&&end.wearable;
-    const start=continuous?end:dress(a,first,ga);
+    const start=continuous?(useMatrix?dress(b,last,gb,a):end):dress(a,first,ga);
     const outbound=weather.outboundLater?dress(laterWeather,tourBase?{...laterCore,base:tourBase}:useMatrix?laterCore:first,useMatrix?gloves(laterWeather):ga):null;
     const startIds=new Set(start.items.map(i=>i.id)),endIds=new Set(end.items.map(i=>i.id));
     const later=[...new Map([...(outbound?.items||[]),...end.items].filter(i=>!startIds.has(i.id)).map(i=>[i.id,i])).values()];
