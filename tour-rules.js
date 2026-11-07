@@ -147,10 +147,14 @@
         const midOptions=useMid&&mids.length?mids:[null];
         return baseOptions.flatMap(base=>midOptions.map(mid=>{
           const basePenalty=base?baseCost(base):0;
+          const dedicatedWindstopper=base?.type==='winterbase'&&base.wind&&
+            /wind[\s-]*stopper/i.test([base.model,base.name].join(' '));
+          const modelPreference=dedicatedWindstopper?
+            (target.base==='thermalWind'?-0.1:target.base==='thermal'?0.1:0):0;
           const midPenalty=mid&&isWarmMid(mid)!==(target.mid!=='short')?8:0;
           const adjustment=base&&mid?L.preference(state,p,[base,mid],G.traits):0;
           return {base,mid,order:basePenalty+midPenalty,learned:adjustment<0,
-            score:basePenalty+midPenalty+2*(base?distance(p,base):0)+2*(mid?distance(p,mid):0)+adjustment};
+            score:basePenalty+midPenalty+modelPreference+2*(base?distance(p,base):0)+2*(mid?distance(p,mid):0)+adjustment};
         })).sort((x,y)=>x.score-y.score);
       }
       const choices=[];
@@ -228,8 +232,18 @@
       add(base,sharedBase?'Gemeinsamer Baselayer':'Baselayer');add(mid,core?.learned?'Trikot · vergleichbare Rückmeldungen berücksichtigt':'Trikot');
       const torsoReady=target?!!(mid||target.outer==='jacket'&&jacket):!!(base&&mid);
       if(!torsoReady){gaps.torso.foundation=true;warnings.push('Trikot oder passende Thermojacke fehlt.');}
-      if(target?.base&&!base)warnings.push('Bestandslücke: passender Baselayer.');
-      if(target?.base==='thermalWind'&&base&&!base.wind)warnings.push('Windschützender Thermo-Baselayer fehlt. Gewählter Baselayer und Außenschicht übernehmen den Schutz soweit möglich.');
+      if(target?.base&&target.base!=='thermalWind'&&!base)warnings.push('Bestandslücke: passender Baselayer.');
+      const windThermalBase=i=>!!i&&isThermal(i)&&i.wind;
+      if(target?.base==='thermalWind'&&!windThermalBase(base)){
+        const available=best(p,bases.filter(windThermalBase));
+        if(available){
+          warnings.push(available.name+' ist verfügbar. '+(sharedBase?
+            'Für die gesamte Tour ist '+base.name+' als gemeinsamer Baselayer eingeplant.':
+            'Für diesen Fahrabschnitt ist '+(base?.name||'eine andere Schicht')+' eingeplant.'));
+        }else{
+          warnings.push('Kein windschützender Thermo-Baselayer mit hinterlegtem Windschutz verfügbar.');
+        }
+      }
       if(target?.base==='lightLong'&&base?.length!=='long'&&base)warnings.push('Leichter Langarm-Baselayer fehlt in der gewählten Kombination. Ärmelschutz der übrigen Schichten prüfen.');
       const long=[base,mid].some(i=>i?.length==='long');
       const fullWind=()=>{
