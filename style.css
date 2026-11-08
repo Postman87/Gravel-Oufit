@@ -45,3 +45,7 @@ header{background:#111719;color:#edf4f7}header h1 span{color:#82adbb}input[type=
 
 
 .measurement-value{min-height:48px}
+
+.laundry-item+.laundry-item{margin-top:12px}
+.laundry-item .actions{margin-top:6px}
+#laundry-plan-status:empty{margin:0}
