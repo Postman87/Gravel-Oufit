@@ -345,6 +345,15 @@
       if(!padded)requireItem(byType(p,'c3'),'Gepolsterte Innenhose');
       if(((target?wantsThermal:p.t<=10)&&pants?.type!=='thermolegs')||p.rain===2||p.mixed||
         p.rain===1&&L.wetNeed(state,p,worn,'legs'))requireItem(overpants,p.mixed?'Nässeschutz bei Schnee mit Regenanteil':p.rain===2?'Regenschutz an den Beinen':'Wind- oder Nässeschutz an den Beinen');
+      const matrixLegWind=target&&(target.base==='thermalWind'||target.outer==='shell');
+      const wornWindBase=base?.type==='winterbase'&&base.wind;
+      if(matrixLegWind||wornWindBase){
+        requireItem(overpants,'Zusätzlicher Windschutz an den Beinen laut Bekleidungsmatrix');
+        if(!overpants?.wind){
+          gaps.legs.wind=1;
+          warnings.push('Windschutz an den Beinen eingeschränkt: winddichte Überhose fehlt.');
+        }
+      }
       if(target&&wantsThermal&&pants?.type!=='thermolegs')warnings.push('Thermohose fehlt. Die Überhose ergänzt den Windschutz, die Beinisolierung bleibt begrenzt.');
       if(p.t<=0&&pants?.type!=='thermolegs')warnings.push('Zusätzliche Beinisolierung durch eine lange Unterhose erforderlich.');
       if(!pants)gaps.legs.foundation=true;
